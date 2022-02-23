@@ -1,0 +1,322 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: blank\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-23 16:48+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
+"Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-SearchPath-0: core/lang\n"
+"X-Poedit-SearchPath-1: core\n"
+"X-Poedit-SearchPath-2: .\n"
+"X-Poedit-SearchPathExcluded-0: core/libs/timber\n"
+
+#: core/gutenberg.php:13
+msgid "First screen"
+msgstr "Перший укран"
+
+#: core/gutenberg.php:130
+msgid "Main"
+msgstr "Головний"
+
+#: core/includes/back/dashboard-footer.php:14
+msgid "Powered by"
+msgstr "Працює на"
+
+#: core/includes/back/dashboard-options-widget.php:12
+msgid "Additional system options"
+msgstr "Додаткові параметри системи"
+
+#: core/includes/back/dashboard-options-widget.php:17
+msgid "Enable maintenance mode for anonymous users"
+msgstr "Режим обслуговування для анонімних користувачів"
+
+#: core/includes/back/dashboard-options-widget.php:22
+msgid "Disable all updates"
+msgstr "Вимкнути всі оновлення"
+
+#: core/includes/back/dashboard-options-widget.php:28
+msgid "Disable customizer"
+msgstr "Вимкнути кастомайзер"
+
+#: core/includes/back/dashboard-options-widget.php:34
+msgid "Disable src set"
+msgstr "Вимкнути src set"
+
+#: core/includes/back/dashboard-options-widget.php:40
+msgid "Remove default image sizes"
+msgstr "Вимкнути стандартні розміри зображень"
+
+#: core/includes/back/dashboard-options-widget.php:46
+msgid "Disable core privacy tools"
+msgstr "Вимкнути інструменти конфіденціальності"
+
+#: core/includes/back/dashboard-options-widget.php:52
+msgid "Enable CYR3LAT"
+msgstr "Активувати CYR3LAT"
+
+#: core/includes/back/dashboard-options-widget.php:58
+msgid "Disable DNS prefetch"
+msgstr "Приховати DNS prefetch"
+
+#: core/includes/back/dashboard-options-widget.php:64
+msgid "Disable Rest API"
+msgstr "Вимкнути Rest API"
+
+#: core/includes/back/dashboard-options-widget.php:70
+msgid "Disable Emojis"
+msgstr "Вимкнути Emoji"
+
+#: core/includes/back/dashboard-options-widget.php:76
+msgid "Disable Embeds"
+msgstr "Вимкнути Embeds"
+
+#: core/includes/back/dashboard-options-widget.php:82
+msgid "Disable dashboard widgets"
+msgstr "Приховати системні віджети консолі"
+
+#: core/includes/back/dashboard-options-widget.php:88
+msgid "Hide admin top bar"
+msgstr "Вимкнути панель адміністратора"
+
+#: core/includes/back/dashboard-options-widget.php:94
+msgid "Disable admin email verification"
+msgstr "Вимкнути E-mail верифікацію для адмінів"
+
+#: core/includes/back/dashboard-options-widget.php:100
+msgid "Disable comments"
+msgstr "Вимкнути коментарі"
+
+#: core/includes/back/dashboard-options-widget.php:106
+msgid "Delete child media"
+msgstr "Видаляти вкладення"
+
+#: core/includes/back/dashboard-options-widget.php:112
+msgid "Enable HTML cache"
+msgstr "Увімкнути HTML кешування"
+
+#: core/includes/back/dashboard-options-widget.php:118
+msgid "Enable minify"
+msgstr "Увімкнути мініфікацію"
+
+#: core/includes/back/dashboard-options-widget.php:124
+msgid "Inline scripts and styles"
+msgstr "Інлайнові скрипти та стилі"
+
+#: core/includes/back/dashboard-options-widget.php:129
+msgid "Resize upload width"
+msgstr "Максимальна ширина завантаженого зображення"
+
+#: core/includes/back/dashboard-options-widget.php:135
+msgid "Resize upload height"
+msgstr "Максимальна висота завантаженого зображення"
+
+#: core/includes/back/dashboard-options-widget.php:141
+msgid "Resize upload quality"
+msgstr "Максимальна якість для ресайзу"
+
+#: core/includes/back/dashboard-options-widget.php:147
+msgid "Google maps API key"
+msgstr "Ключ Google maps API"
+
+#: core/includes/back/dashboard-options-widget.php:153
+msgid "SMTP host"
+msgstr "SMTP хост"
+
+#: core/includes/back/dashboard-options-widget.php:158
+msgid "SMTP port"
+msgstr "SMTP порт"
+
+#: core/includes/back/dashboard-options-widget.php:163
+msgid "SMTP username"
+msgstr "SMTP користувач"
+
+#: core/includes/back/dashboard-options-widget.php:168
+msgid "SMTP password"
+msgstr "SMTP пароль"
+
+#: core/includes/back/dashboard-options-widget.php:173
+msgid "SMTP from name"
+msgstr "SMTP імʼя користувача"
+
+#: core/includes/back/dashboard-options-widget.php:178
+msgid "Header custom code"
+msgstr "Код в шапку"
+
+#: core/includes/back/dashboard-options-widget.php:183
+msgid "Footer custom code"
+msgstr "Код в підвал"
+
+#: core/includes/back/dashboard-update-assets-version.php:18
+msgid "Update theme version"
+msgstr "Оновити версію теми"
+
+#: core/includes/back/system-disable-customizer.php:109
+msgid "The Customizer is currently disabled."
+msgstr "Кастомайзер наразі вимкнено."
+
+#: core/includes/back/system-thumbnails.php:17
+msgid "Thumbnail"
+msgstr "Мініатюра"
+
+#: core/includes/back/system-thumbnails.php:31
+msgid "None"
+msgstr "Немає"
+
+#: core/includes/front/custom-localization.php:10
+msgid "Your Name"
+msgstr "Ваше Ім'я"
+
+#: core/includes/front/custom-localization.php:11
+msgid "Your Phone"
+msgstr "Ваш Телефон"
+
+#: core/init.php:176
+msgid "Website under Maintenance"
+msgstr "Веб-сайт на технічному обслуговуванні"
+
+#: core/init.php:176
+msgid ""
+"We are performing scheduled maintenance. We will be back online shortly!"
+msgstr "Ми виконуємо планове обслуговування і скоро будемо в мережі!"
+
+#: core/init.php:187
+msgid "Please, install Advanced Custom Fields PRO version"
+msgstr "Будь ласка, встановіть PRO версію Advanced Custom Fields"
+
+#: core/libs/acf-nav-menu-field/nav-menu-v4.php:25
+#: core/libs/acf-nav-menu-field/nav-menu-v5.php:25
+msgid "Nav Menu"
+msgstr "Навігаційне меню"
+
+#: core/libs/acf-nav-menu-field/nav-menu-v4.php:26
+msgid "Relational"
+msgstr "Реляційний"
+
+#: core/libs/acf-nav-menu-field/nav-menu-v4.php:49
+#: core/libs/acf-nav-menu-field/nav-menu-v5.php:44
+msgid "Return Value"
+msgstr "Значення, що повертається"
+
+#: core/libs/acf-nav-menu-field/nav-menu-v4.php:59
+#: core/libs/acf-nav-menu-field/nav-menu-v5.php:50
+msgid "Nav Menu Object"
+msgstr "Об'єкт меню"
+
+#: core/libs/acf-nav-menu-field/nav-menu-v4.php:60
+#: core/libs/acf-nav-menu-field/nav-menu-v5.php:51
+msgid "Nav Menu HTML"
+msgstr "HTML меню"
+
+#: core/libs/acf-nav-menu-field/nav-menu-v4.php:61
+#: core/libs/acf-nav-menu-field/nav-menu-v5.php:52
+msgid "Nav Menu ID"
+msgstr "ID меню"
+
+#: core/libs/acf-nav-menu-field/nav-menu-v4.php:69
+#: core/libs/acf-nav-menu-field/nav-menu-v5.php:59
+msgid "Menu Container"
+msgstr "Контейнер меню"
+
+#: core/libs/acf-nav-menu-field/nav-menu-v4.php:70
+#: core/libs/acf-nav-menu-field/nav-menu-v5.php:60
+msgid "What to wrap the Menu's ul with (when returning HTML only)"
+msgstr "Обгортка для меню"
+
+#: core/libs/acf-nav-menu-field/nav-menu-v4.php:85
+#: core/libs/acf-nav-menu-field/nav-menu-v5.php:68
+msgid "Allow Null?"
+msgstr "Дозволити порожнє значення?"
+
+#: core/libs/acf-nav-menu-field/nav-menu-v4.php:95
+#: core/libs/acf-nav-menu-field/nav-menu-v5.php:73
+msgid "Yes"
+msgstr "Так"
+
+#: core/libs/acf-nav-menu-field/nav-menu-v4.php:96
+#: core/libs/acf-nav-menu-field/nav-menu-v5.php:74
+msgid "No"
+msgstr "Ні"
+
+#: core/libs/acf-nav-menu-field/nav-menu-v5.php:45
+msgid "Specify the returned value on front end"
+msgstr "Вкажіть значення, що повертається"
+
+#: core/libs/acf-nav-menu-field/nav-menu-v5.php:53
+msgid "All"
+msgstr "Усі"
+
+#: core/libs/acf-nav-menu-field/nav-menu-v5.php:134
+msgid "Choose one"
+msgstr "Виберіть"
+
+#: core/libs/libraries.php:32 core/libs/libraries.php:33
+msgid "Options"
+msgstr "Опції"
+
+#~ msgid "Example"
+#~ msgstr "Приклад"
+
+#~ msgid "Custom Page Blocks"
+#~ msgstr "Власні блоки для сторінок"
+
+#~ msgid "Custom Post Blocks"
+#~ msgstr "Власні блоки для записів"
+
+#~ msgid "Disable SRCSET"
+#~ msgstr "Вимкнути SRCSET"
+
+#~ msgid "Disable Gutenberg editor"
+#~ msgstr "Вимкнути редактор Gutenberg"
+
+#~ msgid "Disable default Gutenberg blocks"
+#~ msgstr "Вимкнути стандартні блоки Gutenberg"
+
+#~ msgid "Main options"
+#~ msgstr "Загальні параметри"
+
+#~ msgid "Enable cyr3lat"
+#~ msgstr "Увімкнути cyr3lat"
+
+#~ msgid "Additional configuration"
+#~ msgstr "Додаткова конфігурація"
+
+#~ msgid "Clear SVG cache"
+#~ msgstr "Очистити кеш SVG"
+
+#~ msgid "Enable Cyr to Lat enhanced"
+#~ msgstr "Увімкнути Cyr to Lat enhanced"
+
+#~ msgid "Disable Json"
+#~ msgstr "Вимкнути Json"
+
+#~ msgid "Enable responsive viewport"
+#~ msgstr "Додати viewport адаптивності"
+
+#~ msgid "Enable X-UA-Compatible"
+#~ msgstr "Увімкнути сумісність X-UA"
+
+#~ msgid "Disable Skype phone parser"
+#~ msgstr "Вимкнути парсер телефонних номерів Skype"
+
+#~ msgid "Rename file on upload inside post"
+#~ msgstr "Перейменовувати вкладення при завантаженні"
+
+#~ msgid "Overall"
+#~ msgstr "Загальне"
+
+#~ msgid "Working..."
+#~ msgstr "Працюємо..."
+
+#~ msgid "Responsive options"
+#~ msgstr "Опції адаптивки"

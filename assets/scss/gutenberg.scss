@@ -1,0 +1,110 @@
+/* Gutenberg styles
+-------------------------------------------------------------- */
+
+@import "mixins";
+@import "fonts";
+@import "extend";
+
+/* reset styles for gutenberg */
+
+/* change width of gutenberg sidebar */
+.edit-post-layout.is-sidebar-opened .edit-post-sidebar,
+.edit-post-layout.is-sidebar-opened .edit-post-plugin-sidebar__sidebar-layout{
+  width: 480px !important;
+}
+.edit-post-layout.is-sidebar-opened .edit-post-layout__content{
+  margin-right: 480px !important;
+}
+
+/* fix tiny mce editor fullscreen mode */
+body.mce-fullscreen{
+  .interface-interface-skeleton__sidebar{
+    position: absolute;
+    top: 100%;
+    left: 100%;
+  }
+  .mce-fullscreen{
+    z-index: 10000000000000;
+    @include transform(translateZ(10000000000000000px));
+  }
+}
+
+/* editor and blocks overall styles */
+.block-editor-writing-flow {
+  padding: 0;
+  margin: 0;
+
+  /* title area */
+  & > .edit-post-visual-editor__post-title-wrapper{
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    color: #000;
+
+    .wp-block{
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      border-bottom: solid 1px #E0E0E0;
+    }
+
+    .editor-post-title__input{
+      padding: 18px 10px;
+      margin: 0;
+      font-size: 26px;
+      line-height: 1;
+    }
+  }
+
+  /* blocks area */
+  & > .block-editor-block-list__layout {
+
+    /* fix width for wp-block elements */
+    .wp-block:not(.block-list-appender) {
+      display: block;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      font-family: 'Open Sans', sans-serif;
+      text-align: left;
+      overflow: hidden;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* new box add button */
+    //& > .block-list-appender{
+    //  width: 100% !important;
+    //  text-align: center !important;
+    //  padding: 0 !important;
+    //  min-height: 44px !important;
+    //  display: flex !important;
+    //  justify-content: center !important;
+    //  align-items: center !important;
+    //
+    //  button{
+    //    line-height: 1;
+    //    display: inline-block;
+    //    width: auto;
+    //    white-space: nowrap;
+    //    color: white;
+    //    background-color: black;
+    //    margin: 0;
+    //    padding: 0;
+    //    font-size: 0;
+    //  }
+    //}
+  }
+}
+
+/* normalise elements */
+.main-first-screen{
+  .customBlock{
+    p{
+      margin: auto;
+      line-height: 1.6;
+    }
+  }
+}

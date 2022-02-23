@@ -1,0 +1,16 @@
+/* First screen
+-------------------------------------------------------------- */
+
+@import "../../mixins";
+
+.main-first-screen{
+  background-color: #ef0a0a;
+  color: white;
+
+  .customBlock{
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: #049804;
+    padding: 20px;
+  }
+}

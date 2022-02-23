@@ -1,0 +1,7 @@
+{% if not is_example %}
+{% block content %}{% endblock %}
+{% else %}
+{% if block_example %}
+<img src="{{ block_example }}">
+{% endif %}
+{% endif %}
