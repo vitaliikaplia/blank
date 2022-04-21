@@ -12,7 +12,7 @@ date_default_timezone_set(wp_timezone_string());
  */
 define('TEXTDOMAIN', 'blank' );
 define('THEME_PATH', trailingslashit( get_template_directory() ) );
-define('CORE_PATH', THEME_PATH . 'core' );
+define('CORE_PATH', THEME_PATH . 'core');
 define('TEMPLATE_DIRECTORY_URL', trailingslashit( get_template_directory_uri() ) );
 define('CORE_URL', TEMPLATE_DIRECTORY_URL . 'core' );
 define('ADMIN_AJAX_URL', admin_url('admin-ajax.php') );
