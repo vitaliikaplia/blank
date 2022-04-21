@@ -208,3 +208,25 @@
 		display: none !important;
 	}
 }
+
+/* change width of gutenberg sidebar */
+.edit-post-layout.is-sidebar-opened .edit-post-sidebar,
+.edit-post-layout.is-sidebar-opened .edit-post-plugin-sidebar__sidebar-layout{
+	width: 460px !important;
+}
+.edit-post-layout.is-sidebar-opened .edit-post-layout__content{
+	margin-right: 460px !important;
+}
+
+/* fix tiny mce editor fullscreen mode */
+body.mce-fullscreen{
+	.interface-interface-skeleton__sidebar{
+		position: absolute;
+		top: 100%;
+		left: 100%;
+	}
+	.mce-fullscreen{
+		z-index: 10000000000000;
+		@include transform(translateZ(10000000000000000px));
+	}
+}

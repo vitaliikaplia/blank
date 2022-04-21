@@ -1,5 +1,9 @@
 {% if not is_example %}
 {% block content %}{% endblock %}
+{% if is_admin %}
+<link rel="stylesheet" href="{{ block_style_url }}" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ gutenberg_style_url }}" type="text/css" media="all" />
+{% endif %}
 {% else %}
 {% if block_example %}
 <img src="{{ block_example }}">

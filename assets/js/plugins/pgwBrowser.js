@@ -261,3 +261,11 @@
         return pgwBrowser;
     }
 })(window.Zepto || window.jQuery);
+
+/**
+ * Add body classes
+ */
+(function ($) {
+    document.body.classList.add($.pgwBrowser().browser.group.replace(" ","").toLowerCase());
+    document.body.classList.add($.pgwBrowser().os.group.replace(" ","").toLowerCase());
+})(jQuery);

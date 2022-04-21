@@ -33,10 +33,10 @@ if(!DISABLE_GUTENBERG){
             'name'            => $block['category'] . '-' . $block['name'],
             'title'           => $block['label'],
             'render_callback' => 'block_render_callback',
-//            'enqueue_style'   => $style_url,
+            //'enqueue_style'   => $style_url,
             'enqueue_assets' => function() use ($style_url, $style_name){
                 if(is_admin()) {
-                    wp_enqueue_style($style_name, $style_url, array('gutenberg-fix'), ASSETS_VERSION);
+                    // wp_enqueue_style($style_name, $style_url, array('gutenberg-custom-styles'), ASSETS_VERSION);
                 } else {
                     wp_enqueue_style($style_name, $style_url, '', ASSETS_VERSION);
                 }
@@ -89,6 +89,9 @@ if(!DISABLE_GUTENBERG){
         $context['fields'] = get_fields();
 
         $context['site_theme_uri'] = TEMPLATE_DIRECTORY_URL;
+        $context['is_admin'] = is_admin();
+        $context['block_style_url'] = TEMPLATE_DIRECTORY_URL.'assets/css/blocks/'.$block['category'].'/'.$no_category_block_name.'.min.css';
+        $context['gutenberg_style_url'] = TEMPLATE_DIRECTORY_URL . 'assets/css/gutenberg.min.css';
         $context['is_example'] = get_field('is_example');
         if($context['is_example']){
             $context['block_example'] = TEMPLATE_DIRECTORY_URL . 'assets/gutenberg/' . $block['category'] . '/' . $no_category_block_name . '.png';
@@ -148,15 +151,5 @@ if(!DISABLE_GUTENBERG){
         unset($settings['styles'][1]);
         return $settings;
     }
-
-    /**
-     * Custom gutenberg editor styles
-     */
-    function gutenberg_editor_styles() {
-        if(is_admin()){
-            wp_enqueue_style('gutenberg-fix', TEMPLATE_DIRECTORY_URL . 'assets/css/gutenberg.min.css', '', ASSETS_VERSION);
-        }
-    }
-    add_action( 'admin_enqueue_scripts', 'gutenberg_editor_styles' );
 
 }

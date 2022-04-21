@@ -27,6 +27,9 @@
 			text-decoration: none;
 		}
 	}
+	em{
+		font-style: italic;
+	}
 	h1{
 		font-size: 32px;
 		margin-bottom: 14px;
@@ -247,6 +250,7 @@
 	@include transform(translateZ(8px));
 
 	.customBlock{
+		margin: 0 auto;
 		display: block;
 		position: relative;
 		width: 100%;

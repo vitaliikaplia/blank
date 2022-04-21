@@ -5,34 +5,13 @@
 @import "fonts";
 @import "extend";
 
-/* reset styles for gutenberg */
-
-/* change width of gutenberg sidebar */
-.edit-post-layout.is-sidebar-opened .edit-post-sidebar,
-.edit-post-layout.is-sidebar-opened .edit-post-plugin-sidebar__sidebar-layout{
-  width: 480px !important;
-}
-.edit-post-layout.is-sidebar-opened .edit-post-layout__content{
-  margin-right: 480px !important;
-}
-
-/* fix tiny mce editor fullscreen mode */
-body.mce-fullscreen{
-  .interface-interface-skeleton__sidebar{
-    position: absolute;
-    top: 100%;
-    left: 100%;
-  }
-  .mce-fullscreen{
-    z-index: 10000000000000;
-    @include transform(translateZ(10000000000000000px));
-  }
-}
-
 /* editor and blocks overall styles */
-.block-editor-writing-flow {
+.block-editor-writing-flow,
+.editor-styles-wrapper.wp-embed-responsive{
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  width: 100%;
 
   /* title area */
   & > .edit-post-visual-editor__post-title-wrapper{
@@ -40,6 +19,8 @@ body.mce-fullscreen{
     margin: 0;
     background-color: #fff;
     color: #000;
+    box-sizing: border-box;
+    width: 100%;
 
     .wp-block{
       width: 100%;
@@ -54,6 +35,7 @@ body.mce-fullscreen{
       margin: 0;
       font-size: 26px;
       line-height: 1;
+      box-sizing: border-box;
     }
   }
 
@@ -71,40 +53,42 @@ body.mce-fullscreen{
       overflow: hidden;
       font-size: 14px;
       line-height: 1.6;
-      margin: 0;
+      margin: 0 !important;
+
+      *{
+        box-sizing: border-box;
+      }
+
+      p{
+        margin-top: auto;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+      }
     }
 
     /* new box add button */
-    //& > .block-list-appender{
-    //  width: 100% !important;
-    //  text-align: center !important;
-    //  padding: 0 !important;
-    //  min-height: 44px !important;
-    //  display: flex !important;
-    //  justify-content: center !important;
-    //  align-items: center !important;
-    //
-    //  button{
-    //    line-height: 1;
-    //    display: inline-block;
-    //    width: auto;
-    //    white-space: nowrap;
-    //    color: white;
-    //    background-color: black;
-    //    margin: 0;
-    //    padding: 0;
-    //    font-size: 0;
-    //  }
-    //}
-  }
-}
+    & > .block-list-appender{
+      width: 100% !important;
+      text-align: center !important;
+      padding: 0 !important;
+      min-height: 0 !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
 
-/* normalise elements */
-.main-first-screen{
-  .customBlock{
-    p{
-      margin: auto;
-      line-height: 1.6;
+      button{
+        line-height: 1;
+        display: inline-block;
+        width: auto;
+        white-space: nowrap;
+        color: white;
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+      }
     }
   }
 }

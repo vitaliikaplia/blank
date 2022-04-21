@@ -5,7 +5,7 @@ if(!defined('ABSPATH')){exit;}
 /**
  * Fixing timezone
  */
-date_default_timezone_set(get_option('gmt_offset'));
+date_default_timezone_set(wp_timezone_string());
 
 /**
  * Constants
