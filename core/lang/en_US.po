@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-23 16:45+0200\n"
+"POT-Creation-Date: 2022-04-23 18:21+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -15,17 +15,13 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../..\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-SearchPath-0: core/lang\n"
 "X-Poedit-SearchPath-1: core\n"
 "X-Poedit-SearchPath-2: .\n"
 "X-Poedit-SearchPathExcluded-0: core/libs/timber\n"
 
-#: core/gutenberg.php:13
-msgid "First screen"
-msgstr ""
-
-#: core/gutenberg.php:130
+#: core/gutenberg.php:14
 msgid "Main"
 msgstr ""
 
@@ -181,16 +177,16 @@ msgstr ""
 msgid "Your Phone"
 msgstr ""
 
-#: core/init.php:176
+#: core/init.php:146
 msgid "Website under Maintenance"
 msgstr ""
 
-#: core/init.php:176
+#: core/init.php:146
 msgid ""
 "We are performing scheduled maintenance. We will be back online shortly!"
 msgstr ""
 
-#: core/init.php:187
+#: core/init.php:155
 msgid "Please, install Advanced Custom Fields PRO version"
 msgstr ""
 

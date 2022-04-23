@@ -1,0 +1,13 @@
+{% extends "block-base.twig" %}
+
+{% block content %}
+
+<div class="customBlockWrapper {{ block_class }}" id="{{ block.id }}" style="background-color: {{ fields.wrapper_background }};">
+    <div class="customBlock" style="background-color: {{ fields.inner_background }}; color: {{ fields.inner_text }};">
+        {% if fields.text %}
+        <div class="typo">{{ fields.text }}</div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

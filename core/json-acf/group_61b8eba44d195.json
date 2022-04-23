@@ -1,0 +1,95 @@
+{
+    "key": "group_61b8eba44d195",
+    "title": "Block: First screen",
+    "fields": [
+        {
+            "key": "field_61b8ebc072ecc",
+            "label": "Text",
+            "name": "text",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_62164b9481e7e",
+            "label": "Wrapper Background",
+            "name": "wrapper_background",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ef0a0a",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_62164ba681e7f",
+            "label": "Inner Background",
+            "name": "inner_background",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#049804",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_62164bde81e80",
+            "label": "Inner text",
+            "name": "inner_text",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#fff",
+            "enable_opacity": 0,
+            "return_format": "string"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/main-first-screen"
+            }
+        ]
+    ],
+    "menu_order": 1001,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1650724605
+}

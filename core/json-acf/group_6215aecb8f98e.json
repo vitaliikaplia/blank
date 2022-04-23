@@ -1,6 +1,6 @@
 {
-    "key": "group_6215aea7f0923",
-    "title": "Page: Home",
+    "key": "group_6215aecb8f98e",
+    "title": "Page: Blog",
     "fields": [],
     "location": [
         [
@@ -12,11 +12,11 @@
             {
                 "param": "page_type",
                 "operator": "==",
-                "value": "front_page"
+                "value": "posts_page"
             }
         ]
     ],
-    "menu_order": 1001,
+    "menu_order": 102,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -25,5 +25,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1645588168
+    "modified": 1650724592
 }

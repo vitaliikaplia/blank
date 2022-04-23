@@ -12,7 +12,7 @@ if (function_exists('get_fields')) {
     add_filter('acf/settings/save_json', 'my_acf_json_save_point');
     function my_acf_json_save_point( $path ) {
         // update path
-        $path = THEME_PATH . '/core/acf-json';
+        $path = THEME_PATH . '/core/json-acf';
         // return
         return $path;
     }
@@ -21,7 +21,7 @@ if (function_exists('get_fields')) {
         // remove original path (optional)
         unset($paths[0]);
         // append path
-        $paths[] = THEME_PATH . '/core/acf-json';
+        $paths[] = THEME_PATH . '/core/json-acf';
         // return
         return $paths;
     }

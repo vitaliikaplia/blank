@@ -1,0 +1,15 @@
+{
+  "name": "first-screen",
+  "label": {
+    "uk": "Перший екран",
+    "en_US": "First Screen",
+    "ru_RU": "Первый экран"
+  },
+  "category": "main",
+  "defaults": {
+    "field_61b8ebc072ecc": "<p>Hello world!<\/p>",
+    "field_62164b9481e7e": "#1e73be",
+    "field_62164ba681e7f": "#eeee22",
+    "field_62164bde81e80": "#000000"
+  }
+}

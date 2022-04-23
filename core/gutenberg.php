@@ -4,21 +4,37 @@ if(!defined('ABSPATH')){exit;}
 
 if(!DISABLE_GUTENBERG){
 
-    /**
-     * Custom Gutenberg blocks
-     */
-    $blocks = array(
-        array(
-            "name" => "first-screen",
-            "label" => __( "First screen", TEXTDOMAIN ),
-            "category" => "main",
-            'icon' => 'screenoptions'
-        )
-    );
+    /** Custom blocks categories */
+    function custom_block_categories( $categories, $post ) {
+        return array_merge(
+            $categories,
+            array(
+                array(
+                    'slug' => 'main',
+                    'title' => __( 'Main', TEXTDOMAIN ),
+                ),
+            )
+        );
+    }
+    add_filter( 'block_categories', 'custom_block_categories', 10, 2);
 
-    /**
-     * Create arrays of custom blocks
-     */
+    /** Custom Gutenberg blocks */
+    $blocks = array();
+    $includedFiles = list_files( CORE_PATH . '/json-blocks' );
+    if(is_array($includedFiles) && $includedFiles){
+        global $locale;
+        foreach($includedFiles as $file){
+            $ext = pathinfo($file, PATHINFO_EXTENSION);
+            if (in_array($ext, array('json'))) {
+                $json = file_get_contents($file);
+                $block_array = json_decode($json, true);
+                $block_array['label'] = $block_array['label'][$locale];
+                $blocks[] = $block_array;
+            }
+        }
+    }
+
+    /** Create arrays of custom blocks */
     $allowed_blocks = array();
     $custom_gutenberg_blocks = array();
 
@@ -26,22 +42,19 @@ if(!DISABLE_GUTENBERG){
 
         $allowed_blocks[] = 'acf/' . $block['category'] . '-' . $block['name'];
 
-        $style_url = TEMPLATE_DIRECTORY_URL.'assets/css/blocks/'.$block['category'].'/'.$block['name'].'.min.css';
+        $style_url = TEMPLATE_DIRECTORY_URL . 'assets/css/blocks/' . $block['category'] . '/' . $block['name'] . '.min.css';
         $style_name = $block['category'] . '-' . $block['name'];
 
         array_push($custom_gutenberg_blocks, array(
             'name'            => $block['category'] . '-' . $block['name'],
             'title'           => $block['label'],
             'render_callback' => 'block_render_callback',
-            //'enqueue_style'   => $style_url,
             'enqueue_assets' => function() use ($style_url, $style_name){
-                if(is_admin()) {
-                    // wp_enqueue_style($style_name, $style_url, array('gutenberg-custom-styles'), ASSETS_VERSION);
-                } else {
+                if(!is_admin()) {
                     wp_enqueue_style($style_name, $style_url, '', ASSETS_VERSION);
                 }
             },
-            'icon'            => $block['icon'],
+            'icon'            => file_get_contents(TEMPLATE_DIRECTORY_URL . 'assets/svg/blocks/'.$block['category'].'/'.$block['name'].'.svg'),
             'mode' 			  => 'preview',
             'category'        => $block['category'],
             'keywords'        => array( $block['label'] ),
@@ -63,9 +76,7 @@ if(!DISABLE_GUTENBERG){
         ));
     }
 
-    /**
-     *  This is the callback that renders the blocks
-     */
+    /** This is the callback that renders the blocks */
     function block_render_callback( $block, $content = '', $is_preview = false, $post_id = 0 ) {
 
         $context = Timber::get_context();
@@ -73,9 +84,9 @@ if(!DISABLE_GUTENBERG){
         // Store block values
         $context['block'] = $block;
 
-        $context['block_name'] = str_replace('acf/','',$block['name']);
+        $context['block_name'] = str_replace('acf/','', $block['name']);
         $context['block_class'] = $context['block_name'];
-        $no_category_block_name = str_replace('acf/'.$block['category'] . '-','',$block['name']);
+        $no_category_block_name = str_replace('acf/' . $block['category'] . '-','', $block['name']);
 
         //Store $is_preview value.
         global $is_preview_global;
@@ -90,20 +101,18 @@ if(!DISABLE_GUTENBERG){
 
         $context['site_theme_uri'] = TEMPLATE_DIRECTORY_URL;
         $context['is_admin'] = is_admin();
-        $context['block_style_url'] = TEMPLATE_DIRECTORY_URL.'assets/css/blocks/'.$block['category'].'/'.$no_category_block_name.'.min.css';
+        $context['block_style_url'] = TEMPLATE_DIRECTORY_URL . 'assets/css/blocks/' . $block['category'] . '/' . $no_category_block_name . '.min.css';
         $context['gutenberg_style_url'] = TEMPLATE_DIRECTORY_URL . 'assets/css/gutenberg.min.css';
         $context['is_example'] = get_field('is_example');
         if($context['is_example']){
-            $context['block_example'] = TEMPLATE_DIRECTORY_URL . 'assets/gutenberg/' . $block['category'] . '/' . $no_category_block_name . '.png';
+            $context['block_example'] = TEMPLATE_DIRECTORY_URL . 'assets/block-preview/' . $block['category'] . '/' . $no_category_block_name . '.png';
         }
 
         // Render the block
-        Timber::render('blocks/'.$context['block']['category'].'/'.$no_category_block_name.'.twig', $context );
+        Timber::render('blocks/' . $context['block']['category'] . '/' . $no_category_block_name . '.twig', $context );
     }
 
-    /**
-     * Init custom blocks
-     */
+    /** Init custom blocks */
     function init_custom_gutenberg_blocks() {
         global $custom_gutenberg_blocks;
         foreach ($custom_gutenberg_blocks as $block) {
@@ -112,39 +121,17 @@ if(!DISABLE_GUTENBERG){
     }
     add_action( 'acf/init', 'init_custom_gutenberg_blocks' );
 
-    /**
-     * Allow only custom blocks
-     */
+    /** Allow only custom blocks */
     add_filter( 'allowed_block_types', 'custom_allowed_block_types' );
     function custom_allowed_block_types( $allowed_blocks ) {
         global $allowed_blocks;
         return $allowed_blocks;
     }
 
-    /**
-     * Custom blocks category
-     */
-    function custom_block_categories( $categories, $post ) {
-        return array_merge(
-            $categories,
-            array(
-                array(
-                    'slug' => 'main',
-                    'title' => __( 'Main', TEXTDOMAIN ),
-                ),
-            )
-        );
-    }
-    add_filter( 'block_categories', 'custom_block_categories', 10, 2);
-
-    /**
-     * Remove default block patterns from Gutenberg editor
-     */
+    /** Remove default block patterns from Gutenberg editor */
     remove_theme_support( 'core-block-patterns' );
 
-    /**
-     * Remove custom gutenberg css
-     */
+    /** Remove custom gutenberg css */
     add_filter( 'block_editor_settings' , 'remove_guten_wrapper_styles' );
     function remove_guten_wrapper_styles( $settings ) {
         unset($settings['styles'][0]);

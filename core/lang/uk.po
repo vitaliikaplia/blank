@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-23 16:48+0200\n"
+"POT-Creation-Date: 2022-04-23 18:21+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -15,17 +15,13 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../..\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-SearchPath-0: core/lang\n"
 "X-Poedit-SearchPath-1: core\n"
 "X-Poedit-SearchPath-2: .\n"
 "X-Poedit-SearchPathExcluded-0: core/libs/timber\n"
 
-#: core/gutenberg.php:13
-msgid "First screen"
-msgstr "Перший укран"
-
-#: core/gutenberg.php:130
+#: core/gutenberg.php:14
 msgid "Main"
 msgstr "Головний"
 
@@ -181,16 +177,16 @@ msgstr "Ваше Ім'я"
 msgid "Your Phone"
 msgstr "Ваш Телефон"
 
-#: core/init.php:176
+#: core/init.php:146
 msgid "Website under Maintenance"
 msgstr "Веб-сайт на технічному обслуговуванні"
 
-#: core/init.php:176
+#: core/init.php:146
 msgid ""
 "We are performing scheduled maintenance. We will be back online shortly!"
 msgstr "Ми виконуємо планове обслуговування і скоро будемо в мережі!"
 
-#: core/init.php:187
+#: core/init.php:155
 msgid "Please, install Advanced Custom Fields PRO version"
 msgstr "Будь ласка, встановіть PRO версію Advanced Custom Fields"
 
@@ -263,60 +259,3 @@ msgstr "Виберіть"
 #: core/libs/libraries.php:32 core/libs/libraries.php:33
 msgid "Options"
 msgstr "Опції"
-
-#~ msgid "Example"
-#~ msgstr "Приклад"
-
-#~ msgid "Custom Page Blocks"
-#~ msgstr "Власні блоки для сторінок"
-
-#~ msgid "Custom Post Blocks"
-#~ msgstr "Власні блоки для записів"
-
-#~ msgid "Disable SRCSET"
-#~ msgstr "Вимкнути SRCSET"
-
-#~ msgid "Disable Gutenberg editor"
-#~ msgstr "Вимкнути редактор Gutenberg"
-
-#~ msgid "Disable default Gutenberg blocks"
-#~ msgstr "Вимкнути стандартні блоки Gutenberg"
-
-#~ msgid "Main options"
-#~ msgstr "Загальні параметри"
-
-#~ msgid "Enable cyr3lat"
-#~ msgstr "Увімкнути cyr3lat"
-
-#~ msgid "Additional configuration"
-#~ msgstr "Додаткова конфігурація"
-
-#~ msgid "Clear SVG cache"
-#~ msgstr "Очистити кеш SVG"
-
-#~ msgid "Enable Cyr to Lat enhanced"
-#~ msgstr "Увімкнути Cyr to Lat enhanced"
-
-#~ msgid "Disable Json"
-#~ msgstr "Вимкнути Json"
-
-#~ msgid "Enable responsive viewport"
-#~ msgstr "Додати viewport адаптивності"
-
-#~ msgid "Enable X-UA-Compatible"
-#~ msgstr "Увімкнути сумісність X-UA"
-
-#~ msgid "Disable Skype phone parser"
-#~ msgstr "Вимкнути парсер телефонних номерів Skype"
-
-#~ msgid "Rename file on upload inside post"
-#~ msgstr "Перейменовувати вкладення при завантаженні"
-
-#~ msgid "Overall"
-#~ msgstr "Загальне"
-
-#~ msgid "Working..."
-#~ msgstr "Працюємо..."
-
-#~ msgid "Responsive options"
-#~ msgstr "Опції адаптивки"
