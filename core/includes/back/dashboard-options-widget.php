@@ -221,8 +221,7 @@ class custom_widget_options{
 		if($part == 'options' && $options && is_array($options)){
 			foreach($options as $option){
                 if($option['type'] == 'checkbox'){
-                    $option_html  = "";
-                    $option_html .= '<label for="'.$option['label'].'">';
+                    $option_html  = '<label for="'.$option['label'].'">';
                     $option_html .= '<input type="checkbox" value="1" class="widget-options-checkbox" name="'.$option['label'].'" id="'.$option['label'].'" ';
                     $option_html .= checked( 1, get_option( $option['label'] ), false );
                     $option_html .= '/>';
@@ -232,32 +231,28 @@ class custom_widget_options{
                     echo $option_html;
                 }
                 if($option['type'] == 'number'){
-                    $option_html  = "";
-                    $option_html .= '<label for="'.$option['label'].'">';
+                    $option_html  = '<label for="'.$option['label'].'">';
                     $option_html .= '<span class="label">'.$option['description'].'</span>';
                     $option_html .= '<input type="number" class="widget-options-number" name="'.$option['label'].'" id="'.$option['label'].'" value="'.get_option( $option['label'] ).'" step="1" />';
                     $option_html .= '</label>';
                     echo $option_html;
                 }
                 if($option['type'] == 'text'){
-                    $option_html  = "";
-                    $option_html .= '<label for="'.$option['label'].'">';
+                    $option_html  = '<label for="'.$option['label'].'">';
                     $option_html .= '<span class="label">'.$option['description'].'</span>';
                     $option_html .= '<input type="text" class="widget-options-text" name="'.$option['label'].'" id="'.$option['label'].'" value="'.get_option( $option['label'] ).'" autocomplete="off" />';
                     $option_html .= '</label>';
                     echo $option_html;
                 }
                 if($option['type'] == 'password'){
-                    $option_html  = "";
-                    $option_html .= '<label for="'.$option['label'].'">';
+                    $option_html  = '<label for="'.$option['label'].'">';
                     $option_html .= '<span class="label">'.$option['description'].'</span>';
                     $option_html .= '<input type="password" class="widget-options-text" name="'.$option['label'].'" id="'.$option['label'].'" value="'.get_option( $option['label'] ).'" autocomplete="new-password" />';
                     $option_html .= '</label>';
                     echo $option_html;
                 }
                 if($option['type'] == 'textarea'){
-                    $option_html  = "";
-                    $option_html .= '<label for="'.$option['label'].'">';
+                    $option_html  = '<label for="'.$option['label'].'">';
                     $option_html .= '<span class="label">'.$option['description'].'</span>';
                     $option_html .= '<textarea name="'.$option['label'].'" id="'.$option['label'].'" rows="4" class="large-text widget-options-textarea">'.get_option( $option['label'] ).'</textarea>';
                     $option_html .= '</label>';
