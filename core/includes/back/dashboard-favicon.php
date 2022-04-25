@@ -2,11 +2,9 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Favicon for dashboard
- ****************************************************/
-function favicon4admin() {
-	echo '<link rel="shortcut icon" href="'.TEMPLATE_DIRECTORY_URL.'assets/img/favicon2x.ico?'.ASSETS_VERSION.'" />';
+/** Favicon for dashboard */
+function favicon_for_admin() {
+	echo '<link rel="shortcut icon" href="'.TEMPLATE_DIRECTORY_URL.'assets/img/favicon2x.png?'.ASSETS_VERSION.'" />';
 }
-add_action( 'admin_head', 'favicon4admin' );
-add_action( 'login_head', 'favicon4admin' );
+add_action( 'admin_head', 'favicon_for_admin' );
+add_action( 'login_head', 'favicon_for_admin' );
