@@ -2,9 +2,7 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * ACF
- */
+/** ACF */
 if (function_exists('get_fields')) {
     if(HIDE_ACF){
         add_filter('acf/settings/show_admin', '__return_false');
@@ -36,8 +34,6 @@ if (function_exists('get_fields')) {
     ));
 }
 
-/**
- * Timber
- */
+/** Timber */
 require_once CORE_PATH . '/libs/timber/timber.php';
 Timber::$dirname = TIMBER_VIEWS;
