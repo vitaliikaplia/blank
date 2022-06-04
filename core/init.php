@@ -47,6 +47,9 @@ $currentTheme = wp_get_theme();
 define( 'AUTHOR_URL', $currentTheme->get( 'AuthorURI' ) );
 define( 'AUTHOR_TITLE', $currentTheme->get( 'Author' ) );
 
+/** libraries */
+require_once CORE_PATH . DS . 'libs' . DS . 'libraries.php';
+
 /** theme activation */
 function myactivationfunction( $oldname, $oldtheme=false ) {
     add_option('assets_version', '0.01');
@@ -94,9 +97,6 @@ if(is_array($includedAjax) && $includedAjax){
 		require_once $ajax;
 	}
 }
-
-/** libraries */
-require_once CORE_PATH . DS . 'libs' . DS . 'libraries.php';
 
 /** timber */
 class BlankSite extends TimberSite {
