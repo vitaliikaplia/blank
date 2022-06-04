@@ -2,7 +2,7 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/** ACF */
+/** acf */
 if (function_exists('get_fields')) {
     if(HIDE_ACF){
         add_filter('acf/settings/show_admin', '__return_false');
@@ -10,7 +10,7 @@ if (function_exists('get_fields')) {
     add_filter('acf/settings/save_json', 'my_acf_json_save_point');
     function my_acf_json_save_point( $path ) {
         // update path
-        $path = THEME_PATH . '/core/json-acf';
+        $path = THEME_PATH . DS . 'core' . DS . 'acf-json';
         // return
         return $path;
     }
@@ -19,21 +19,14 @@ if (function_exists('get_fields')) {
         // remove original path (optional)
         unset($paths[0]);
         // append path
-        $paths[] = THEME_PATH . '/core/json-acf';
+        $paths[] = THEME_PATH . DS . 'core' . DS . 'acf-json';
         // return
         return $paths;
     }
     // ACF nav menu field
-    require_once CORE_PATH . '/libs/acf-nav-menu-field/nav-menu-v5.php';
-	// Options page for ACF
-    acf_add_options_sub_page(array(
-        'page_title'  => __('Options', TEXTDOMAIN),
-        'menu_title'  => __('Options', TEXTDOMAIN),
-        'slug' => 'options',
-        'parent_slug' => 'themes.php',
-    ));
+    require_once CORE_PATH . DS . 'libs' . DS . 'acf-nav-menu-field' . DS . 'nav-menu-v5.php';
 }
 
-/** Timber */
-require_once CORE_PATH . '/libs/timber/timber.php';
+/** timber */
+require_once CORE_PATH . DS . 'libs' . DS . 'timber' . DS . 'timber.php';
 Timber::$dirname = TIMBER_VIEWS;

@@ -2,9 +2,7 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Hide some dashboard pages
- */
+/** hide some dashboard pages */
 //if(is_admin()){
 	//function remove_menus(){
 		//remove_menu_page( 'tools.php' );                  //Tools

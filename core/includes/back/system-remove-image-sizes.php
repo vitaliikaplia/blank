@@ -2,7 +2,7 @@
 
 if(!defined('ABSPATH')){exit;}
 
-if(get_option('remove_default_image_sizes')){
+if(cached_field('website_options/remove_default_image_sizes')){
     function remove_default_image_sizes( $sizes) {
         unset( $sizes['large']); // Added to remove 1024
         unset( $sizes['thumbnail']);

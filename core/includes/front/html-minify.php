@@ -2,7 +2,7 @@
 
 if(!defined('ABSPATH')){exit;}
 
-if(!is_admin() && !wp_is_json_request() && get_option('enable_minify') ){
+if(!is_admin() && !wp_is_json_request() && cached_field('website_options/enable_minify') ){
 
     class FLHM_HTML_Compression
     {

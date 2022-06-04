@@ -2,10 +2,8 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Delete child media attachments when delete the post
- */
-if(get_option('delete_child_media')){
+/** delete child media attachments when delete the post */
+if(cached_field('website_options/delete_child_media')){
 	function delete_associated_media($id)
 	{
 		$media = get_children(array(

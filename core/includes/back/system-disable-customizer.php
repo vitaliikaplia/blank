@@ -2,7 +2,7 @@
 
 if(!defined('ABSPATH')){exit;}
 
-if(get_option('disable_customizer')){
+if(cached_field('website_options/disable_customizer')){
 
 	if (!class_exists('Customizer_Remove_All')) :
 		class Customizer_Remove_All {

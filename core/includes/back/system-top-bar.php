@@ -2,9 +2,7 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Hide top menu
- ****************************************************/
+/** hide top menu */
 function sl_dashboard_tweaks_render() {
 	global $wp_admin_bar;
 	$wp_admin_bar->remove_menu('wp-logo');
@@ -19,10 +17,8 @@ function sl_dashboard_tweaks_render() {
 }
 add_action( 'wp_before_admin_bar_render', 'sl_dashboard_tweaks_render' );
 
-/**
- * Hide admin top bar
- */
-if(get_option('hide_admin_top_bar')){
+/** hide admin top bar */
+if(cached_field('website_options/hide_admin_top_bar')){
 	add_action( 'admin_print_styles-profile.php', 'global_profile_hide_admin_bar' );
 	add_action( 'admin_print_styles-user-edit.php', 'global_profile_hide_admin_bar' );
 	function global_profile_hide_admin_bar() {

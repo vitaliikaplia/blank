@@ -2,9 +2,7 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Footer copyright
- ****************************************************/
+/** footer dashboard copyright */
 add_filter('admin_footer_text', 'remove_footer_admin');
 function remove_footer_admin () {
 	echo '<a target="_blank" href="'.AUTHOR_URL.'">'.AUTHOR_TITLE.'</a>';

@@ -2,9 +2,9 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Hide WPML version
- */
+/** hide wpml version */
 
-global $sitepress;
-remove_action( 'wp_head', array( $sitepress, 'meta_generator_tag' ) );
+if( defined('ICL_LANGUAGE_CODE' ) ){
+    global $sitepress;
+    remove_action( 'wp_head', array( $sitepress, 'meta_generator_tag' ) );
+}

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-23 18:21+0300\n"
+"POT-Creation-Date: 2022-06-04 04:56+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -25,168 +25,212 @@ msgstr ""
 msgid "Main"
 msgstr ""
 
-#: core/includes/back/dashboard-footer.php:14
+#: core/gutenberg.php:25
+msgid "First screen"
+msgstr ""
+
+#: core/gutenberg.php:31
+msgid "Second screen"
+msgstr ""
+
+#: core/includes/back/dashboard-footer.php:12
 msgid "Powered by"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:12
-msgid "Additional system options"
+#: core/includes/back/dashboard-options-widget.php:9
+#: core/includes/back/system-acf-fields-labels-localisation.php:14
+msgid "Website options"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:17
+#: core/includes/back/dashboard-options-widget.php:16
+msgid "Update"
+msgstr ""
+
+#: core/includes/back/dashboard-options-widget.php:19
+msgid "Settings updated"
+msgstr ""
+
+#: core/includes/back/dashboard-update-assets-version.php:16
+msgid "Update theme version"
+msgstr ""
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:10
+msgid "Title"
+msgstr ""
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:11
+msgid "Text"
+msgstr ""
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:12
+msgid "Maintenance mode"
+msgstr ""
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:13
 msgid "Enable maintenance mode for anonymous users"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:22
+#: core/includes/back/system-acf-fields-labels-localisation.php:15
 msgid "Disable all updates"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:28
+#: core/includes/back/system-acf-fields-labels-localisation.php:16
 msgid "Disable customizer"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:34
+#: core/includes/back/system-acf-fields-labels-localisation.php:17
 msgid "Disable src set"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:40
+#: core/includes/back/system-acf-fields-labels-localisation.php:18
 msgid "Remove default image sizes"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:46
+#: core/includes/back/system-acf-fields-labels-localisation.php:19
 msgid "Disable core privacy tools"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:52
+#: core/includes/back/system-acf-fields-labels-localisation.php:20
 msgid "Enable CYR3LAT"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:58
+#: core/includes/back/system-acf-fields-labels-localisation.php:21
 msgid "Disable DNS prefetch"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:64
+#: core/includes/back/system-acf-fields-labels-localisation.php:22
 msgid "Disable Rest API"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:70
+#: core/includes/back/system-acf-fields-labels-localisation.php:23
 msgid "Disable Emojis"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:76
+#: core/includes/back/system-acf-fields-labels-localisation.php:24
 msgid "Disable Embeds"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:82
+#: core/includes/back/system-acf-fields-labels-localisation.php:25
 msgid "Disable dashboard widgets"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:88
+#: core/includes/back/system-acf-fields-labels-localisation.php:26
 msgid "Hide admin top bar"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:94
+#: core/includes/back/system-acf-fields-labels-localisation.php:27
 msgid "Disable admin email verification"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:100
+#: core/includes/back/system-acf-fields-labels-localisation.php:28
 msgid "Disable comments"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:106
+#: core/includes/back/system-acf-fields-labels-localisation.php:29
 msgid "Delete child media"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:112
+#: core/includes/back/system-acf-fields-labels-localisation.php:30
 msgid "Enable HTML cache"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:118
+#: core/includes/back/system-acf-fields-labels-localisation.php:31
 msgid "Enable minify"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:124
+#: core/includes/back/system-acf-fields-labels-localisation.php:32
 msgid "Inline scripts and styles"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:129
-msgid "Resize upload width"
-msgstr ""
-
-#: core/includes/back/dashboard-options-widget.php:135
-msgid "Resize upload height"
-msgstr ""
-
-#: core/includes/back/dashboard-options-widget.php:141
-msgid "Resize upload quality"
-msgstr ""
-
-#: core/includes/back/dashboard-options-widget.php:147
+#: core/includes/back/system-acf-fields-labels-localisation.php:33
 msgid "Google maps API key"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:153
-msgid "SMTP host"
+#: core/includes/back/system-acf-fields-labels-localisation.php:34
+msgid "Resize at upload"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:158
-msgid "SMTP port"
+#: core/includes/back/system-acf-fields-labels-localisation.php:35
+msgid "Enable"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:163
-msgid "SMTP username"
+#: core/includes/back/system-acf-fields-labels-localisation.php:36
+msgid "Width"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:168
-msgid "SMTP password"
+#: core/includes/back/system-acf-fields-labels-localisation.php:37
+msgid "Height"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:173
-msgid "SMTP from name"
+#: core/includes/back/system-acf-fields-labels-localisation.php:38
+msgid "Quality"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:178
+#: core/includes/back/system-acf-fields-labels-localisation.php:39
+msgid "Formats"
+msgstr ""
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:40
+msgid "Custom code"
+msgstr ""
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:41
 msgid "Header custom code"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:183
+#: core/includes/back/system-acf-fields-labels-localisation.php:42
 msgid "Footer custom code"
 msgstr ""
 
-#: core/includes/back/dashboard-update-assets-version.php:18
-msgid "Update theme version"
+#: core/includes/back/system-acf-fields-labels-localisation.php:43
+msgid "SMTP"
+msgstr ""
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:44
+msgid "Host"
+msgstr ""
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:45
+msgid "Port"
+msgstr ""
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:46
+msgid "Username"
+msgstr ""
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:47
+msgid "Password"
+msgstr ""
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:48
+msgid "From name"
+msgstr ""
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:49
+msgid "Secure"
 msgstr ""
 
 #: core/includes/back/system-disable-customizer.php:109
 msgid "The Customizer is currently disabled."
 msgstr ""
 
-#: core/includes/back/system-thumbnails.php:17
+#: core/includes/back/system-thumbnails.php:13
 msgid "Thumbnail"
 msgstr ""
 
-#: core/includes/back/system-thumbnails.php:31
+#: core/includes/back/system-thumbnails.php:27
 msgid "None"
 msgstr ""
 
-#: core/includes/front/custom-localization.php:10
-msgid "Your Name"
+#: core/includes/front/custom-localization.php:8
+msgid "Your Email"
 msgstr ""
 
-#: core/includes/front/custom-localization.php:11
-msgid "Your Phone"
+#: core/includes/front/custom-localization.php:9
+msgid "Your password"
 msgstr ""
 
-#: core/init.php:146
-msgid "Website under Maintenance"
-msgstr ""
-
-#: core/init.php:146
-msgid ""
-"We are performing scheduled maintenance. We will be back online shortly!"
-msgstr ""
-
-#: core/init.php:155
+#: core/init.php:154
 msgid "Please, install Advanced Custom Fields PRO version"
 msgstr ""
 
@@ -254,8 +298,4 @@ msgstr ""
 
 #: core/libs/acf-nav-menu-field/nav-menu-v5.php:134
 msgid "Choose one"
-msgstr ""
-
-#: core/libs/libraries.php:32 core/libs/libraries.php:33
-msgid "Options"
 msgstr ""

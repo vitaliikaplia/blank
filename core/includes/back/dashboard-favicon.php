@@ -2,7 +2,7 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/** Favicon for dashboard */
+/** favicon for dashboard */
 function favicon_for_admin() {
 	echo '<link rel="shortcut icon" href="'.TEMPLATE_DIRECTORY_URL.'assets/img/favicon2x.png?'.ASSETS_VERSION.'" />';
 }

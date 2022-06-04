@@ -2,25 +2,19 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * [map]
- */
+/** [map] */
 function short_code_map() {
 	return 'map';
 }
 add_shortcode ('map', 'short_code_map');
 
-/**
- * [year]
- */
+/** [year] */
 function short_code_year() {
 	return date("Y");
 }
 add_shortcode ('year', 'short_code_year');
 
-/**
- * [b]
- */
+/** [b] */
 function short_code_b( $atts = array(), $content = null ) {
     $content = "<b>" . do_shortcode( $content ) . "</b>";
     return $content;

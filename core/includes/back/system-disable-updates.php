@@ -2,10 +2,9 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Disable all updates
- */
-if(get_option('disable_all_updates')){
+/** disable all updates */
+
+if(cached_field('website_options/disable_all_updates')){
 
     /**
      * The OS_Disable_WordPress_Updates class

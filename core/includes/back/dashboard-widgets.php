@@ -2,10 +2,9 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Hide default widgets
- ****************************************************/
-if(get_option('hide_dashboard_widgets')){
+/** hide default widgets */
+
+if(cached_field('website_options/hide_dashboard_widgets')){
 	function remove_dashboard_widgets() {
 		global $wp_meta_boxes;
 		unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
@@ -20,11 +19,7 @@ if(get_option('hide_dashboard_widgets')){
 		unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health']);
 	}
 	add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
-
-	// hide Gutenberg
 	remove_action( 'try_gutenberg_panel', 'wp_try_gutenberg_panel' );
-
-	// hide yoast seo widget
 	add_action('wp_dashboard_setup', 'remove_wpseo_dashboard_overview' );
 	function remove_wpseo_dashboard_overview() {
 		remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'side' );

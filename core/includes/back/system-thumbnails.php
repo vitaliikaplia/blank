@@ -2,14 +2,10 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Enable thumbnails
- */
+/** enable thumbnails */
 add_theme_support( 'post-thumbnails' );
 
-/**
- * Thumbnails in dashboard area
- */
+/** thumbnails in dashboard area */
 if ( !function_exists('AddThumbColumn') && function_exists('add_theme_support') ) {
 	// for post and page
 	// add_theme_support('post-thumbnails', array( 'post', 'page' ) );

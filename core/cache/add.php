@@ -2,9 +2,31 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Cache general fields
- */
+/** cache svg icons */
+function cache_icon_list($name){
+    if($cached_svg_icons = get_transient( 'cached_svg_icons' )){
+        $icons = $cached_svg_icons;
+    } else {
+        $icons = array();
+    }
+    $icons[] = $name;
+    set_transient( 'cached_svg_icons', $icons, TRANSIENTS_TIME );
+}
+function cache_svg_icon($icon_url){
+    $base_name = basename($icon_url);
+    $file_name_arr = pathinfo($base_name);
+    if($svg = get_transient( 'svg_icon-' . $file_name_arr['filename'] )){
+        return $svg;
+    } else {
+        $svg = file_get_contents($icon_url);
+        cache_icon_list($file_name_arr['filename']);
+        set_transient( 'svg_icon-' . $file_name_arr['filename'], $svg, TRANSIENTS_TIME );
+        return $svg;
+    }
+}
+
+
+/** cache general fields */
 function cache_general_fields(){
     if (function_exists('get_fields')) {
         if($general_fields = get_transient( 'general_fields'.LANG_SUFFIX )){
@@ -19,26 +41,7 @@ function cache_general_fields(){
     }
 }
 
-/**
- * Cache front fields
- */
-function cache_front_fields(){
-    if (function_exists('get_fields')) {
-        if($front_fields = get_transient( 'front_fields'.LANG_SUFFIX )){
-            return $front_fields;
-        } else {
-            $front_fields = get_fields(PAGE_ON_FRONT);
-            set_transient( 'front_fields'.LANG_SUFFIX, $front_fields, TRANSIENTS_TIME );
-            return $front_fields;
-        }
-    } else {
-        return false;
-    }
-}
-
-/**
- * Cache page fields
- */
+/** cache page fields */
 function cache_fields($post_id){
     if (function_exists('get_fields')) {
         if($post_id){
@@ -51,23 +54,6 @@ function cache_fields($post_id){
             }
         } else {
             return false;
-        }
-    } else {
-        return false;
-    }
-}
-
-/**
- * Cache blog fields
- */
-function cache_blog_fields(){
-    if (function_exists('get_fields')) {
-        if($blog_fields = get_transient( 'blog_fields'.LANG_SUFFIX )){
-            return $blog_fields;
-        } else {
-            $blog_fields = get_fields(PAGE_FOR_POSTS);
-            set_transient( 'blog_fields'.LANG_SUFFIX, $blog_fields, TRANSIENTS_TIME );
-            return $blog_fields;
         }
     } else {
         return false;

@@ -2,17 +2,13 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Custom editor CSS styles
- */
+/** custom editor css styles */
 function my_theme_add_editor_styles() {
     add_editor_style( TEMPLATE_DIRECTORY_URL . '/assets/css/tinymce.min.css?' . ASSETS_VERSION );
 }
 add_action( 'after_setup_theme', 'my_theme_add_editor_styles' );
 
-/**
- * Custom editor buttons lines
- */
+/** custom editor buttons lines */
 function my_mce_buttons( $buttons ) {
     $option = 'bold,italic,bullist,numlist,alignleft,aligncenter,alignright,link,unlink,wp_adv,undo,redo,spellchecker,fullscreen';
     $buttons = explode(',', $option);
@@ -34,9 +30,7 @@ function my_mce_buttons_3( $buttons ) {
 }
 add_filter( 'mce_buttons_3', 'my_mce_buttons_3' );
 
-/**
- * Adding Custom classes for TinyMCE
- */
+/** adding custom style formats and fix important mce configs */
 function my_mce_before_init_insert_formats( $init_array ) {
     $style_formats = array(
         array(
@@ -61,14 +55,14 @@ function my_mce_before_init_insert_formats( $init_array ) {
             'classes' => 'checkList' // CSS class to add
         )
     );
+    $init_array['wpautop'] = false;
+    $init_array['tadv_noautop'] = true;
     $init_array['style_formats'] = json_encode( $style_formats );
     return $init_array;
 }
 add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
 
-/**
- * TinyMCE plugins
- */
+/** editor plugins */
 function mce_register_plugins( $plugin_array ) {
     $plugin_array['table'] = TEMPLATE_DIRECTORY_URL . 'assets/js/mce/table.min.js';
     $plugin_array['code'] = TEMPLATE_DIRECTORY_URL . 'assets/js/mce/code.min.js';

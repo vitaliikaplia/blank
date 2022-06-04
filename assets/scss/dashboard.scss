@@ -1,135 +1,14 @@
-/* Dashboard custom styles
+/* dashboard custom styles
 -------------------------------------------------------------- */
 
 @import "mixins";
 
-/* dashboard widget configuration */
-.widget-options-inner{
-	padding: 4px 0;
-	position: relative;
-
-	&.wait{
-		&:before{
-			content: '';
-			display: block;
-			position: absolute;
-			z-index: 8;
-			top: -40px;
-			right: 18px;
-			width: 22px;
-			height: 22px;
-			background: transparent url(../img/ajax-loader.gif) center no-repeat;
-			background-size: contain;
-		}
-	}
-
-	label{
-		display: block;
-		position: relative;
-		overflow: hidden;
-		color: #23282D;
-		margin-bottom: 12px;
-		font-size: 13px;
-		font-weight: 500;
-
-		&:last-child{
-			margin-bottom: 0;
-		}
-
-		&>.widget-options-checkbox{
-			position: absolute;
-			left: -99999px;
-
-			&:checked + span:before{
-				background-color: #46B450;
-			}
-
-			&:checked + span:after{
-				left: 21px;
-			}
-		}
-
-		&>.indicator{
-			display: inline-block;
-			vertical-align: -8px;
-			width: 42px;
-			height: 24px;
-			background: #ffffff;
-			border: solid 1px #DDDDDD;
-			box-sizing: border-box;
-			border-radius: 12px;
-			cursor: pointer;
-			margin-right: 12px;
-			position: relative;
-
-			&:before{
-				content: '';
-				display: block;
-				position: absolute;
-				z-index: 1;
-				top: 1px;
-				right: 1px;
-				bottom: 1px;
-				left: 1px;
-				border-radius: 12px;
-				box-sizing: border-box;
-				background-color: #E14D43;
-				transition: all .35s;
-			}
-
-			&:after{
-				content: '';
-				display: block;
-				position: absolute;
-				z-index: 4;
-				width: 16px;
-				height: 16px;
-				background-color: white;
-				border-radius: 100%;
-				left: 3px;
-				top: 3px;
-				transition: all .35s;
-			}
-		}
-
-		&>.label{
-			display: block;
-			margin-bottom: 4px;
-		}
-
-		&>.widget-options-number{
-			display: block;
-			width: 98%;
-			margin-bottom: 0;
-			border: solid 1px #DDDDDD;
-
-			&::-webkit-outer-spin-button,
-			&::-webkit-inner-spin-button {
-				-webkit-appearance: none;
-			}
-		}
-
-		&>.widget-options-text{
-			display: block;
-			width: 98%;
-			margin-bottom: 0;
-			border: solid 1px #DDDDDD;
-
-			&::-webkit-outer-spin-button,
-			&::-webkit-inner-spin-button {
-				-webkit-appearance: none;
-			}
-		}
-
-		&>.widget-options-textarea{
-			display: block;
-			width: 98%;
-			margin-bottom: 0;
-		}
-	}
+/* disable-welcome-and-tips */
+.wp-admin .components-popover.nux-dot-tip {
+	display: none !important;
 }
 
-/* fix ACF dashboard styles */
+/* fix acf dashboard styles */
 .acf-postbox.seamless{
 	& > .acf-fields{
 		& > .acf-field{
@@ -176,12 +55,12 @@
 	}
 }
 
-/* hide WPML Translation Priority options */
+/* hide wpml translation priority options */
 #icl_translation_priority_dropdown,#icl_how_to_translate_link,.icl_subsubsub,.otgs-notice {
 	display: none !important;
 }
 
-/* fix WPML dashboard language switcher */
+/* fix wpml dashboard language switcher */
 #wp-admin-bar-WPML_ALS{
 	.ab-item{
 		font-size: 0 !important;
@@ -229,4 +108,39 @@ body.mce-fullscreen{
 		z-index: 10000000000000;
 		@include transform(translateZ(10000000000000000px));
 	}
+}
+
+/* fix acf dashboard widget and other styles */
+.index-php .postbox-container{
+	width: 100% !important;
+}
+#custom_acf_options_widget{
+	#message{
+		display: none;
+	}
+	.inside{
+		padding: 0;
+		margin: 0;
+	}
+	.acf-form-submit{
+		padding: 10px;
+		text-align: right;
+		border-top: solid 1px #DFDFDF;
+	}
+	input[type="number"]::-webkit-outer-spin-button,
+	input[type="number"]::-webkit-inner-spin-button{
+		-webkit-appearance: none !important;
+		margin: 0 !important;
+	}
+	input[type="number"]{
+		-moz-appearance: textfield !important;
+	}
+}
+.acf-range-wrap{
+	input[type="number"]{
+		padding-right: 3px !important;
+	}
+}
+.no_label > .acf-label{
+	display: none;
 }

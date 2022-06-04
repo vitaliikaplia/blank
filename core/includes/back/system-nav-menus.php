@@ -2,9 +2,7 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Remove <ul> tags from nav menus
- */
+/** remove <ul> tags from nav menus */
 function remove_ul( $menu ){
 	return preg_replace( array( '#^<ul[^>]*>#', '#</ul>$#' ), '', $menu );
 }

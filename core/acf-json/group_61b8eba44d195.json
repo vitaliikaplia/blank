@@ -1,9 +1,9 @@
 {
-    "key": "group_6264186c62ded",
-    "title": "Block: Second screen",
+    "key": "group_61b8eba44d195",
+    "title": "Block: First screen",
     "fields": [
         {
-            "key": "field_6264186c6599a",
+            "key": "field_61b8ebc072ecc",
             "label": "Text",
             "name": "text",
             "type": "wysiwyg",
@@ -22,7 +22,7 @@
             "delay": 0
         },
         {
-            "key": "field_6264186c659a2",
+            "key": "field_62164b9481e7e",
             "label": "Wrapper Background",
             "name": "wrapper_background",
             "type": "color_picker",
@@ -39,7 +39,7 @@
             "return_format": "string"
         },
         {
-            "key": "field_6264186c659a7",
+            "key": "field_62164ba681e7f",
             "label": "Inner Background",
             "name": "inner_background",
             "type": "color_picker",
@@ -56,7 +56,7 @@
             "return_format": "string"
         },
         {
-            "key": "field_6264186c659ad",
+            "key": "field_62164bde81e80",
             "label": "Inner text",
             "name": "inner_text",
             "type": "color_picker",
@@ -78,11 +78,11 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/main-second-screen"
+                "value": "acf\/main-first-screen"
             }
         ]
     ],
-    "menu_order": 1002,
+    "menu_order": 1001,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -91,5 +91,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1650727063
+    "modified": 1654300184
 }

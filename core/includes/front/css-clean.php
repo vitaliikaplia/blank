@@ -2,14 +2,10 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Clean inline gallery CSS
- */
+/** clean inline gallery CSS */
 add_filter( 'use_default_gallery_style', '__return_false' );
 
-/**
- * Clean other CSS and JS on header
- */
+/** clean other CSS and JS on header */
 if (!is_admin()) {
     function my_init_method(){
         wp_deregister_script( 'l10n' );

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-23 18:21+0300\n"
+"POT-Creation-Date: 2022-06-04 04:56+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -25,168 +25,212 @@ msgstr ""
 msgid "Main"
 msgstr "Головний"
 
-#: core/includes/back/dashboard-footer.php:14
+#: core/gutenberg.php:25
+msgid "First screen"
+msgstr "Перший екран"
+
+#: core/gutenberg.php:31
+msgid "Second screen"
+msgstr "Другий екран"
+
+#: core/includes/back/dashboard-footer.php:12
 msgid "Powered by"
 msgstr "Працює на"
 
-#: core/includes/back/dashboard-options-widget.php:12
-msgid "Additional system options"
-msgstr "Додаткові параметри системи"
+#: core/includes/back/dashboard-options-widget.php:9
+#: core/includes/back/system-acf-fields-labels-localisation.php:14
+msgid "Website options"
+msgstr "Налаштування сайту"
 
-#: core/includes/back/dashboard-options-widget.php:17
+#: core/includes/back/dashboard-options-widget.php:16
+msgid "Update"
+msgstr "Оновити"
+
+#: core/includes/back/dashboard-options-widget.php:19
+msgid "Settings updated"
+msgstr "Налаштування оновлено"
+
+#: core/includes/back/dashboard-update-assets-version.php:16
+msgid "Update theme version"
+msgstr "Оновити версію теми"
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:10
+msgid "Title"
+msgstr "Заголовок"
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:11
+msgid "Text"
+msgstr "Текст"
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:12
+msgid "Maintenance mode"
+msgstr "Режим обслуговування"
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:13
 msgid "Enable maintenance mode for anonymous users"
 msgstr "Режим обслуговування для анонімних користувачів"
 
-#: core/includes/back/dashboard-options-widget.php:22
+#: core/includes/back/system-acf-fields-labels-localisation.php:15
 msgid "Disable all updates"
 msgstr "Вимкнути всі оновлення"
 
-#: core/includes/back/dashboard-options-widget.php:28
+#: core/includes/back/system-acf-fields-labels-localisation.php:16
 msgid "Disable customizer"
 msgstr "Вимкнути кастомайзер"
 
-#: core/includes/back/dashboard-options-widget.php:34
+#: core/includes/back/system-acf-fields-labels-localisation.php:17
 msgid "Disable src set"
 msgstr "Вимкнути src set"
 
-#: core/includes/back/dashboard-options-widget.php:40
+#: core/includes/back/system-acf-fields-labels-localisation.php:18
 msgid "Remove default image sizes"
 msgstr "Вимкнути стандартні розміри зображень"
 
-#: core/includes/back/dashboard-options-widget.php:46
+#: core/includes/back/system-acf-fields-labels-localisation.php:19
 msgid "Disable core privacy tools"
 msgstr "Вимкнути інструменти конфіденціальності"
 
-#: core/includes/back/dashboard-options-widget.php:52
+#: core/includes/back/system-acf-fields-labels-localisation.php:20
 msgid "Enable CYR3LAT"
 msgstr "Активувати CYR3LAT"
 
-#: core/includes/back/dashboard-options-widget.php:58
+#: core/includes/back/system-acf-fields-labels-localisation.php:21
 msgid "Disable DNS prefetch"
 msgstr "Приховати DNS prefetch"
 
-#: core/includes/back/dashboard-options-widget.php:64
+#: core/includes/back/system-acf-fields-labels-localisation.php:22
 msgid "Disable Rest API"
 msgstr "Вимкнути Rest API"
 
-#: core/includes/back/dashboard-options-widget.php:70
+#: core/includes/back/system-acf-fields-labels-localisation.php:23
 msgid "Disable Emojis"
 msgstr "Вимкнути Emoji"
 
-#: core/includes/back/dashboard-options-widget.php:76
+#: core/includes/back/system-acf-fields-labels-localisation.php:24
 msgid "Disable Embeds"
 msgstr "Вимкнути Embeds"
 
-#: core/includes/back/dashboard-options-widget.php:82
+#: core/includes/back/system-acf-fields-labels-localisation.php:25
 msgid "Disable dashboard widgets"
 msgstr "Приховати системні віджети консолі"
 
-#: core/includes/back/dashboard-options-widget.php:88
+#: core/includes/back/system-acf-fields-labels-localisation.php:26
 msgid "Hide admin top bar"
 msgstr "Вимкнути панель адміністратора"
 
-#: core/includes/back/dashboard-options-widget.php:94
+#: core/includes/back/system-acf-fields-labels-localisation.php:27
 msgid "Disable admin email verification"
 msgstr "Вимкнути E-mail верифікацію для адмінів"
 
-#: core/includes/back/dashboard-options-widget.php:100
+#: core/includes/back/system-acf-fields-labels-localisation.php:28
 msgid "Disable comments"
 msgstr "Вимкнути коментарі"
 
-#: core/includes/back/dashboard-options-widget.php:106
+#: core/includes/back/system-acf-fields-labels-localisation.php:29
 msgid "Delete child media"
 msgstr "Видаляти вкладення"
 
-#: core/includes/back/dashboard-options-widget.php:112
+#: core/includes/back/system-acf-fields-labels-localisation.php:30
 msgid "Enable HTML cache"
 msgstr "Увімкнути HTML кешування"
 
-#: core/includes/back/dashboard-options-widget.php:118
+#: core/includes/back/system-acf-fields-labels-localisation.php:31
 msgid "Enable minify"
 msgstr "Увімкнути мініфікацію"
 
-#: core/includes/back/dashboard-options-widget.php:124
+#: core/includes/back/system-acf-fields-labels-localisation.php:32
 msgid "Inline scripts and styles"
 msgstr "Інлайнові скрипти та стилі"
 
-#: core/includes/back/dashboard-options-widget.php:129
-msgid "Resize upload width"
-msgstr "Максимальна ширина завантаженого зображення"
-
-#: core/includes/back/dashboard-options-widget.php:135
-msgid "Resize upload height"
-msgstr "Максимальна висота завантаженого зображення"
-
-#: core/includes/back/dashboard-options-widget.php:141
-msgid "Resize upload quality"
-msgstr "Максимальна якість для ресайзу"
-
-#: core/includes/back/dashboard-options-widget.php:147
+#: core/includes/back/system-acf-fields-labels-localisation.php:33
 msgid "Google maps API key"
 msgstr "Ключ Google maps API"
 
-#: core/includes/back/dashboard-options-widget.php:153
-msgid "SMTP host"
-msgstr "SMTP хост"
+#: core/includes/back/system-acf-fields-labels-localisation.php:34
+msgid "Resize at upload"
+msgstr "Змінити розмір під час завантаження"
 
-#: core/includes/back/dashboard-options-widget.php:158
-msgid "SMTP port"
-msgstr "SMTP порт"
+#: core/includes/back/system-acf-fields-labels-localisation.php:35
+msgid "Enable"
+msgstr "Увімкнути"
 
-#: core/includes/back/dashboard-options-widget.php:163
-msgid "SMTP username"
-msgstr "SMTP користувач"
+#: core/includes/back/system-acf-fields-labels-localisation.php:36
+msgid "Width"
+msgstr "Ширина"
 
-#: core/includes/back/dashboard-options-widget.php:168
-msgid "SMTP password"
-msgstr "SMTP пароль"
+#: core/includes/back/system-acf-fields-labels-localisation.php:37
+msgid "Height"
+msgstr "Висота"
 
-#: core/includes/back/dashboard-options-widget.php:173
-msgid "SMTP from name"
-msgstr "SMTP імʼя користувача"
+#: core/includes/back/system-acf-fields-labels-localisation.php:38
+msgid "Quality"
+msgstr "Якість"
 
-#: core/includes/back/dashboard-options-widget.php:178
+#: core/includes/back/system-acf-fields-labels-localisation.php:39
+msgid "Formats"
+msgstr "Формати"
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:40
+msgid "Custom code"
+msgstr "Власний код"
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:41
 msgid "Header custom code"
 msgstr "Код в шапку"
 
-#: core/includes/back/dashboard-options-widget.php:183
+#: core/includes/back/system-acf-fields-labels-localisation.php:42
 msgid "Footer custom code"
 msgstr "Код в підвал"
 
-#: core/includes/back/dashboard-update-assets-version.php:18
-msgid "Update theme version"
-msgstr "Оновити версію теми"
+#: core/includes/back/system-acf-fields-labels-localisation.php:43
+msgid "SMTP"
+msgstr "SMTP"
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:44
+msgid "Host"
+msgstr "Хост"
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:45
+msgid "Port"
+msgstr "Порт"
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:46
+msgid "Username"
+msgstr "Ім'я користувача"
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:47
+msgid "Password"
+msgstr "Пароль"
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:48
+msgid "From name"
+msgstr "Ім'я Від кого"
+
+#: core/includes/back/system-acf-fields-labels-localisation.php:49
+msgid "Secure"
+msgstr "Захищено"
 
 #: core/includes/back/system-disable-customizer.php:109
 msgid "The Customizer is currently disabled."
 msgstr "Кастомайзер наразі вимкнено."
 
-#: core/includes/back/system-thumbnails.php:17
+#: core/includes/back/system-thumbnails.php:13
 msgid "Thumbnail"
 msgstr "Мініатюра"
 
-#: core/includes/back/system-thumbnails.php:31
+#: core/includes/back/system-thumbnails.php:27
 msgid "None"
 msgstr "Немає"
 
-#: core/includes/front/custom-localization.php:10
-msgid "Your Name"
-msgstr "Ваше Ім'я"
+#: core/includes/front/custom-localization.php:8
+msgid "Your Email"
+msgstr "Ваш Email"
 
-#: core/includes/front/custom-localization.php:11
-msgid "Your Phone"
-msgstr "Ваш Телефон"
+#: core/includes/front/custom-localization.php:9
+msgid "Your password"
+msgstr "Ваш пароль"
 
-#: core/init.php:146
-msgid "Website under Maintenance"
-msgstr "Веб-сайт на технічному обслуговуванні"
-
-#: core/init.php:146
-msgid ""
-"We are performing scheduled maintenance. We will be back online shortly!"
-msgstr "Ми виконуємо планове обслуговування і скоро будемо в мережі!"
-
-#: core/init.php:155
+#: core/init.php:154
 msgid "Please, install Advanced Custom Fields PRO version"
 msgstr "Будь ласка, встановіть PRO версію Advanced Custom Fields"
 
@@ -256,6 +300,30 @@ msgstr "Усі"
 msgid "Choose one"
 msgstr "Виберіть"
 
-#: core/libs/libraries.php:32 core/libs/libraries.php:33
-msgid "Options"
-msgstr "Опції"
+#~ msgid "User additional fields"
+#~ msgstr "Додаткові поля користувача"
+
+#~ msgid "Additional system options"
+#~ msgstr "Додаткові параметри системи"
+
+#~ msgid "Resize upload height"
+#~ msgstr "Максимальна висота завантаженого зображення"
+
+#~ msgid "Resize upload quality"
+#~ msgstr "Максимальна якість для ресайзу"
+
+#~ msgid "SMTP port"
+#~ msgstr "SMTP порт"
+
+#~ msgid "Your Phone"
+#~ msgstr "Ваш Телефон"
+
+#~ msgid "Website under Maintenance"
+#~ msgstr "Веб-сайт на технічному обслуговуванні"
+
+#~ msgid ""
+#~ "We are performing scheduled maintenance. We will be back online shortly!"
+#~ msgstr "Ми виконуємо планове обслуговування і скоро будемо в мережі!"
+
+#~ msgid "Options"
+#~ msgstr "Опції"

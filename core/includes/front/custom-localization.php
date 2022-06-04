@@ -2,14 +2,10 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Custom localization
- */
+/** custom localization */
 function custom_localization(){
-
-	$localization['your_name'] = __("Your Name", TEXTDOMAIN);
-	$localization['your_phone'] = __("Your Phone", TEXTDOMAIN);
-
-	return $localization;
-
+    return array(
+        'Your Email' => __('Your Email', TEXTDOMAIN),
+        'Your password' => __('Your password', TEXTDOMAIN),
+    );
 }

@@ -2,11 +2,12 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/** Fixing timezone */
+/** fixing timezone */
 date_default_timezone_set( wp_timezone_string() );
 
-/** Constants */
+/** constants */
 define( 'TEXTDOMAIN', 'blank' );
+define( 'DS', DIRECTORY_SEPARATOR );
 define( 'THEME_PATH', trailingslashit( get_template_directory() ) );
 define( 'CORE_PATH', THEME_PATH . 'core' );
 define( 'TEMPLATE_DIRECTORY_URL', trailingslashit( get_template_directory_uri() ) );
@@ -21,15 +22,11 @@ define( 'SVG_SPRITE_URL', TEMPLATE_DIRECTORY_URL . 'assets/svg/sprite.svg?ver=' 
 $parsed_url = parse_url(BLOGINFO_URL );
 define( 'BLOGINFO_JUST_DOMAIN', $parsed_url['host'] );
 define( 'TRANSIENTS_TIME', 48 * HOUR_IN_SECONDS );
-if( get_option('enable_html_cache') ){
-	define( 'TIMBER_CACHE_TIME', 48 * HOUR_IN_SECONDS );
-} else {
-	define( 'TIMBER_CACHE_TIME', false );
-}
+
 define( 'HIDE_ACF', false );
 define( 'DISABLE_GUTENBERG', false );
 
-/** Multilingual constants + WPML */
+/** multilingual constants + wpml */
 if( defined('ICL_LANGUAGE_CODE' ) ){
 	define( 'BLOGINFO_LANGUAGE', ICL_LANGUAGE_CODE );
 	define( 'LANG_SUFFIX', "_" . ICL_LANGUAGE_CODE );
@@ -45,66 +42,63 @@ if( defined('ICL_LANGUAGE_CODE' ) ){
 	define( 'PAGE_FOR_POSTS', get_option('page_for_posts') );
 }
 
-/** Template author information */
+/** template author information */
 $currentTheme = wp_get_theme();
 define( 'AUTHOR_URL', $currentTheme->get( 'AuthorURI' ) );
 define( 'AUTHOR_TITLE', $currentTheme->get( 'Author' ) );
 
-/** Theme activation */
+/** theme activation */
 function myactivationfunction( $oldname, $oldtheme=false ) {
     add_option('assets_version', '0.01');
-    add_option('resize_upload_width', '2048');
-    add_option('resize_upload_height', '2048');
-    add_option('resize_upload_quality', '80');
 }
 add_action('after_switch_theme', 'myactivationfunction', 10 ,  2);
 
-/** Theme deactivation */
+/** theme deactivation */
 function mydeactivationfunction( $newname, $newtheme ) {
     delete_option('assets_version');
-    delete_option('resize_upload_width');
-    delete_option('resize_upload_height');
-    delete_option('resize_upload_quality');
 }
 add_action('switch_theme', 'mydeactivationfunction', 10 , 2);
 
-/** Load lang files */
-load_theme_textdomain( TEXTDOMAIN, CORE_PATH . '/lang' );
+/** load lang files */
+load_theme_textdomain( TEXTDOMAIN, CORE_PATH . DS . 'lang' );
 
-/** Load WordPress includes script */
-require_once ABSPATH . 'wp-admin/includes/file.php';
+/** load wordpress includes script */
+require_once ABSPATH . 'wp-admin' . DS . 'includes' . DS . 'file.php';
 
-/** Cache */
-$includedFiles = list_files( CORE_PATH . '/cache' );
+/** pr */
+require_once CORE_PATH . DS . 'pr.php';
+
+/** cache */
+$includedFiles = list_files( CORE_PATH . DS . 'cache' );
 if(is_array($includedFiles) && $includedFiles){
 	foreach($includedFiles as $file){
 		require_once $file;
 	}
 }
 
-/** Include all modules */
-$includedFiles = list_files( CORE_PATH . '/includes' );
+/** include all modules */
+$includedFiles = list_files( CORE_PATH . DS . 'includes' );
 if(is_array($includedFiles) && $includedFiles){
 	foreach($includedFiles as $file){
 		require_once $file;
 	}
 }
 
-/** Gutenberg */
-require_once CORE_PATH . '/gutenberg.php';
+/** gutenberg */
+require_once CORE_PATH . DS . 'gutenberg.php';
 
-/** Include ajax scripts */
-$includedAjax = list_files( CORE_PATH . '/ajax' );
+/** include ajax scripts */
+$includedAjax = list_files( CORE_PATH . DS . 'ajax' );
 if(is_array($includedAjax) && $includedAjax){
 	foreach($includedAjax as $ajax){
 		require_once $ajax;
 	}
 }
 
-/** Libraries */
-require_once CORE_PATH . '/libs/libraries.php';
+/** libraries */
+require_once CORE_PATH . DS . 'libs' . DS . 'libraries.php';
 
-/** Timber */
+/** timber */
 class BlankSite extends TimberSite {
 
 	function __construct() {
@@ -122,8 +116,6 @@ class BlankSite extends TimberSite {
 		$context['site_language'] = BLOGINFO_LANGUAGE;
 		$context['svg_sprite'] = SVG_SPRITE_URL;
         $context['general_fields'] = cache_general_fields();
-        $context['front_fields'] = cache_front_fields();
-        $context['blog_fields'] = cache_blog_fields();
         $context['localization'] = custom_localization();
 
 		return $context;
@@ -139,15 +131,22 @@ class BlankSite extends TimberSite {
 
 new BlankSite();
 
-/** Maintenance mode */
-if(get_option( 'enable_maintenance_mode' )){
+/** maintenance mode */
+if(cached_field( 'maintenance_mode/enable' )){
 	global $pagenow;
 	if(!is_admin() && !is_user_logged_in() && $pagenow != "wp-login.php"){
-		wp_die('<h1>'.__('Website under Maintenance', TEXTDOMAIN).'</h1><p>'.__('We are performing scheduled maintenance. We will be back online shortly!', TEXTDOMAIN).'</p>');
+		wp_die('<h1>'.cached_field( 'maintenance_mode/title' ).'</h1>'.cached_field( 'maintenance_mode/text' ));
 	}
 }
 
-/** ACF notification */
+/** timber html cache */
+if(cached_field('website_options/enable_html_cache')){
+    define( 'TIMBER_CACHE_TIME', 48 * HOUR_IN_SECONDS );
+} else {
+    define( 'TIMBER_CACHE_TIME', false );
+}
+
+/** acf notification */
 if (!function_exists('get_fields')) {
     function sample_admin_notice__success() {
         ?>

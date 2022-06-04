@@ -2,11 +2,9 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Header CSS
- */
+/** header css */
 function custom_header_css(){
-    if(get_option( 'inline_scripts_and_styles' )){
+    if(cached_field('website_options/inline_scripts_and_styles')){
         if($header_css = get_transient( 'header_css' )){
             echo $header_css;
         } else {

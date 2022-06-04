@@ -2,11 +2,10 @@
 
 if(!defined('ABSPATH')){exit;}
 
-if(get_option('enable_cyr3lat')){
+/** cyr to Lat enhanced by http://wordpress.org/plugins/cyr3lat/ */
 
-	/**
-	 * Cyr to Lat enhanced by http://wordpress.org/plugins/cyr3lat/
-	 */
+if(cached_field('website_options/enable_cyr3lat')){
+
 	function ctl_sanitize_title($title) {
 		global $wpdb;
 

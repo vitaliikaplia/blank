@@ -1,5 +1,5 @@
 /**
- * Variables
+ * variables
  */
 var isMobile = navigator.userAgent.match(/Mobile/i) == "Mobile",
 	ajaxUrl = "/wp-admin/admin-ajax.php",

@@ -2,7 +2,7 @@
 
 if(!defined('ABSPATH')){exit;}
 
-if(get_option('disable_comments')){
+if(cached_field('website_options/disable_comments')){
 
     add_action('admin_init', function () {
         // Redirect any user trying to access comments page

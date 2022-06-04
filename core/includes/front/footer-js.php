@@ -2,10 +2,8 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/**
- * Footer JS
- */
-if(get_option( 'inline_scripts_and_styles' )){
+/** footer js */
+if(cached_field('website_options/inline_scripts_and_styles')){
     function custom_footer_js(){
         if($footer_js = get_transient( 'footer_js' )){
             echo $footer_js;

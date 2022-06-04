@@ -2,7 +2,7 @@
 
 if(!defined('ABSPATH')){exit;}
 
-if(get_option('disable_src_set')){
+if(cached_field('website_options/disable_src_set')){
     // disable srcset on frontend
     function disable_wp_responsive_images() {
         return 1;
