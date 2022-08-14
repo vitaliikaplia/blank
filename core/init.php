@@ -44,6 +44,9 @@ $currentTheme = wp_get_theme();
 define( 'AUTHOR_URL', $currentTheme->get( 'AuthorURI' ) );
 define( 'AUTHOR_TITLE', $currentTheme->get( 'Author' ) );
 
+/** load lang files */
+load_theme_textdomain( TEXTDOMAIN, CORE_PATH . DS . 'lang' );
+
 /** libraries */
 require_once CORE_PATH . DS . 'libs' . DS . 'libraries.php';
 
@@ -58,9 +61,6 @@ function mydeactivationfunction( $newname, $newtheme ) {
     delete_option('assets_version');
 }
 add_action('switch_theme', 'mydeactivationfunction', 10 , 2);
-
-/** load lang files */
-load_theme_textdomain( TEXTDOMAIN, CORE_PATH . DS . 'lang' );
 
 /** load wordpress includes script */
 require_once ABSPATH . 'wp-admin' . DS . 'includes' . DS . 'file.php';
