@@ -3,7 +3,7 @@
 if(!defined('ABSPATH')){exit;}
 
 /** disable the emoji's */
-if(cached_field('website_options/disable_emojis')){
+if(get_option('disable_emojis')){
 	function disable_emojis() {
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );

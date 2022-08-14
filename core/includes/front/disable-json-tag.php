@@ -3,7 +3,7 @@
 if(!defined('ABSPATH')){exit;}
 
 /** disable Json from head */
-if(cached_field('website_options/disable_rest_api')){
+if(get_option('disable_rest_api')){
 
 	add_filter( 'rest_enabled', '__return_false' );
 

@@ -2,17 +2,17 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/** header */
+/** header custom code */
 function frontend_custom_header(){
-	if ($custom_header_code = cached_field('custom_code/header')) {
+	if ($custom_header_code = get_option('header_custom_code')) {
 		echo $custom_header_code . "\n";
 	}
 }
 add_filter('wp_head', 'frontend_custom_header');
 
-/** footer */
+/** footer custom code */
 function frontend_custom_footer(){
-	if ($custom_footer_code = cached_field('custom_code/footer')) {
+	if ($custom_footer_code = get_option('footer_custom_code')) {
 		echo $custom_footer_code . "\n";
 	}
 }

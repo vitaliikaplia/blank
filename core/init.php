@@ -23,9 +23,6 @@ $parsed_url = parse_url(BLOGINFO_URL );
 define( 'BLOGINFO_JUST_DOMAIN', $parsed_url['host'] );
 define( 'TRANSIENTS_TIME', 48 * HOUR_IN_SECONDS );
 
-define( 'HIDE_ACF', false );
-define( 'DISABLE_GUTENBERG', false );
-
 /** multilingual constants + wpml */
 if( defined('ICL_LANGUAGE_CODE' ) ){
 	define( 'BLOGINFO_LANGUAGE', ICL_LANGUAGE_CODE );
@@ -132,15 +129,15 @@ class BlankSite extends TimberSite {
 new BlankSite();
 
 /** maintenance mode */
-if(cached_field( 'maintenance_mode/enable' )){
+if(get_option('enable_maintenance_mode')){
 	global $pagenow;
 	if(!is_admin() && !is_user_logged_in() && $pagenow != "wp-login.php"){
-		wp_die('<h1>'.cached_field( 'maintenance_mode/title' ).'</h1>'.cached_field( 'maintenance_mode/text' ));
+		wp_die('<h1>'.get_option( 'maintenance_mode_title' ).'</h1><p>'.get_option( 'maintenance_mode_text' ).'</p>');
 	}
 }
 
 /** timber html cache */
-if(cached_field('website_options/enable_html_cache')){
+if(get_option('enable_html_cache')){
     define( 'TIMBER_CACHE_TIME', 48 * HOUR_IN_SECONDS );
 } else {
     define( 'TIMBER_CACHE_TIME', false );

@@ -25,7 +25,6 @@ function cache_svg_icon($icon_url){
     }
 }
 
-
 /** cache general fields */
 function cache_general_fields(){
     if (function_exists('get_fields')) {

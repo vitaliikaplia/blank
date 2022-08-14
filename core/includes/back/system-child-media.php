@@ -3,7 +3,7 @@
 if(!defined('ABSPATH')){exit;}
 
 /** delete child media attachments when delete the post */
-if(cached_field('website_options/delete_child_media')){
+if(get_option('delete_child_media')){
 	function delete_associated_media($id)
 	{
 		$media = get_children(array(

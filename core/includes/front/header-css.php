@@ -4,7 +4,7 @@ if(!defined('ABSPATH')){exit;}
 
 /** header css */
 function custom_header_css(){
-    if(cached_field('website_options/inline_scripts_and_styles')){
+    if(get_option('inline_scripts_and_styles')){
         if($header_css = get_transient( 'header_css' )){
             echo $header_css;
         } else {

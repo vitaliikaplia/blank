@@ -14,7 +14,6 @@ function clear_svg_cache(){
     }
 }
 
-
 /** clear transients cache */
 function my_acf_update_value( $value, $post_id, $field  ) {
 

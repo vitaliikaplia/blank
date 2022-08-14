@@ -2,7 +2,7 @@
 
 if(!defined('ABSPATH')){exit;}
 
-if(!DISABLE_GUTENBERG){
+if(!get_option('disable_gutenberg_everywhere')){
 
     /** custom blocks categories */
     function custom_block_categories( $categories, $post ) {

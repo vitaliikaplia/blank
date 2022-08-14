@@ -3,8 +3,7 @@
 if(!defined('ABSPATH')){exit;}
 
 /** disable all updates */
-
-if(cached_field('website_options/disable_all_updates')){
+if(get_option('disable_all_updates')){
 
     /**
      * The OS_Disable_WordPress_Updates class

@@ -2,6 +2,5 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/** disable Site Health Email Notifications */
-
+/** disable site health email notifications */
 add_filter( 'wp_fatal_error_handler_enabled', '__return_false' );

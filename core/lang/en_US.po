@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-04 04:56+0300\n"
+"POT-Creation-Date: 2022-08-14 21:43+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../..\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1\n"
 "X-Poedit-SearchPath-0: core/lang\n"
 "X-Poedit-SearchPath-1: core\n"
 "X-Poedit-SearchPath-2: .\n"
@@ -29,185 +29,221 @@ msgstr ""
 msgid "First screen"
 msgstr ""
 
-#: core/gutenberg.php:31
+#: core/gutenberg.php:32
 msgid "Second screen"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:7
+msgid "System tweaks"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:17
+#: core/includes/front/custom-localization.php:12
+msgid "Maintenance mode"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:22
+#: core/includes/front/custom-localization.php:13
+msgid "Enable maintenance mode for anonymous users"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:27
+msgid "Maintenance mode title"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:32
+msgid "Maintenance mode text"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:42
+#: core/includes/front/custom-localization.php:34
+msgid "Resize at upload"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:47
+msgid "Enable resizing media while upload"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:58
+msgid "Resize at upload formats"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:64
+msgid "Resize upload width"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:70
+msgid "Resize upload height"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:76
+msgid "Resize upload quality"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:87
+msgid "SMTP options"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:92
+msgid "Enable custom SMTP server"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:97
+msgid "SMTP host"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:102
+msgid "SMTP port"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:107
+msgid "SMTP username"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:112
+msgid "SMTP password"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:117
+msgid "SMTP from name"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:122
+msgid "Secure SMTP connection"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:132
+#: core/includes/front/custom-localization.php:40
+msgid "Custom code"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:137
+#: core/includes/front/custom-localization.php:41
+msgid "Header custom code"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:142
+#: core/includes/front/custom-localization.php:42
+msgid "Footer custom code"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:152
+msgid "Other options"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:157
+#: core/includes/front/custom-localization.php:33
+msgid "Google maps API key"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:162
+#: core/includes/front/custom-localization.php:15
+msgid "Disable all updates"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:167
+#: core/includes/front/custom-localization.php:16
+msgid "Disable customizer"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:172
+#: core/includes/front/custom-localization.php:17
+msgid "Disable src set"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:177
+#: core/includes/front/custom-localization.php:18
+msgid "Remove default image sizes"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:182
+#: core/includes/front/custom-localization.php:19
+msgid "Disable core privacy tools"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:187
+#: core/includes/front/custom-localization.php:20
+msgid "Enable CYR3LAT"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:192
+#: core/includes/front/custom-localization.php:21
+msgid "Disable DNS prefetch"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:197
+#: core/includes/front/custom-localization.php:22
+msgid "Disable Rest API"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:202
+#: core/includes/front/custom-localization.php:23
+msgid "Disable Emojis"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:207
+#: core/includes/front/custom-localization.php:24
+msgid "Disable Embeds"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:212
+#: core/includes/front/custom-localization.php:25
+msgid "Disable dashboard widgets"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:217
+#: core/includes/front/custom-localization.php:26
+msgid "Hide admin top bar"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:222
+#: core/includes/front/custom-localization.php:27
+msgid "Disable admin email verification"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:227
+#: core/includes/front/custom-localization.php:28
+msgid "Disable comments"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:232
+#: core/includes/front/custom-localization.php:29
+msgid "Delete child media"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:237
+#: core/includes/front/custom-localization.php:30
+msgid "Enable HTML cache"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:242
+#: core/includes/front/custom-localization.php:31
+msgid "Enable minify"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:247
+#: core/includes/front/custom-localization.php:32
+msgid "Inline scripts and styles"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:252
+msgid "Hide ACF"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:257
+msgid "Disable Gutenberg editor everywhere"
+msgstr ""
+
+#: core/includes/back/custom-dashboard-options-widget.php:262
+msgid "Disable Gutenberg editor for Blog"
 msgstr ""
 
 #: core/includes/back/dashboard-footer.php:12
 msgid "Powered by"
 msgstr ""
 
-#: core/includes/back/dashboard-options-widget.php:9
-#: core/includes/back/system-acf-fields-labels-localisation.php:14
-msgid "Website options"
-msgstr ""
-
-#: core/includes/back/dashboard-options-widget.php:16
-msgid "Update"
-msgstr ""
-
-#: core/includes/back/dashboard-options-widget.php:19
-msgid "Settings updated"
-msgstr ""
-
 #: core/includes/back/dashboard-update-assets-version.php:16
 msgid "Update theme version"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:10
-msgid "Title"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:11
-msgid "Text"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:12
-msgid "Maintenance mode"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:13
-msgid "Enable maintenance mode for anonymous users"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:15
-msgid "Disable all updates"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:16
-msgid "Disable customizer"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:17
-msgid "Disable src set"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:18
-msgid "Remove default image sizes"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:19
-msgid "Disable core privacy tools"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:20
-msgid "Enable CYR3LAT"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:21
-msgid "Disable DNS prefetch"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:22
-msgid "Disable Rest API"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:23
-msgid "Disable Emojis"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:24
-msgid "Disable Embeds"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:25
-msgid "Disable dashboard widgets"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:26
-msgid "Hide admin top bar"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:27
-msgid "Disable admin email verification"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:28
-msgid "Disable comments"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:29
-msgid "Delete child media"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:30
-msgid "Enable HTML cache"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:31
-msgid "Enable minify"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:32
-msgid "Inline scripts and styles"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:33
-msgid "Google maps API key"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:34
-msgid "Resize at upload"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:35
-msgid "Enable"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:36
-msgid "Width"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:37
-msgid "Height"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:38
-msgid "Quality"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:39
-msgid "Formats"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:40
-msgid "Custom code"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:41
-msgid "Header custom code"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:42
-msgid "Footer custom code"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:43
-msgid "SMTP"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:44
-msgid "Host"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:45
-msgid "Port"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:46
-msgid "Username"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:47
-msgid "Password"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:48
-msgid "From name"
-msgstr ""
-
-#: core/includes/back/system-acf-fields-labels-localisation.php:49
-msgid "Secure"
 msgstr ""
 
 #: core/includes/back/system-disable-customizer.php:109
@@ -230,7 +266,67 @@ msgstr ""
 msgid "Your password"
 msgstr ""
 
-#: core/init.php:154
+#: core/includes/front/custom-localization.php:10
+msgid "Title"
+msgstr ""
+
+#: core/includes/front/custom-localization.php:11
+msgid "Text"
+msgstr ""
+
+#: core/includes/front/custom-localization.php:14
+msgid "Website options"
+msgstr ""
+
+#: core/includes/front/custom-localization.php:35
+msgid "Enable"
+msgstr ""
+
+#: core/includes/front/custom-localization.php:36
+msgid "Width"
+msgstr ""
+
+#: core/includes/front/custom-localization.php:37
+msgid "Height"
+msgstr ""
+
+#: core/includes/front/custom-localization.php:38
+msgid "Quality"
+msgstr ""
+
+#: core/includes/front/custom-localization.php:39
+msgid "Formats"
+msgstr ""
+
+#: core/includes/front/custom-localization.php:43
+msgid "SMTP"
+msgstr ""
+
+#: core/includes/front/custom-localization.php:44
+msgid "Host"
+msgstr ""
+
+#: core/includes/front/custom-localization.php:45
+msgid "Port"
+msgstr ""
+
+#: core/includes/front/custom-localization.php:46
+msgid "Username"
+msgstr ""
+
+#: core/includes/front/custom-localization.php:47
+msgid "Password"
+msgstr ""
+
+#: core/includes/front/custom-localization.php:48
+msgid "From name"
+msgstr ""
+
+#: core/includes/front/custom-localization.php:49
+msgid "Secure"
+msgstr ""
+
+#: core/init.php:151
 msgid "Please, install Advanced Custom Fields PRO version"
 msgstr ""
 
@@ -298,4 +394,9 @@ msgstr ""
 
 #: core/libs/acf-nav-menu-field/nav-menu-v5.php:134
 msgid "Choose one"
+msgstr ""
+
+#: core/libs/libraries.php:30 core/libs/libraries.php:36
+#: core/libs/libraries.php:37
+msgid "Main options"
 msgstr ""

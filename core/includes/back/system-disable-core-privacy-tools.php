@@ -4,7 +4,7 @@ if(!defined('ABSPATH')){exit;}
 
 /** disable core privacy tools */
 
-if(cached_field('website_options/disable_core_privacy_tools')){
+if(get_option('disable_core_privacy_tools')){
 	function ds_disable_core_privacy_tools( $caps, $cap ) {
 		switch ( $cap ) {
 			case 'export_others_personal_data':

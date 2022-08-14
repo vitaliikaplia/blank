@@ -3,7 +3,7 @@
 if(!defined('ABSPATH')){exit;}
 
 /** disable embeds from head */
-if(cached_field('website_options/disable_embeds')){
+if(get_option('disable_embeds')){
 	function disable_embeds_init() {
 		// Remove the REST API endpoint.
 		remove_action('rest_api_init', 'wp_oembed_register_route');
