@@ -35,6 +35,13 @@ if (function_exists('get_fields')) {
     // Main label for ACF options pages
     //    acf_set_options_page_menu(__("Main options", TEXTDOMAIN));
     //    acf_set_options_page_title( __("Main options", TEXTDOMAIN) );
+    // ACF dashboard pages
+    //    acf_add_options_sub_page(array(
+    //        'page_title'  => __('Options', TEXTDOMAIN),
+    //        'menu_title'  => __('Options', TEXTDOMAIN),
+    //        'slug' => 'options',
+    //        'parent_slug' => 'themes.php',
+    //    ));
 }
 
 /** timber */
