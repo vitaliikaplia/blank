@@ -16,9 +16,14 @@ function custom_header_css(){
             echo "\n";
             echo $header_css;
         }
-    } else {
-        echo "\n";
-        echo '<link rel="stylesheet" href="'.TEMPLATE_DIRECTORY_URL.'assets/css/style.min.css?ver='.ASSETS_VERSION.'" type="text/css" media="screen" />';
     }
 }
 add_filter('wp_head', 'custom_header_css');
+
+if(!get_option('inline_scripts_and_styles') && !is_admin() && $GLOBALS['pagenow'] !== 'wp-login.php'){
+    function add_style_css_action() {
+        wp_register_style('main', TEMPLATE_DIRECTORY_URL . 'assets/css/style.min.css', '', ASSETS_VERSION);
+        wp_enqueue_style('main');
+    }
+    add_action('init', 'add_style_css_action');
+}

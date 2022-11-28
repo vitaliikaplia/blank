@@ -2,77 +2,21 @@
 
 if(!defined('ABSPATH')){exit;}
 
-// Return the accepted value for SVG mime-types in compliance with the RFC 3023.
-// RFC 3023: https://www.ietf.org/rfc/rfc3023.txt 8.19, A.1, A.2, A.3, A.5, and A.7
-// Expects to interface with https://codex.wordpress.org/Plugin_API/Filter_Reference/upload_mimes
-function allow_svg_uploads( $existing_mime_types = array() ) {
-    return $existing_mime_types + array( 'svg' => 'image/svg+xml' );
-}
+add_action("init", function() {
+    // First line of defence defused
+    add_filter('upload_mimes', function ($mimes) {
+        $mimes['svg'] = 'image/svg+xml';
+        return $mimes;
+    });
 
-// This is a decent way of grabbing the dimensions of SVG files.
-// Depends on http://php.net/manual/en/function.simplexml-load-file.php
-// I believe this to be a reasonable dependency and should be common enough to
-// not cause problems.
-function get_dimensions( $svg ) {
-    $svg = simplexml_load_file( $svg );
-    $attributes = $svg->attributes();
-    $width = (string) $attributes->width;
-    $height = (string) $attributes->height;
-
-    return (object) array( 'width' => $width, 'height' => $height );
-}
-
-// Browsers may or may not show SVG files properly without a height/width.
-// WordPress specifically defines width/height as "0" if it cannot figure it out.
-// Thus the below is needed.
-//
-// Consider this the "server side" fix for dimensions.
-// Which is needed for the Media Grid within the Administration area.
-function adjust_response_for_svg( $response, $attachment, $meta ) {
-    if( $response['mime'] == 'image/svg+xml' && empty( $response['sizes'] ) ) {
-        $svg_file_path = get_attached_file( $attachment->ID );
-        $dimensions = get_dimensions( $svg_file_path );
-
-        $response[ 'sizes' ] = array(
-            'full' => array(
-                'url' => $response[ 'url' ],
-                'width' => $dimensions->width,
-                'height' => $dimensions->height,
-                'orientation' => $dimensions->width > $dimensions->height ? 'landscape' : 'portrait'
-            )
-        );
-    }
-
-    return $response;
-}
-// Browsers may or may not show SVG files properly without a height/width.
-// WordPress specifically defines width/height as "0" if it cannot figure it out.
-// Thus the below is needed.
-//
-// Consider this the "client side" fix for dimensions. But only for the Administration.
-//
-// WordPress requires inline administration styles to be wrapped in an actionable function.
-// These styles specifically address the Media Listing styling and Featured Image
-// styling so that the images show up in the Administration area.
-function administration_styles() {
-    // Media Listing Fix
-    wp_add_inline_style( 'wp-admin', ".media .media-icon img[src$='.svg'] { width: auto; height: auto; }" );
-    // Featured Image Fix
-    wp_add_inline_style( 'wp-admin', "#postimagediv .inside img[src$='.svg'] { width: 100%; height: auto; }" );
-}
-
-// Browsers may or may not show SVG files properly without a height/width.
-// WordPress specifically defines width/height as "0" if it cannot figure it out.
-// Thus the below is needed.
-//
-// Consider this the "client side" fix for dimensions. But only for the End User.
-function public_styles() {
-    // Featured Image Fix
-    // echo "<style>.post-thumbnail img[src$='.svg'] { width: 100%; height: auto; }</style>";
-}
-
-// Do work son.
-add_filter( 'upload_mimes', 'allow_svg_uploads' );
-add_filter( 'wp_prepare_attachment_for_js', 'adjust_response_for_svg', 10, 3 );
-add_action( 'admin_enqueue_scripts', 'administration_styles' );
-add_action( 'wp_head', 'public_styles' );
+    // Add the XML Declaration if it's missing (otherwise WordPress does not allow uploads)
+    add_filter("wp_handle_upload_prefilter", function ($upload) {
+        if (!empty($upload["type"]) && $upload["type"] === "image/svg+xml") {
+            $contents = file_get_contents($upload["tmp_name"]);
+            if (strpos($contents, "<?xml") === false) {
+                file_put_contents($upload["tmp_name"], '<?xml version="1.0" encoding="UTF-8"?>' . $contents);
+            }
+        }
+        return $upload;
+    }, 10, 1);
+});
