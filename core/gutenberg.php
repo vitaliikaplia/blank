@@ -24,14 +24,14 @@ if(!get_option('disable_gutenberg_everywhere')){
             "name" => "first-screen",
             "label" => __( "First screen", TEXTDOMAIN ),
             "category" => "main",
-            'icon' => 'screenoptions',
+            'icon' => 'URL',
             'defaults' => ''
         ),
         array(
             "name" => "second-screen",
             "label" => __( "Second screen", TEXTDOMAIN ),
             "category" => "main",
-            'icon' => 'screenoptions',
+            'icon' => 'URL',
             'defaults' => ''
         )
     );
@@ -51,11 +51,22 @@ if(!get_option('disable_gutenberg_everywhere')){
             wp_register_style($style_name, $style_url, '', ASSETS_VERSION);
         }
 
+        if($block['icon'] == 'URL'){
+            $url = TEMPLATE_DIRECTORY_URL . 'assets/svg/blocks/'.$block['category'].'/'.$block['name'].'.svg';
+            if(filter_var($url, FILTER_VALIDATE_URL)){
+                $icon = cache_svg_icon(TEMPLATE_DIRECTORY_URL . 'assets/svg/blocks/'.$block['category'].'/'.$block['name'].'.svg');
+            } else {
+                $icon = $block['icon'];
+            }
+        } else {
+            $icon = $block['icon'];
+        }
+
         $custom_gutenberg_blocks[] = array(
             'name'            => $block['category'] . '-' . $block['name'],
             'title'           => $block['label'],
             'render_callback' => 'block_render_callback',
-            'icon'            => cache_svg_icon(TEMPLATE_DIRECTORY_URL . 'assets/svg/blocks/'.$block['category'].'/'.$block['name'].'.svg'),
+            'icon'            => $icon,
             'style'           => $style_name,
             'mode' 			  => 'preview',
             'category'        => $block['category'],
@@ -106,7 +117,7 @@ if(!get_option('disable_gutenberg_everywhere')){
         $context['is_admin'] = is_admin();
         $context['is_example'] = get_field('is_example');
         if($context['is_example']){
-            $context['block_example'] = TEMPLATE_DIRECTORY_URL . 'assets/block-preview/' . $block['category'] . '/' . $no_category_block_name . '.png';
+            $context['block_example'] = TEMPLATE_DIRECTORY_URL . 'assets/block-preview/' . $block['category'] . '/' . $no_category_block_name . '.png?ver=' . ASSETS_VERSION;
         }
 
         // Render the block

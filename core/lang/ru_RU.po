@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-14 21:43+0300\n"
+"POT-Creation-Date: 2022-11-29 15:53+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../..\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-SearchPath-0: core/lang\n"
 "X-Poedit-SearchPath-1: core\n"
 "X-Poedit-SearchPath-2: .\n"
@@ -326,7 +326,19 @@ msgstr "Имя отправителя"
 msgid "Secure"
 msgstr "Безопасность"
 
-#: core/init.php:151
+#: core/init.php:56
+msgid "Website under Maintenance"
+msgstr "Веб-сайт на техническом обслуживании"
+
+#: core/init.php:57
+#, fuzzy
+#| msgid ""
+#| "We are performing scheduled maintenance. We will be back online shortly!"
+msgid ""
+"We are performing scheduled maintenance. We will be back online shortly."
+msgstr "Мы выполняем плановое обслуживание и скоро будем в сети!"
+
+#: core/init.php:197
 msgid "Please, install Advanced Custom Fields PRO version"
 msgstr "Пожалуйста, установите PRO версию Advanced Custom Fields"
 
@@ -396,10 +408,8 @@ msgstr "Все"
 msgid "Choose one"
 msgstr "Выберите"
 
-#: core/libs/libraries.php:30 core/libs/libraries.php:36
-#: core/libs/libraries.php:37
-msgid "Main options"
-msgstr "Главные параметры"
+#~ msgid "Main options"
+#~ msgstr "Главные параметры"
 
 #~ msgid "Update"
 #~ msgstr "Обновить"
@@ -415,13 +425,6 @@ msgstr "Главные параметры"
 
 #~ msgid "Your Phone"
 #~ msgstr "Ваш Телефон"
-
-#~ msgid "Website under Maintenance"
-#~ msgstr "Веб-сайт на техническом обслуживании"
-
-#~ msgid ""
-#~ "We are performing scheduled maintenance. We will be back online shortly!"
-#~ msgstr "Мы выполняем плановое обслуживание и скоро будем в сети!"
 
 #~ msgid "Options"
 #~ msgstr "Опции"
