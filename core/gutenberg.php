@@ -142,6 +142,7 @@ if(!get_option('disable_gutenberg_everywhere')){
 
     /** remove default block patterns from gutenberg editor */
     remove_theme_support( 'core-block-patterns' );
+//    remove_theme_support( 'core-block-outline' );
 
     /** remove custom gutenberg css */
 //    add_filter( 'block_editor_settings_all' , 'remove_guten_wrapper_styles' );
