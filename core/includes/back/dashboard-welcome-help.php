@@ -2,7 +2,7 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/** hide welcome screen */
+/** Hide welcome screen */
 add_action('load-index.php', 'hide_welcome_message_panel');
 function hide_welcome_message_panel() {
     $user_id = get_current_user_id();
@@ -13,7 +13,7 @@ function my_custom_admin_head_welcome_hide() {
 }
 add_action('admin_head', 'my_custom_admin_head_welcome_hide');
 
-/** hide help tab */
+/** Hide help tab */
 add_action('admin_head', 'remove_help_tabs');
 function remove_help_tabs() {
     $screen = get_current_screen();

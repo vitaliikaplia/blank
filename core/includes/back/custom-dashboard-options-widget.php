@@ -194,7 +194,7 @@ function tweaks_widget_html(){
         array (
             'type'          => 'checkbox',
             'label'          => 'disable_rest_api',
-            'description'   => __("Disable Rest API", TEXTDOMAIN),
+            'description'   => __("Disable Rest API for anonymous users", TEXTDOMAIN),
         ),
         array (
             'type'          => 'checkbox',
