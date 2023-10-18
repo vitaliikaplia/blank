@@ -53,3 +53,19 @@ require_once 'core' . DIRECTORY_SEPARATOR . 'init.php';
 //}
 //
 //add_action( 'after_setup_theme', 'disable_gutenberg_word_block_count' );
+//use LisDev\Delivery\NovaPoshtaApi2;
+//$np = new NovaPoshtaApi2(
+//    'be35eda71c68d394656ee88ff10a0192',
+//    'ua',
+//    FALSE,
+//    'curl'
+//);
+
+//$cities = $np->getCities();
+//$keyword = "Ружин"; // Введіть тут ключове слово або частину назви міста
+//$cities = $np->getCities(0, $keyword);
+//pr($cities);
+
+//створили клієнта - через нього запити будуть слатись
+//$monoClient = new \MonoPay\Client('u7lJP6k2mjneoD92ZE4xPD8GOjUX_gUarn6lAY_UOKcU');
+//pr($monoClient);

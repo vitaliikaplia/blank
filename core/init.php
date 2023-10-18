@@ -50,6 +50,9 @@ load_theme_textdomain( TEXTDOMAIN, CORE_PATH . DS . 'lang' );
 /** libraries */
 require_once CORE_PATH . DS . 'libs' . DS . 'libraries.php';
 
+/** composer */
+require_once THEME_PATH . 'vendor' . DS . 'autoload.php';
+
 /** theme activation */
 function activation_function( $oldname, $oldtheme=false ) {
     add_option('assets_version', '0.01');

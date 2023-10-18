@@ -1,0 +1,26 @@
+{
+    "name": "vitaliikaplia/blank",
+    "description": "blank wp theme",
+    "type": "theme",
+    "license": "none",
+    "autoload": {
+        "psr-4": {
+            "Vitaliikaplia\\Blank\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "vitaliikaplia",
+            "email": "vitalii.kaplia@gmail.com"
+        }
+    ],
+    "require": {
+        "lis-dev/nova-poshta-api-2": "^0.1.6",
+        "plakidan/monobank-pay": "^0.1.0"
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
+    }
+}
