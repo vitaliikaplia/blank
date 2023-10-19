@@ -1,8 +1,0 @@
-.project
-.settings
-.htaccess
-.php_cs.cache
-.idea/
-tests/cover
-vendor/
-web/

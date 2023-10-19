@@ -138,15 +138,15 @@ if(!get_option('disable_gutenberg_everywhere')){
 
     /** remove default block patterns from gutenberg editor */
     remove_theme_support( 'core-block-patterns' );
-//    remove_theme_support( 'core-block-outline' );
+    // remove_theme_support( 'core-block-outline' );
 
     /** remove custom gutenberg css */
-//    add_filter( 'block_editor_settings_all' , 'remove_guten_wrapper_styles' );
-//    function remove_guten_wrapper_styles( $settings ) {
-//        unset($settings['styles'][0]);
-//        unset($settings['styles'][1]);
-//        return $settings;
-//    }
+    //    add_filter( 'block_editor_settings_all' , 'remove_guten_wrapper_styles' );
+    //    function remove_guten_wrapper_styles( $settings ) {
+    //        unset($settings['styles'][0]);
+    //        unset($settings['styles'][1]);
+    //        return $settings;
+    //    }
 
     /**
      * Enqueue WordPress theme styles within Gutenberg.

@@ -14,11 +14,9 @@
             "email": "vitalii.kaplia@gmail.com"
         }
     ],
-    "require": {
-        "lis-dev/nova-poshta-api-2": "^0.1.6",
-        "plakidan/monobank-pay": "^0.1.0"
-    },
+    "require": {},
     "config": {
+        "vendor-dir": "core/vendor",
         "platform": {
             "php": "7.4"
         }

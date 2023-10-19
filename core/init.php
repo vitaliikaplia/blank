@@ -51,7 +51,7 @@ load_theme_textdomain( TEXTDOMAIN, CORE_PATH . DS . 'lang' );
 require_once CORE_PATH . DS . 'libs' . DS . 'libraries.php';
 
 /** composer */
-require_once THEME_PATH . 'vendor' . DS . 'autoload.php';
+require_once CORE_PATH . DS . 'vendor' . DS . 'autoload.php';
 
 /** theme activation */
 function activation_function( $oldname, $oldtheme=false ) {
