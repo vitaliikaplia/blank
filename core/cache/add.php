@@ -13,17 +13,15 @@ function cache_icon_list($name){
     set_transient( 'cached_svg_icons', $icons, TRANSIENTS_TIME );
 }
 function cache_svg_icon($icon_url){
-    if(!check_if_404_error($icon_url)){
-        $base_name = basename($icon_url);
-        $file_name_arr = pathinfo($base_name);
-        if($svg = get_transient( 'svg_icon-' . $file_name_arr['filename'] )){
-            return $svg;
-        } else {
-            $svg = file_get_contents($icon_url);
-            cache_icon_list($file_name_arr['filename']);
-            set_transient( 'svg_icon-' . $file_name_arr['filename'], $svg, TRANSIENTS_TIME );
-            return $svg;
-        }
+    $base_name = basename($icon_url);
+    $file_name_arr = pathinfo($base_name);
+    if($svg = get_transient( 'svg_icon-' . $file_name_arr['filename'] )){
+        return $svg;
+    } else {
+        $svg = file_get_contents($icon_url);
+        cache_icon_list($file_name_arr['filename']);
+        set_transient( 'svg_icon-' . $file_name_arr['filename'], $svg, TRANSIENTS_TIME );
+        return $svg;
     }
 }
 
