@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-08 15:26+0300\n"
+"POT-Creation-Date: 2024-02-29 23:48+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../..\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-SearchPath-0: core/lang\n"
 "X-Poedit-SearchPath-1: core\n"
 "X-Poedit-SearchPath-2: .\n"
@@ -29,7 +29,7 @@ msgstr "Главный"
 msgid "First screen"
 msgstr "Первый экран"
 
-#: core/gutenberg.php:32
+#: core/gutenberg.php:33
 msgid "Second screen"
 msgstr "Второй экран"
 
@@ -221,21 +221,58 @@ msgid "Enable minify"
 msgstr "Включить минификацию"
 
 #: core/includes/back/custom-dashboard-options-widget.php:247
-#: core/includes/front/custom-localization.php:32
-msgid "Inline scripts and styles"
-msgstr "Онлайновые скрипты и стили"
-
-#: core/includes/back/custom-dashboard-options-widget.php:252
 msgid "Hide ACF"
 msgstr "Скрыть ACF"
 
-#: core/includes/back/custom-dashboard-options-widget.php:257
+#: core/includes/back/custom-dashboard-options-widget.php:252
 msgid "Disable Gutenberg editor everywhere"
 msgstr "Отключите редактор Gutenberg везде"
 
-#: core/includes/back/custom-dashboard-options-widget.php:262
+#: core/includes/back/custom-dashboard-options-widget.php:257
 msgid "Disable Gutenberg editor for Blog"
 msgstr "Отключите редактор Gutenberg для блога"
+
+#: core/includes/back/custom-post-types.php:6
+#: core/includes/back/custom-post-types.php:26
+#: core/includes/back/custom-post-types.php:27
+#: core/includes/back/custom-post-types.php:28
+msgid "Mail log"
+msgstr "Журнал почты"
+
+#: core/includes/back/custom-post-types.php:29
+#: core/includes/back/custom-post-types.php:30
+msgid "Add"
+msgstr "Добавить"
+
+#: core/includes/back/custom-post-types.php:31
+#: core/includes/back/custom-post-types.php:32
+msgid "Edit"
+msgstr "Править"
+
+#: core/includes/back/custom-post-types.php:33
+msgid "New"
+msgstr "Новый"
+
+#: core/includes/back/custom-post-types.php:34
+#: core/includes/back/custom-post-types.php:35
+msgid "View"
+msgstr "Просмотр"
+
+#: core/includes/back/custom-post-types.php:36
+msgid "Search for mail logs"
+msgstr "Поиск журналов почты."
+
+#: core/includes/back/custom-post-types.php:37
+msgid "No mail logs found"
+msgstr "Журналы почты не найдены."
+
+#: core/includes/back/custom-post-types.php:38
+msgid "No mail logs found in trash"
+msgstr "В корзине не найдено журналов почты."
+
+#: core/includes/back/custom-post-types.php:39
+msgid "Parent"
+msgstr "Родитель"
 
 #: core/includes/back/dashboard-footer.php:12
 msgid "Powered by"
@@ -281,6 +318,10 @@ msgstr "Настройки сайта"
 msgid "Disable Rest API"
 msgstr "Отключить Rest API"
 
+#: core/includes/front/custom-localization.php:32
+msgid "Inline scripts and styles"
+msgstr "Онлайновые скрипты и стили"
+
 #: core/includes/front/custom-localization.php:35
 msgid "Enable"
 msgstr "Включить"
@@ -317,7 +358,7 @@ msgstr "Порт"
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: core/includes/front/custom-localization.php:47
+#: core/includes/front/custom-localization.php:47 views/password.twig:10
 msgid "Password"
 msgstr "Пароль"
 
@@ -337,10 +378,10 @@ msgstr "Веб-сайт на техническом обслуживании"
 msgid ""
 "We are performing scheduled maintenance. We will be back online shortly."
 msgstr ""
-"Мы проводим плановое техническое обслуживание. Мы вернемся онлайн в "
-"ближайшее время."
+"Мы проводим плановое обслуживание. Мы проводим плановое техническое "
+"обслуживание. Мы вернемся онлайн в ближайшее время."
 
-#: core/init.php:197
+#: core/init.php:201
 msgid "Please, install Advanced Custom Fields PRO version"
 msgstr "Пожалуйста, установите PRO версию Advanced Custom Fields"
 
@@ -409,6 +450,15 @@ msgstr "Все"
 #: core/libs/acf-nav-menu-field/nav-menu-v5.php:134
 msgid "Choose one"
 msgstr "Выберите"
+
+#: core/libs/libraries.php:30 core/libs/libraries.php:38
+#: core/libs/libraries.php:39
+msgid "Framework"
+msgstr "Фреймворк"
+
+#: views/password.twig:11
+msgid "Submit"
+msgstr "Отправить"
 
 #~ msgid "Main options"
 #~ msgstr "Главные параметры"

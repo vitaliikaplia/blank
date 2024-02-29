@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-08 15:27+0300\n"
+"POT-Creation-Date: 2024-02-29 23:47+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../..\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-SearchPath-0: core/lang\n"
 "X-Poedit-SearchPath-1: core\n"
 "X-Poedit-SearchPath-2: .\n"
@@ -29,7 +29,7 @@ msgstr "Головний"
 msgid "First screen"
 msgstr "Перший екран"
 
-#: core/gutenberg.php:32
+#: core/gutenberg.php:33
 msgid "Second screen"
 msgstr "Другий екран"
 
@@ -221,21 +221,58 @@ msgid "Enable minify"
 msgstr "Увімкнути мініфікацію"
 
 #: core/includes/back/custom-dashboard-options-widget.php:247
-#: core/includes/front/custom-localization.php:32
-msgid "Inline scripts and styles"
-msgstr "Інлайнові скрипти та стилі"
-
-#: core/includes/back/custom-dashboard-options-widget.php:252
 msgid "Hide ACF"
 msgstr "Приховати ACF"
 
-#: core/includes/back/custom-dashboard-options-widget.php:257
+#: core/includes/back/custom-dashboard-options-widget.php:252
 msgid "Disable Gutenberg editor everywhere"
 msgstr "Вимкніть редактор Gutenberg всюди"
 
-#: core/includes/back/custom-dashboard-options-widget.php:262
+#: core/includes/back/custom-dashboard-options-widget.php:257
 msgid "Disable Gutenberg editor for Blog"
 msgstr "Вимкнути редактор Gutenberg для блогу"
+
+#: core/includes/back/custom-post-types.php:6
+#: core/includes/back/custom-post-types.php:26
+#: core/includes/back/custom-post-types.php:27
+#: core/includes/back/custom-post-types.php:28
+msgid "Mail log"
+msgstr "Поштовий журнал"
+
+#: core/includes/back/custom-post-types.php:29
+#: core/includes/back/custom-post-types.php:30
+msgid "Add"
+msgstr "Додати"
+
+#: core/includes/back/custom-post-types.php:31
+#: core/includes/back/custom-post-types.php:32
+msgid "Edit"
+msgstr "Редагувати"
+
+#: core/includes/back/custom-post-types.php:33
+msgid "New"
+msgstr "Нове"
+
+#: core/includes/back/custom-post-types.php:34
+#: core/includes/back/custom-post-types.php:35
+msgid "View"
+msgstr "Переглянути"
+
+#: core/includes/back/custom-post-types.php:36
+msgid "Search for mail logs"
+msgstr "Пошук поштових журналів"
+
+#: core/includes/back/custom-post-types.php:37
+msgid "No mail logs found"
+msgstr "Жодних поштових журналів не знайдено"
+
+#: core/includes/back/custom-post-types.php:38
+msgid "No mail logs found in trash"
+msgstr "Жодних поштових журналів не знайдено в кошику"
+
+#: core/includes/back/custom-post-types.php:39
+msgid "Parent"
+msgstr "Батько"
 
 #: core/includes/back/dashboard-footer.php:12
 msgid "Powered by"
@@ -281,6 +318,10 @@ msgstr "Налаштування сайту"
 msgid "Disable Rest API"
 msgstr "Вимкнути Rest API"
 
+#: core/includes/front/custom-localization.php:32
+msgid "Inline scripts and styles"
+msgstr "Інлайнові скрипти та стилі"
+
 #: core/includes/front/custom-localization.php:35
 msgid "Enable"
 msgstr "Увімкнути"
@@ -317,7 +358,7 @@ msgstr "Порт"
 msgid "Username"
 msgstr "Ім'я користувача"
 
-#: core/includes/front/custom-localization.php:47
+#: core/includes/front/custom-localization.php:47 views/password.twig:10
 msgid "Password"
 msgstr "Пароль"
 
@@ -337,10 +378,10 @@ msgstr "Веб-сайт на технічному обслуговуванні"
 msgid ""
 "We are performing scheduled maintenance. We will be back online shortly."
 msgstr ""
-"Ми проводимо планове технічне обслуговування. Незабаром ми знову будемо "
-"онлайн."
+"Ми проводимо планове технічне обслуговування. Ми проводимо планове технічне "
+"обслуговування. Незабаром ми знову будемо онлайн."
 
-#: core/init.php:197
+#: core/init.php:201
 msgid "Please, install Advanced Custom Fields PRO version"
 msgstr "Будь ласка, встановіть PRO версію Advanced Custom Fields"
 
@@ -409,6 +450,15 @@ msgstr "Усі"
 #: core/libs/acf-nav-menu-field/nav-menu-v5.php:134
 msgid "Choose one"
 msgstr "Виберіть"
+
+#: core/libs/libraries.php:30 core/libs/libraries.php:38
+#: core/libs/libraries.php:39
+msgid "Framework"
+msgstr "Фреймворк"
+
+#: views/password.twig:11
+msgid "Submit"
+msgstr "Надіслати"
 
 #~ msgid "Main options"
 #~ msgstr "Налаштування сайту"

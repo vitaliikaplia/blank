@@ -2,9 +2,6 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/** fixing timezone */
-date_default_timezone_set( wp_timezone_string() );
-
 /** constants */
 define( 'TEXTDOMAIN', 'blank' );
 define( 'DS', DIRECTORY_SEPARATOR );
@@ -59,17 +56,12 @@ function activation_function( $oldname, $oldtheme=false ) {
     add_option('maintenance_mode_title', __('Website under Maintenance', TEXTDOMAIN));
     add_option('maintenance_mode_text', __('We are performing scheduled maintenance. We will be back online shortly.', TEXTDOMAIN));
     add_option('enable_resize_at_upload', true);
-    add_option('resize_at_upload_formats', array (
-        'image/gif' => 'GIF',
-        'image/png' => 'PNG',
-        'image/jpeg' => 'JPEG',
-        'image/jpg' => 'JPG',
-    ));
+    add_option('resize_at_upload_formats', array ('image/gif', 'image/png', 'image/jpeg', 'image/jpg'));
     add_option('resize_upload_width', 2048);
     add_option('resize_upload_height', 2048);
     add_option('resize_upload_quality', 80);
-
     add_option('disable_all_updates', true);
+    add_option('disable_rest_api', true);
     add_option('disable_customizer', true);
     add_option('disable_src_set', true);
     add_option('remove_default_image_sizes', true);
@@ -96,6 +88,7 @@ function deactivation_function( $newname, $newtheme ) {
     delete_option('resize_upload_height');
     delete_option('resize_upload_quality');
     delete_option('disable_all_updates');
+    delete_option('disable_rest_api');
     delete_option('disable_customizer');
     delete_option('disable_src_set');
     delete_option('remove_default_image_sizes');
@@ -108,6 +101,12 @@ function deactivation_function( $newname, $newtheme ) {
     delete_option('hide_admin_top_bar');
     delete_option('disable_admin_email_verification');
     delete_option('disable_comments');
+    delete_option('delete_child_media');
+    delete_option('enable_html_cache');
+    delete_option('enable_minify');
+    delete_option('hide_acf');
+    delete_option('disable_gutenberg_everywhere');
+    delete_option('disable_gutenberg_for_blog');
 }
 add_action('switch_theme', 'deactivation_function', 10, 2);
 
@@ -163,6 +162,7 @@ class BlankSite extends TimberSite {
 		$context['svg_sprite'] = SVG_SPRITE_URL;
         $context['general_fields'] = cache_general_fields();
         $context['localization'] = custom_localization();
+        $context['TEXTDOMAIN'] = TEXTDOMAIN;
 
 		return $context;
 	}
@@ -170,6 +170,7 @@ class BlankSite extends TimberSite {
 	function add_to_twig( $twig ) {
 		/* this is where you can add your own functions to twig */
 		$twig->addExtension( new Twig_Extension_StringLoader() );
+        $twig->addFilter( new Twig_SimpleFilter( 'pr', 'pr' ) );
 		return $twig;
 	}
 
@@ -194,12 +195,12 @@ if(get_option('enable_html_cache')){
 
 /** acf notification */
 if (!function_exists('get_fields')) {
-    function sample_admin_notice__success() {
-        ?>
-        <div class="notice notice-error">
-            <p><?php _e('Please, install Advanced Custom Fields PRO version', TEXTDOMAIN); ?></p>
-        </div>
-        <?php
+    function acf_notification_admin_notice() {
+        echo '<div class="notice notice-error">';
+        echo '<p>';
+        _e('Please, install Advanced Custom Fields PRO version', TEXTDOMAIN);
+        echo '</p>';
+        echo '</div>';
     }
-    add_action( 'admin_notices', 'sample_admin_notice__success' );
+    add_action( 'admin_notices', 'acf_notification_admin_notice' );
 }

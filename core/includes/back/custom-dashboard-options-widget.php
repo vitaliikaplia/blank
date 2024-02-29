@@ -243,11 +243,6 @@ function tweaks_widget_html(){
         ),
         array (
             'type'          => 'checkbox',
-            'label'         => 'inline_scripts_and_styles',
-            'description'   => __("Inline scripts and styles", TEXTDOMAIN)
-        ),
-        array (
-            'type'          => 'checkbox',
             'label'         => 'hide_acf',
             'description'   => __("Hide ACF", TEXTDOMAIN)
         ),

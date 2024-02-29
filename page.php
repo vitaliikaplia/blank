@@ -7,4 +7,8 @@ $post = new TimberPost();
 $context['post'] = $post;
 $context['custom_fields'] = cache_fields($post->ID);
 
-Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context, TIMBER_CACHE_TIME );
+if ( post_password_required( $post->ID ) ) {
+    Timber::render( 'password.twig', $context );
+} else {
+    Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context, TIMBER_CACHE_TIME );
+}

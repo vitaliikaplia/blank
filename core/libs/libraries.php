@@ -26,22 +26,17 @@ if (function_exists('get_fields')) {
     // ACF nav menu field
     require_once CORE_PATH . DS . 'libs' . DS . 'acf-nav-menu-field' . DS . 'nav-menu-v5.php';
     // Options page for ACF
-    //    $sub_page = array(
-    //        'title' => __("Main options", TEXTDOMAIN),
-    //        'slug' => 'main-options',
-    //        'capability' => 'edit_dashboard'
-    //    );
-    //    acf_add_options_sub_page($sub_page);
+    $sub_page = array(
+        'title' => __("Framework", TEXTDOMAIN),
+        'slug' => 'options',
+        'capability' => 'edit_posts',
+        'position'   => 30,
+        'icon_url'   => TEMPLATE_DIRECTORY_URL . 'assets/svg/favicon.svg'
+    );
+    acf_add_options_page($sub_page);
     // Main label for ACF options pages
-    //    acf_set_options_page_menu(__("Main options", TEXTDOMAIN));
-    //    acf_set_options_page_title( __("Main options", TEXTDOMAIN) );
-    // ACF dashboard pages
-    //    acf_add_options_sub_page(array(
-    //        'page_title'  => __('Options', TEXTDOMAIN),
-    //        'menu_title'  => __('Options', TEXTDOMAIN),
-    //        'slug' => 'options',
-    //        'parent_slug' => 'themes.php',
-    //    ));
+    acf_set_options_page_menu(__("Framework", TEXTDOMAIN));
+    acf_set_options_page_title( __("Framework", TEXTDOMAIN) );
 }
 
 /** timber */

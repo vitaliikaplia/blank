@@ -8,6 +8,7 @@ function change_widget_option_action(){
 
         $label = stripslashes($_POST['label']);
         $type = stripslashes($_POST['type']);
+
         if(is_array($_POST['val'])){
             $val = $_POST['val'];
         } else {

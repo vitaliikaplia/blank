@@ -2,18 +2,6 @@
 
 if(!defined('ABSPATH')){exit;}
 
-/** clear cached svg icons */
-function clear_svg_cache(){
-    if($cached_svg_icons = get_transient( 'cached_svg_icons' )){
-        if(!empty($cached_svg_icons)){
-            foreach($cached_svg_icons as $name){
-                delete_transient( 'svg_icon-' . $name );
-            }
-        }
-        delete_transient( 'cached_svg_icons' );
-    }
-}
-
 /** clear transients cache */
 function my_acf_update_value( $value, $post_id, $field  ) {
 

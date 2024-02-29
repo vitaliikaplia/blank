@@ -24,7 +24,9 @@ function store_all_widget_options_by_ajax(this_option_label, this_option_value, 
         },
         success : function (out) {
             // console.log(out);
-            jQuery(".widget-options-inner").removeClass('wait');
+            setTimeout(function(){
+                jQuery(".widget-options-inner").removeClass('wait');
+            }, 500);
         }
     });
 

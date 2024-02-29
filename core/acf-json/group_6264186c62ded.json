@@ -3,9 +3,28 @@
     "title": "Block: Second screen",
     "fields": [
         {
+            "key": "field_65e0f0276c0e6",
+            "label": "Content",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_6264186c6599a",
             "label": "Text",
             "name": "text",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -25,6 +44,7 @@
             "key": "field_6264186c659a2",
             "label": "Wrapper Background",
             "name": "wrapper_background",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -42,6 +62,7 @@
             "key": "field_6264186c659a7",
             "label": "Inner Background",
             "name": "inner_background",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -59,6 +80,7 @@
             "key": "field_6264186c659ad",
             "label": "Inner text",
             "name": "inner_text",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -82,7 +104,7 @@
             }
         ]
     ],
-    "menu_order": 1002,
+    "menu_order": 102,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -91,5 +113,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1654386265
+    "modified": 1709240376
 }

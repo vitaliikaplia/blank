@@ -66,7 +66,6 @@ if(is_admin()){
 		echo json_encode($toJson);
         if (function_exists('wp_cache_flush')) { wp_cache_flush(); }
         if (function_exists('opcache_reset')) { opcache_reset(); }
-        clear_svg_cache();
 		exit;
 	}
 	add_action( 'wp_ajax_update_assets_version', 'update_assets_version_function' );

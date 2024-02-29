@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-08 15:26+0300\n"
+"POT-Creation-Date: 2024-02-29 23:46+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../..\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-SearchPath-0: core/lang\n"
 "X-Poedit-SearchPath-1: core\n"
 "X-Poedit-SearchPath-2: .\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "First screen"
 msgstr ""
 
-#: core/gutenberg.php:32
+#: core/gutenberg.php:33
 msgid "Second screen"
 msgstr ""
 
@@ -221,20 +221,57 @@ msgid "Enable minify"
 msgstr ""
 
 #: core/includes/back/custom-dashboard-options-widget.php:247
-#: core/includes/front/custom-localization.php:32
-msgid "Inline scripts and styles"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:252
 msgid "Hide ACF"
 msgstr ""
 
-#: core/includes/back/custom-dashboard-options-widget.php:257
+#: core/includes/back/custom-dashboard-options-widget.php:252
 msgid "Disable Gutenberg editor everywhere"
 msgstr ""
 
-#: core/includes/back/custom-dashboard-options-widget.php:262
+#: core/includes/back/custom-dashboard-options-widget.php:257
 msgid "Disable Gutenberg editor for Blog"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:6
+#: core/includes/back/custom-post-types.php:26
+#: core/includes/back/custom-post-types.php:27
+#: core/includes/back/custom-post-types.php:28
+msgid "Mail log"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:29
+#: core/includes/back/custom-post-types.php:30
+msgid "Add"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:31
+#: core/includes/back/custom-post-types.php:32
+msgid "Edit"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:33
+msgid "New"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:34
+#: core/includes/back/custom-post-types.php:35
+msgid "View"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:36
+msgid "Search for mail logs"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:37
+msgid "No mail logs found"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:38
+msgid "No mail logs found in trash"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:39
+msgid "Parent"
 msgstr ""
 
 #: core/includes/back/dashboard-footer.php:12
@@ -281,6 +318,10 @@ msgstr ""
 msgid "Disable Rest API"
 msgstr ""
 
+#: core/includes/front/custom-localization.php:32
+msgid "Inline scripts and styles"
+msgstr ""
+
 #: core/includes/front/custom-localization.php:35
 msgid "Enable"
 msgstr ""
@@ -317,7 +358,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: core/includes/front/custom-localization.php:47
+#: core/includes/front/custom-localization.php:47 views/password.twig:10
 msgid "Password"
 msgstr ""
 
@@ -338,7 +379,7 @@ msgid ""
 "We are performing scheduled maintenance. We will be back online shortly."
 msgstr ""
 
-#: core/init.php:197
+#: core/init.php:201
 msgid "Please, install Advanced Custom Fields PRO version"
 msgstr ""
 
@@ -406,4 +447,13 @@ msgstr ""
 
 #: core/libs/acf-nav-menu-field/nav-menu-v5.php:134
 msgid "Choose one"
+msgstr ""
+
+#: core/libs/libraries.php:30 core/libs/libraries.php:38
+#: core/libs/libraries.php:39
+msgid "Framework"
+msgstr ""
+
+#: views/password.twig:11
+msgid "Submit"
 msgstr ""

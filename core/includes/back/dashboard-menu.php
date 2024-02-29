@@ -21,3 +21,20 @@ if(!defined('ABSPATH')){exit;}
 	//}
 	//add_action( 'admin_menu', 'remove_menus', 999 );
 //}
+
+/** add dashboard menu separators */
+function add_admin_menu_separator($position) {
+    global $menu;
+    $menu[$position] = array(
+        0	=>	'',
+        1	=>	'read',
+        2	=>	'separator' . $position,
+        3	=>	'',
+        4	=>	'wp-menu-separator'
+    );
+}
+function set_admin_menu_separator() {
+    add_admin_menu_separator(25);
+    add_admin_menu_separator(87);
+}
+add_action('admin_menu', 'set_admin_menu_separator');

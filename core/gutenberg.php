@@ -24,45 +24,36 @@ if(!get_option('disable_gutenberg_everywhere')){
             "name" => "first-screen",
             "label" => __( "First screen", TEXTDOMAIN ),
             "category" => "main",
-            'icon' => 'URL',
-            'defaults' => ''
+            'defaults' => array(
+                'field_5es3eaf348ca151aff27' => array('desktop_tablet','mobile')
+            )
         ),
         array(
             "name" => "second-screen",
             "label" => __( "Second screen", TEXTDOMAIN ),
             "category" => "main",
-            'icon' => 'URL',
-            'defaults' => ''
-        )
+            'defaults' => array(
+                'field_5es3eaf348ca151aff27' => array('desktop_tablet','mobile')
+            )
+        ),
     );
 
     /** create arrays of custom blocks */
-    $allowed_blocks = array();
+    global $global_allowed_blocks;
+    $global_allowed_blocks = array();
     $custom_gutenberg_blocks = array();
 
     foreach($blocks as $block){
 
-        $allowed_blocks[] = 'acf/' . $block['category'] . '-' . $block['name'];
+        $global_allowed_blocks[] = 'acf/' . $block['category'] . '-' . $block['name'];
 
         $style_url = TEMPLATE_DIRECTORY_URL . 'assets/css/blocks/' . $block['category'] . '/' . $block['name'] . '.min.css';
         $style_name = $block['category'] . '-' . $block['name'];
-
-        if($block['icon'] == 'URL'){
-            $url = TEMPLATE_DIRECTORY_URL . 'assets/svg/blocks/'.$block['category'].'/'.$block['name'].'.svg';
-            if(filter_var($url, FILTER_VALIDATE_URL)){
-                $icon = cache_svg_icon(TEMPLATE_DIRECTORY_URL . 'assets/svg/blocks/'.$block['category'].'/'.$block['name'].'.svg');
-            } else {
-                $icon = $block['icon'];
-            }
-        } else {
-            $icon = $block['icon'];
-        }
 
         $custom_gutenberg_blocks[] = array(
             'name'            => $block['category'] . '-' . $block['name'],
             'title'           => $block['label'],
             'render_callback' => 'block_render_callback',
-            'icon'            => $icon,
             'style'           => $style_name,
             'mode' 			  => 'preview',
             'category'        => $block['category'],
@@ -127,26 +118,17 @@ if(!get_option('disable_gutenberg_everywhere')){
             acf_register_block_type( $block );
         }
     }
-    add_action( 'acf/init', 'init_custom_gutenberg_blocks' );
+    add_action( 'init', 'init_custom_gutenberg_blocks' );
 
     /** allow only custom blocks */
     add_filter( 'allowed_block_types_all', 'custom_allowed_block_types' );
-    function custom_allowed_block_types( $allowed_blocks ) {
-        global $allowed_blocks;
-        return $allowed_blocks;
+    function custom_allowed_block_types( $global_allowed_blocks ) {
+        global $global_allowed_blocks;
+        return $global_allowed_blocks;
     }
 
     /** remove default block patterns from gutenberg editor */
     remove_theme_support( 'core-block-patterns' );
-    // remove_theme_support( 'core-block-outline' );
-
-    /** remove custom gutenberg css */
-    //    add_filter( 'block_editor_settings_all' , 'remove_guten_wrapper_styles' );
-    //    function remove_guten_wrapper_styles( $settings ) {
-    //        unset($settings['styles'][0]);
-    //        unset($settings['styles'][1]);
-    //        return $settings;
-    //    }
 
     /**
      * Enqueue WordPress theme styles within Gutenberg.
@@ -157,42 +139,14 @@ if(!get_option('disable_gutenberg_everywhere')){
     add_action( 'enqueue_block_editor_assets', 'organic_origin_gutenberg_styles' );
 
     /** adding block styles as css files */
-    if(!get_option('inline_scripts_and_styles') ){
-        function add_locks_styles_css_action() {
-            global $blocks;
-            foreach($blocks as $block){
-                $style_name = $block['category'] . '-' . $block['name'];
-                $style_url = TEMPLATE_DIRECTORY_URL . 'assets/css/blocks/' . $block['category'] . '/' . $block['name'] . '.min.css';
-                wp_register_style($style_name, $style_url, '', ASSETS_VERSION);
-            }
-        }
-        add_action('init', 'add_locks_styles_css_action');
-    }
-
-    /**
-     * Adding block styles as cached inlined css
-     */
-    function add_blocks_styles() {
-        if(!is_404()){
-            if(get_option('inline_scripts_and_styles')){
-                if($blocks_css = get_transient( 'blocks_css' )){
-                    echo $blocks_css;
-                } else {
-                    global $blocks;
-                    if(!empty($blocks)){
-                        $css = '';
-                        foreach($blocks as $block){
-                            $css .= file_get_contents( TEMPLATE_DIRECTORY_URL.'assets/css/blocks/' . $block['category'] . '/' . $block['name'] . '.min.css' );
-                        }
-                        $blocks_css = '<style type="text/css">'.$css.'</style>';
-                        set_transient( 'blocks_css', $blocks_css, TRANSIENTS_TIME );
-                        echo "\n";
-                        echo $blocks_css;
-                    }
-                }
-            }
+    function add_locks_styles_css_action() {
+        global $blocks;
+        foreach($blocks as $block){
+            $style_name = $block['category'] . '-' . $block['name'];
+            $style_url = TEMPLATE_DIRECTORY_URL . 'assets/css/blocks/' . $block['category'] . '/' . $block['name'] . '.min.css';
+            wp_register_style($style_name, $style_url, '', ASSETS_VERSION);
         }
     }
-    add_action( 'wp_head', 'add_blocks_styles' );
+    add_action('init', 'add_locks_styles_css_action');
 
 }
