@@ -257,6 +257,17 @@
 	z-index: 8;
 	@include transform(translateZ(8px));
 
+	&:not(.desktop_tablet){
+		@media (min-width: 961px) {
+			display: none;
+		}
+	}
+	&:not(.mobile){
+		@media (max-width: 960px) {
+			display: none;
+		}
+	}
+
 	.customBlock{
 		margin: 0 auto;
 		display: block;
