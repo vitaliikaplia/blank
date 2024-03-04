@@ -118,7 +118,7 @@ if(!get_option('disable_gutenberg_everywhere')){
             acf_register_block_type( $block );
         }
     }
-    add_action( 'init', 'init_custom_gutenberg_blocks' );
+    add_action( 'acf/init', 'init_custom_gutenberg_blocks' );
 
     /** allow only custom blocks */
     add_filter( 'allowed_block_types_all', 'custom_allowed_block_types' );

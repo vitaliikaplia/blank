@@ -124,6 +124,9 @@ if(is_array($includedFiles) && $includedFiles){
 	}
 }
 
+/** gutenberg */
+require_once CORE_PATH . DS . 'gutenberg.php';
+
 /** include all modules */
 $includedFiles = list_files( CORE_PATH . DS . 'includes' );
 if(is_array($includedFiles) && $includedFiles){
@@ -131,9 +134,6 @@ if(is_array($includedFiles) && $includedFiles){
 		require_once $file;
 	}
 }
-
-/** gutenberg */
-require_once CORE_PATH . DS . 'gutenberg.php';
 
 /** include ajax scripts */
 $includedAjax = list_files( CORE_PATH . DS . 'ajax' );
