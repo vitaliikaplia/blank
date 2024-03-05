@@ -20,3 +20,14 @@ add_action("init", function() {
         return $upload;
     }, 10, 1);
 });
+
+function add_svg_dimensions($metadata, $attachment_id) {
+    $attachment_path = get_attached_file($attachment_id);
+    $mime_type = get_post_mime_type($attachment_id);
+    if ('image/svg+xml' === $mime_type) {
+        $metadata['width'] = 100;
+        $metadata['height'] = 100;
+    }
+    return $metadata;
+}
+add_filter('wp_generate_attachment_metadata', 'add_svg_dimensions', 10, 2);
