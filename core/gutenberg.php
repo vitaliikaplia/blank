@@ -40,42 +40,43 @@ if(!get_option('disable_gutenberg_everywhere')){
         );
     }
 
-    /** create arrays of custom blocks */
-    global $global_allowed_blocks;
-    $global_allowed_blocks = array();
-    $custom_gutenberg_blocks = array();
+    /** parse arrays of custom blocks */
+    function parse_custom_gutenberg_blocks(){
 
-    foreach(get_custom_gutenberg_blocks_array() as $block){
+        $to_return = array();
 
-        $global_allowed_blocks[] = 'acf/' . $block['category'] . '-' . $block['name'];
+        foreach(get_custom_gutenberg_blocks_array() as $block){
 
-        $style_url = TEMPLATE_DIRECTORY_URL . 'assets/css/blocks/' . $block['category'] . '/' . $block['name'] . '.min.css';
-        $style_name = $block['category'] . '-' . $block['name'];
+            $to_return['global_allowed_blocks'][] = 'acf/' . $block['category'] . '-' . $block['name'];
 
-        $custom_gutenberg_blocks[] = array(
-            'name'            => $block['category'] . '-' . $block['name'],
-            'title'           => $block['label'],
-            'render_callback' => 'block_render_callback',
-            'style'           => $style_name,
-            'mode' 			  => 'preview',
-            'category'        => $block['category'],
-            'keywords'        => array( $block['label'] ),
-            'data'            => $block['defaults'],
-            'supports'        => array(
-                'align' => false,
-                'mode' => false,
-                'customClassName' => false,
-                'jsx' => true
-            ),
-            'example'  => [
-                'attributes' => [
-                    'mode' => 'preview',
-                    'data' => array(
-                        'is_example'   => true
-                    )
+            $to_return['custom_gutenberg_blocks'][] = array(
+                'name'            => $block['category'] . '-' . $block['name'],
+                'title'           => $block['label'],
+                'render_callback' => 'block_render_callback',
+                'style'           => $block['category'] . '-' . $block['name'],
+                'mode' 			  => 'preview',
+                'category'        => $block['category'],
+                'keywords'        => array( $block['label'] ),
+                'data'            => $block['defaults'],
+                'supports'        => array(
+                    'align' => false,
+                    'mode' => false,
+                    'customClassName' => false,
+                    'jsx' => true
+                ),
+                'example'  => [
+                    'attributes' => [
+                        'mode' => 'preview',
+                        'data' => array(
+                            'is_example'   => true
+                        )
+                    ]
                 ]
-            ]
-        );
+            );
+
+        }
+
+        return $to_return;
 
     }
 
@@ -115,8 +116,8 @@ if(!get_option('disable_gutenberg_everywhere')){
 
     /** init custom blocks */
     function init_custom_gutenberg_blocks() {
-        global $custom_gutenberg_blocks;
-        foreach ($custom_gutenberg_blocks as $block) {
+        $parsed = parse_custom_gutenberg_blocks();
+        foreach ($parsed['custom_gutenberg_blocks'] as $block) {
             acf_register_block_type( $block );
         }
     }
@@ -124,9 +125,9 @@ if(!get_option('disable_gutenberg_everywhere')){
 
     /** allow only custom blocks */
     add_filter( 'allowed_block_types_all', 'custom_allowed_block_types' );
-    function custom_allowed_block_types( $global_allowed_blocks ) {
-        global $global_allowed_blocks;
-        return $global_allowed_blocks;
+    function custom_allowed_block_types() {
+        $parsed = parse_custom_gutenberg_blocks();
+        return $parsed['global_allowed_blocks'];
     }
 
     /** remove default block patterns from gutenberg editor */
