@@ -80,7 +80,7 @@ if(!get_option('disable_gutenberg_everywhere')){
     /** the callback that renders the blocks */
     function block_render_callback( $block, $content = '', $is_preview = false, $post_id = 0 ) {
 
-        $context = Timber::get_context();
+        $context = Timber::context();
 
         // Store block values
         $context['block'] = $block;

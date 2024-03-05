@@ -2,5 +2,5 @@
 
 if(!defined('ABSPATH')){exit;}
 
-$GLOBALS['timberContext'] = Timber::get_context();
+$GLOBALS['timberContext'] = Timber::context();
 ob_start();

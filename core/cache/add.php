@@ -4,7 +4,7 @@ if(!defined('ABSPATH')){exit;}
 
 /** cache general fields */
 function cache_general_fields(){
-    if (function_exists('get_fields')) {
+    if (class_exists('ACF')) {
         if($general_fields = get_transient( 'general_fields'.LANG_SUFFIX )){
             return $general_fields;
         } else {
@@ -19,7 +19,7 @@ function cache_general_fields(){
 
 /** cache page fields */
 function cache_fields($post_id){
-    if (function_exists('get_fields')) {
+    if (class_exists('ACF')) {
         if($post_id){
             if($fields = get_transient( 'custom_page_' . $post_id . '_fields'.LANG_SUFFIX )){
                 return $fields;

@@ -2,5 +2,5 @@
 
 if(!defined('ABSPATH')){exit;}
 
-$context = Timber::get_context();
+$context = Timber::context();
 Timber::render( '404.twig', $context, TIMBER_CACHE_TIME );

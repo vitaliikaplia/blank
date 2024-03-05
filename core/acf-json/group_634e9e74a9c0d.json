@@ -77,7 +77,6 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 2,
                     "save_format": "id",
                     "container": 0,
                     "allow_null": 1
@@ -228,7 +227,6 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 2,
                     "save_format": "id",
                     "container": 0,
                     "allow_null": 1
@@ -627,5 +625,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1709227124
+    "modified": 1709639753
 }

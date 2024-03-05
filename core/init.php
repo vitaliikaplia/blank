@@ -44,11 +44,14 @@ define( 'AUTHOR_TITLE', $currentTheme->get( 'Author' ) );
 /** load lang files */
 load_theme_textdomain( TEXTDOMAIN, CORE_PATH . DS . 'lang' );
 
-/** libraries */
-require_once CORE_PATH . DS . 'libs' . DS . 'libraries.php';
-
 /** composer */
 require_once CORE_PATH . DS . 'vendor' . DS . 'autoload.php';
+
+/** timber */
+require_once CORE_PATH . DS . 'timber.php';
+
+/** acf */
+require_once CORE_PATH . DS . 'acf.php';
 
 /** theme activation */
 function activation_function( $oldname, $oldtheme=false ) {
@@ -143,41 +146,6 @@ if(is_array($includedAjax) && $includedAjax){
 	}
 }
 
-/** timber */
-class BlankSite extends TimberSite {
-
-	function __construct() {
-		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
-		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
-
-		if ( ! is_admin() ) {
-			parent::__construct();
-		}
-	}
-
-	function add_to_context( $context ) {
-		$context['site'] = $this;
-		$context['assets'] = ASSETS_VERSION;
-		$context['site_language'] = BLOGINFO_LANGUAGE;
-		$context['svg_sprite'] = SVG_SPRITE_URL;
-        $context['general_fields'] = cache_general_fields();
-        $context['localization'] = custom_localization();
-        $context['TEXTDOMAIN'] = TEXTDOMAIN;
-
-		return $context;
-	}
-
-	function add_to_twig( $twig ) {
-		/* this is where you can add your own functions to twig */
-		$twig->addExtension( new Twig_Extension_StringLoader() );
-        $twig->addFilter( new Twig_SimpleFilter( 'pr', 'pr' ) );
-		return $twig;
-	}
-
-}
-
-new BlankSite();
-
 /** maintenance mode */
 if(get_option('enable_maintenance_mode')){
 	global $pagenow;
@@ -194,7 +162,7 @@ if(get_option('enable_html_cache')){
 }
 
 /** acf notification */
-if (!function_exists('get_fields')) {
+if (!class_exists('ACF')) {
     function acf_notification_admin_notice() {
         echo '<div class="notice notice-error">';
         echo '<p>';

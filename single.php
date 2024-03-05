@@ -2,12 +2,12 @@
 
 if(!defined('ABSPATH')){exit;}
 
-$context = Timber::get_context();
-$post = Timber::query_post();
-$context['post'] = $post;
+$context = Timber::context();
+$timber_post = Timber::get_post();
+$context['post'] = $timber_post;
 
-if ( post_password_required( $post->ID ) ) {
+if ( post_password_required( $context['post']->ID ) ) {
     Timber::render( 'password.twig', $context );
 } else {
-    Timber::render( array( 'single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single.twig' ), $context, TIMBER_CACHE_TIME );
+    Timber::render( array( 'single-' . $context['post']->ID . '.twig', 'single-' . $context['post']->post_type . '.twig', 'single.twig' ), $context, TIMBER_CACHE_TIME );
 }

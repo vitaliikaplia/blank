@@ -14,11 +14,16 @@
             "email": "vitalii.kaplia@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "timber/timber": "^2.0"
+    },
     "config": {
         "vendor-dir": "core/vendor",
         "platform": {
             "php": "7.4"
+        },
+        "allow-plugins": {
+            "composer/installers": true
         }
     }
 }

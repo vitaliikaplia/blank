@@ -3,7 +3,7 @@
 if(!defined('ABSPATH')){exit;}
 
 /** dashboard acf maps google maps api key */
-if (function_exists('get_fields') && get_option('google_maps_api_key')) {
+if (class_exists('ACF') && get_option('google_maps_api_key')) {
     function my_acf_google_map_api( $api ){
         $api['key'] = get_option('google_maps_api_key');
         return $api;

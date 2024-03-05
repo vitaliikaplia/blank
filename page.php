@@ -2,13 +2,15 @@
 
 if(!defined('ABSPATH')){exit;}
 
-$context = Timber::get_context();
-$post = new TimberPost();
-$context['post'] = $post;
-$context['custom_fields'] = cache_fields($post->ID);
+$context = Timber::context();
 
-if ( post_password_required( $post->ID ) ) {
-    Timber::render( 'password.twig', $context );
+$timber_post = Timber::get_post();
+$context['post'] = $timber_post;
+
+$context['custom_fields'] = cache_fields($context['post']->ID);
+
+if (post_password_required($context['post']->ID)) {
+    Timber::render('password.twig', $context);
 } else {
-    Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context, TIMBER_CACHE_TIME );
+    Timber::render(array('page-' . $context['post']->post_name . '.twig', 'page.twig'), $context, TIMBER_CACHE_TIME);
 }
