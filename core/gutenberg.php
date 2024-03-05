@@ -19,31 +19,33 @@ if(!get_option('disable_gutenberg_everywhere')){
     add_filter( 'block_categories_all', 'custom_block_categories', 10, 2);
 
     /** custom gutenberg blocks */
-    $blocks = array(
-        array(
-            "name" => "first-screen",
-            "label" => __( "First screen", TEXTDOMAIN ),
-            "category" => "main",
-            'defaults' => array(
-                'field_5es3eaf348ca151aff27' => array('desktop_tablet','mobile')
-            )
-        ),
-        array(
-            "name" => "second-screen",
-            "label" => __( "Second screen", TEXTDOMAIN ),
-            "category" => "main",
-            'defaults' => array(
-                'field_5es3eaf348ca151aff27' => array('desktop_tablet','mobile')
-            )
-        ),
-    );
+    function get_custom_gutenberg_blocks_array(){
+        return array(
+            array(
+                "name" => "first-screen",
+                "label" => __( "First screen", TEXTDOMAIN ),
+                "category" => "main",
+                'defaults' => array(
+                    'field_5es3eaf348ca151aff27' => array('desktop_tablet','mobile')
+                )
+            ),
+            array(
+                "name" => "second-screen",
+                "label" => __( "Second screen", TEXTDOMAIN ),
+                "category" => "main",
+                'defaults' => array(
+                    'field_5es3eaf348ca151aff27' => array('desktop_tablet','mobile')
+                )
+            ),
+        );
+    }
 
     /** create arrays of custom blocks */
     global $global_allowed_blocks;
     $global_allowed_blocks = array();
     $custom_gutenberg_blocks = array();
 
-    foreach($blocks as $block){
+    foreach(get_custom_gutenberg_blocks_array() as $block){
 
         $global_allowed_blocks[] = 'acf/' . $block['category'] . '-' . $block['name'];
 
@@ -140,8 +142,7 @@ if(!get_option('disable_gutenberg_everywhere')){
 
     /** adding block styles as css files */
     function add_locks_styles_css_action() {
-        global $blocks;
-        foreach($blocks as $block){
+        foreach(get_custom_gutenberg_blocks_array() as $block){
             $style_name = $block['category'] . '-' . $block['name'];
             $style_url = TEMPLATE_DIRECTORY_URL . 'assets/css/blocks/' . $block['category'] . '/' . $block['name'] . '.min.css';
             wp_register_style($style_name, $style_url, '', ASSETS_VERSION);
