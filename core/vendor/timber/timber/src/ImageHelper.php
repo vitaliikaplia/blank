@@ -2,6 +2,7 @@
 
 namespace Timber;
 
+use InvalidArgumentException;
 use Timber\Image\Operation;
 
 /**
@@ -28,6 +29,10 @@ class ImageHelper
     public const BASE_CONTENT = 2;
 
     public static $home_url;
+
+    protected const ALLOWED_PROTOCOLS = ['file', 'http', 'https'];
+
+    protected const WINDOWS_LOCAL_FILENAME_REGEX = '/^[a-z]:(?:[\\\\\/]?(?:[\w\s!#()-]+|[\.]{1,2})+)*[\\\\\/]?/i';
 
     /**
      * Inits the object.
@@ -140,6 +145,11 @@ class ImageHelper
             //doesn't have .gif, bail
             return false;
         }
+
+        if (!ImageHelper::is_protocol_allowed($file)) {
+            throw new InvalidArgumentException('The output file scheme is not supported.');
+        }
+
         // Its a gif so test
         if (!($fh = @\fopen($file, 'rb'))) {
             return false;
@@ -169,7 +179,15 @@ class ImageHelper
      */
     public static function is_svg($file_path)
     {
-        if ('' === $file_path || !\file_exists($file_path)) {
+        if ('' === $file_path) {
+            return false;
+        }
+
+        if (!ImageHelper::is_protocol_allowed($file_path)) {
+            throw new InvalidArgumentException('The output file scheme is not supported.');
+        }
+
+        if (!\file_exists($file_path)) {
             return false;
         }
 
@@ -302,7 +320,7 @@ class ImageHelper
     {
         if (\wp_attachment_is_image($post_id)) {
             $attachment = Timber::get_post($post_id);
-            /** @var \Timber\Attachment $attachment */
+            /** @var Attachment $attachment */
             if ($file_loc = $attachment->file_loc()) {
                 ImageHelper::delete_generated_files($file_loc);
             }
@@ -393,6 +411,23 @@ class ImageHelper
         $file = \parse_url($file);
         $path_parts = PathHelper::pathinfo($file['path']);
         $basename = \md5($filename);
+
+        /**
+         * Filters basename for sideloaded files.
+         * @since 2.1.0
+         * @example
+         * ```php
+         * // Change the basename used for sideloaded images.
+         * add_filter( 'timber/sideload_image/basename', function ($basename, $path_parts) {
+         *     return $path_parts['filename'] . '-' . substr($basename, 0, 6);
+         * }, 10, 2)
+         * ```
+         *
+         * @param string $basename Current basename for the sideloaded file.
+         * @param array $path_parts Array with path info for the sideloaded file.
+         */
+        $basename = \apply_filters('timber/sideload_image/basename', $basename, $path_parts);
+
         $ext = 'jpg';
         if (isset($path_parts['extension'])) {
             $ext = $path_parts['extension'];
@@ -414,6 +449,10 @@ class ImageHelper
      */
     public static function sideload_image($file)
     {
+        if (!ImageHelper::is_protocol_allowed($file)) {
+            throw new InvalidArgumentException('The output file scheme is not supported.');
+        }
+
         /**
          * Adds a filter to change the upload folder temporarily.
          *
@@ -427,6 +466,7 @@ class ImageHelper
         \add_filter('upload_dir', [__CLASS__, 'set_sideload_image_upload_dir']);
 
         $loc = self::get_sideloaded_file_loc($file);
+
         if (\file_exists($loc)) {
             $url = URLHelper::file_system_to_url($loc);
 
@@ -440,8 +480,8 @@ class ImageHelper
         }
         $tmp = \download_url($file);
         \preg_match('/[^\?]+\.(jpe?g|jpe|gif|png)\b/i', $file, $matches);
+
         $file_array = [];
-        $file_array['name'] = PathHelper::basename($matches[0]);
         $file_array['tmp_name'] = $tmp;
         // If error storing temporarily, do not use
         if (\is_wp_error($tmp)) {
@@ -516,26 +556,63 @@ class ImageHelper
      * The image is expected to be either part of a theme, plugin, or an upload.
      *
      * @param  string $url A URL (absolute or relative) pointing to an image.
-     * @return array       An array (see keys in code below).
+     * @return array<string, mixed> An array (see keys in code below).
      */
-    public static function analyze_url($url)
+    public static function analyze_url(string $url): array
+    {
+        /**
+         * Filters whether to short-circuit the ImageHelper::analyze_url()
+         * file path of a URL located in a theme directory.
+         *
+         * Returning a non-null value from the filter will short-circuit
+         * ImageHelper::analyze_url(), returning that value.
+         *
+         * @since 2.0.0
+         *
+         * @param array<string, mixed>|null $info The URL components array to short-circuit with. Default null.
+         * @param string                    $url  The URL pointing to an image.
+         */
+        $result = \apply_filters('timber/image_helper/pre_analyze_url', null, $url);
+        if (null === $result) {
+            $result = self::get_url_components($url);
+        }
+
+        /**
+         * Filters the array of analyzed URL components.
+         *
+         * @since 2.0.0
+         *
+         * @param array<string, mixed> $info The URL components.
+         * @param string               $url  The URL pointing to an image.
+         */
+        return \apply_filters('timber/image_helper/analyze_url', $result, $url);
+    }
+
+    /**
+     * Returns information about a URL.
+     *
+     * @param  string $url A URL (absolute or relative) pointing to an image.
+     * @return array<string, mixed> An array (see keys in code below).
+     */
+    private static function get_url_components(string $url): array
     {
         $result = [
-            'url' => $url,
             // the initial url
-            'absolute' => URLHelper::is_absolute($url),
+            'url' => $url,
             // is the url absolute or relative (to home_url)
-            'base' => 0,
+            'absolute' => URLHelper::is_absolute($url),
             // is the image in uploads dir, or in content dir (theme or plugin)
-            'subdir' => '',
+            'base' => 0,
             // the path between base (uploads or content) and file
-            'filename' => '',
+            'subdir' => '',
             // the filename, without extension
-            'extension' => '',
+            'filename' => '',
             // the file extension
-            'basename' => '',
+            'extension' => '',
             // full file name
+            'basename' => '',
         ];
+
         $upload_dir = \wp_upload_dir();
         $tmp = $url;
         if (\str_starts_with($tmp, ABSPATH) || \str_starts_with($tmp, '/srv/www/')) {
@@ -565,8 +642,9 @@ class ImageHelper
         $parts = PathHelper::pathinfo($tmp);
         $result['subdir'] = ($parts['dirname'] === '/') ? '' : $parts['dirname'];
         $result['filename'] = $parts['filename'];
-        $result['extension'] = \strtolower($parts['extension']);
+        $result['extension'] = (isset($parts['extension']) ? \strtolower($parts['extension']) : '');
         $result['basename'] = $parts['basename'];
+
         return $result;
     }
 
@@ -576,16 +654,52 @@ class ImageHelper
      * @param string  $src A URL (http://example.org/wp-content/themes/twentysixteen/images/home.jpg).
      * @return string Full path to the file in question.
      */
-    public static function theme_url_to_dir($src)
+    public static function theme_url_to_dir(string $src): string
+    {
+        /**
+         * Filters whether to short-circuit the ImageHelper::theme_url_to_dir()
+         * file path of a URL located in a theme directory.
+         *
+         * Returning a non-null value from the filter will short-circuit
+         * ImageHelper::theme_url_to_dir(), returning that value.
+         *
+         * @since 2.0.0
+         *
+         * @param string|null $path Full path to short-circuit with. Default null.
+         * @param string      $src  The URL to be converted.
+         */
+        $path = \apply_filters('timber/image_helper/pre_theme_url_to_dir', null, $src);
+        if (null === $path) {
+            $path = self::get_dir_from_theme_url($src);
+        }
+
+        /**
+         * Filters the raw file path of a URL located in a theme directory.
+         *
+         * @since 2.0.0
+         *
+         * @param string $path The resolved full path to $src.
+         * @param string $src  The URL that was converted.
+         */
+        return \apply_filters('timber/image_helper/theme_url_to_dir', $path, $src);
+    }
+
+    /**
+     * Converts a URL located in a theme directory into the raw file path.
+     *
+     * @param string  $src A URL (http://example.org/wp-content/themes/twentysixteen/images/home.jpg).
+     * @return string Full path to the file in question.
+     */
+    private static function get_dir_from_theme_url(string $src): string
     {
         $site_root = \trailingslashit(\get_theme_root_uri()) . \get_stylesheet();
-        $tmp = \str_replace($site_root, '', $src);
-        //$tmp = trailingslashit(get_theme_root()).get_stylesheet().$tmp;
-        $tmp = \get_stylesheet_directory() . $tmp;
-        if (\realpath($tmp)) {
-            return \realpath($tmp);
+        $path = \str_replace($site_root, '', $src);
+        //$path = \trailingslashit(\get_theme_root()).\get_stylesheet().$path;
+        $path = \get_stylesheet_directory() . $path;
+        if ($_path = \realpath($path)) {
+            return $_path;
         }
-        return $tmp;
+        return $path;
     }
 
     /**
@@ -715,6 +829,10 @@ class ImageHelper
             return '';
         }
 
+        if (!ImageHelper::is_protocol_allowed($src)) {
+            throw new InvalidArgumentException('The output file scheme is not supported.');
+        }
+
         $allow_fs_write = \apply_filters('timber/allow_fs_write', true);
 
         if ($allow_fs_write === false) {
@@ -795,8 +913,8 @@ class ImageHelper
         }
     }
 
-    // -- the below methods are just used for unit testing the URL generation code
-    //
+    //-- the below methods are just used for
+    // unit testing the URL generation code --//
     /**
      * @internal
      */
@@ -857,5 +975,37 @@ class ImageHelper
             $op->filename($au['filename'], $au['extension'])
         );
         return $new_path;
+    }
+
+    /**
+     * Checks if the protocol of the given filename is allowed.
+     *
+     * This fixes a security issue with a PHAR deserialization vulnerability
+     * with file_exists() in PHP < 8.0.0.
+     *
+     * @param  string $filepath File path.
+     * @return bool
+     */
+    public static function is_protocol_allowed($filepath)
+    {
+        $parsed_url = \parse_url($filepath);
+
+        if (false === $parsed_url) {
+            throw new InvalidArgumentException('The filename is not valid.');
+        }
+
+        $protocol = isset($parsed_url['scheme'])
+            ? \mb_strtolower($parsed_url['scheme'])
+            : 'file';
+
+        if (
+            \PHP_OS_FAMILY === 'Windows'
+            && \strlen($protocol) === 1
+            && \preg_match(self::WINDOWS_LOCAL_FILENAME_REGEX, $filepath)
+        ) {
+            $protocol = 'file';
+        }
+
+        return \in_array($protocol, self::ALLOWED_PROTOCOLS, true);
     }
 }
