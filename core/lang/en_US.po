@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 23:46+0200\n"
+"POT-Creation-Date: 2024-11-30 02:03+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -15,443 +15,724 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../..\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-SearchPath-0: core/lang\n"
 "X-Poedit-SearchPath-1: core\n"
 "X-Poedit-SearchPath-2: .\n"
 "X-Poedit-SearchPathExcluded-0: core/libs/timber\n"
 
-#: core/gutenberg.php:14
-msgid "Main"
+#: core/acf.php:28 core/acf.php:29
+msgid "Header"
 msgstr ""
 
-#: core/gutenberg.php:25
+#: core/acf.php:34 core/acf.php:35
+msgid "Footer"
+msgstr ""
+
+#: core/gutenberg.php:14
+msgid "Main blocks"
+msgstr ""
+
+#: core/gutenberg.php:18
+msgid "Logical blocks"
+msgstr ""
+
+#: core/gutenberg.php:30
 msgid "First screen"
 msgstr ""
 
-#: core/gutenberg.php:33
+#: core/gutenberg.php:38
 msgid "Second screen"
 msgstr ""
 
-#: core/includes/back/custom-dashboard-options-widget.php:7
-msgid "System tweaks"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:17
-#: core/includes/front/custom-localization.php:12
-msgid "Maintenance mode"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:22
-#: core/includes/front/custom-localization.php:13
-msgid "Enable maintenance mode for anonymous users"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:27
-msgid "Maintenance mode title"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:32
-msgid "Maintenance mode text"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:42
-#: core/includes/front/custom-localization.php:34
-msgid "Resize at upload"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:47
-msgid "Enable resizing media while upload"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:58
-msgid "Resize at upload formats"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:64
-msgid "Resize upload width"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:70
-msgid "Resize upload height"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:76
-msgid "Resize upload quality"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:87
-msgid "SMTP options"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:92
-msgid "Enable custom SMTP server"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:97
-msgid "SMTP host"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:102
-msgid "SMTP port"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:107
-msgid "SMTP username"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:112
-msgid "SMTP password"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:117
-msgid "SMTP from name"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:122
-msgid "Secure SMTP connection"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:132
-#: core/includes/front/custom-localization.php:40
-msgid "Custom code"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:137
-#: core/includes/front/custom-localization.php:41
-msgid "Header custom code"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:142
-#: core/includes/front/custom-localization.php:42
-msgid "Footer custom code"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:152
-msgid "Other options"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:157
-#: core/includes/front/custom-localization.php:33
-msgid "Google maps API key"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:162
-#: core/includes/front/custom-localization.php:15
-msgid "Disable all updates"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:167
-#: core/includes/front/custom-localization.php:16
-msgid "Disable customizer"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:172
-#: core/includes/front/custom-localization.php:17
-msgid "Disable src set"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:177
-#: core/includes/front/custom-localization.php:18
-msgid "Remove default image sizes"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:182
-#: core/includes/front/custom-localization.php:19
-msgid "Disable core privacy tools"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:187
-#: core/includes/front/custom-localization.php:20
-msgid "Enable CYR3LAT"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:192
-#: core/includes/front/custom-localization.php:21
-msgid "Disable DNS prefetch"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:197
-msgid "Disable Rest API for anonymous users"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:202
-#: core/includes/front/custom-localization.php:23
-msgid "Disable Emojis"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:207
-#: core/includes/front/custom-localization.php:24
-msgid "Disable Embeds"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:212
-#: core/includes/front/custom-localization.php:25
-msgid "Disable dashboard widgets"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:217
-#: core/includes/front/custom-localization.php:26
-msgid "Hide admin top bar"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:222
-#: core/includes/front/custom-localization.php:27
-msgid "Disable admin email verification"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:227
-#: core/includes/front/custom-localization.php:28
-msgid "Disable comments"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:232
-#: core/includes/front/custom-localization.php:29
-msgid "Delete child media"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:237
-#: core/includes/front/custom-localization.php:30
-msgid "Enable HTML cache"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:242
-#: core/includes/front/custom-localization.php:31
-msgid "Enable minify"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:247
-msgid "Hide ACF"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:252
-msgid "Disable Gutenberg editor everywhere"
-msgstr ""
-
-#: core/includes/back/custom-dashboard-options-widget.php:257
-msgid "Disable Gutenberg editor for Blog"
+#: core/gutenberg.php:46 core/includes/back/custom-post-types.php:57
+msgid "Pattern"
 msgstr ""
 
 #: core/includes/back/custom-post-types.php:6
-#: core/includes/back/custom-post-types.php:26
-#: core/includes/back/custom-post-types.php:27
-#: core/includes/back/custom-post-types.php:28
-msgid "Mail log"
+#: core/includes/back/custom-post-types.php:19
+#: core/includes/back/custom-post-types.php:21
+msgid "Redirect rules"
 msgstr ""
 
-#: core/includes/back/custom-post-types.php:29
-#: core/includes/back/custom-post-types.php:30
-msgid "Add"
+#: core/includes/back/custom-post-types.php:20
+msgid "Redirect rule"
 msgstr ""
 
-#: core/includes/back/custom-post-types.php:31
-#: core/includes/back/custom-post-types.php:32
+#: core/includes/back/custom-post-types.php:22
+msgid "Add redirect rule"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:23
+msgid "Add new redirect rule"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:24
+#: core/includes/back/custom-post-types.php:61
+#: core/includes/back/custom-post-types.php:100
+#: core/includes/back/custom-post-types.php:101
 msgid "Edit"
 msgstr ""
 
-#: core/includes/back/custom-post-types.php:33
-msgid "New"
+#: core/includes/back/custom-post-types.php:25
+msgid "Edit redirect rule"
 msgstr ""
 
-#: core/includes/back/custom-post-types.php:34
-#: core/includes/back/custom-post-types.php:35
+#: core/includes/back/custom-post-types.php:26
+msgid "New redirect rule"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:27
+#: core/includes/back/custom-post-types.php:64
+#: core/includes/back/custom-post-types.php:103
+#: core/includes/back/custom-post-types.php:104
 msgid "View"
 msgstr ""
 
-#: core/includes/back/custom-post-types.php:36
-msgid "Search for mail logs"
+#: core/includes/back/custom-post-types.php:28
+msgid "View redirect rule"
 msgstr ""
 
-#: core/includes/back/custom-post-types.php:37
-msgid "No mail logs found"
+#: core/includes/back/custom-post-types.php:29
+msgid "Search for redirect rules"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:30
+msgid "No redirect rules found"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:31
+msgid "No redirect rules found in trash"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:32
+msgid "Parent redirect rule"
 msgstr ""
 
 #: core/includes/back/custom-post-types.php:38
+#: core/includes/back/custom-post-types.php:56
+#: core/includes/back/custom-post-types.php:58
+msgid "Patterns"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:59
+msgid "Add item"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:60
+msgid "Add new item"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:62
+msgid "Edit item"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:63
+msgid "New item"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:65
+msgid "View item"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:66
+msgid "Search for items"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:67
+msgid "No items found"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:68
+msgid "No items found in trash"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:69
+msgid "Parent item"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:75
+#: core/includes/back/custom-post-types.php:95
+#: core/includes/back/custom-post-types.php:96
+#: core/includes/back/custom-post-types.php:97
+msgid "Mail log"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:98
+#: core/includes/back/custom-post-types.php:99
+msgid "Add"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:102
+msgid "New"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:105
+msgid "Search for mail logs"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:106
+msgid "No mail logs found"
+msgstr ""
+
+#: core/includes/back/custom-post-types.php:107
 msgid "No mail logs found in trash"
 msgstr ""
 
-#: core/includes/back/custom-post-types.php:39
+#: core/includes/back/custom-post-types.php:108
 msgid "Parent"
+msgstr ""
+
+#: core/includes/back/custom-taxonomies.php:10
+#: core/includes/back/custom-taxonomies.php:18
+msgid "Pattern categories"
+msgstr ""
+
+#: core/includes/back/custom-taxonomies.php:19
+msgid "Pattern category"
+msgstr ""
+
+#: core/includes/back/custom-taxonomies.php:20
+msgid "Search categories"
+msgstr ""
+
+#: core/includes/back/custom-taxonomies.php:21
+msgid "All categories"
+msgstr ""
+
+#: core/includes/back/custom-taxonomies.php:22
+msgid "Edit category"
+msgstr ""
+
+#: core/includes/back/custom-taxonomies.php:23
+msgid "Update category"
+msgstr ""
+
+#: core/includes/back/custom-taxonomies.php:24
+msgid "Add new category"
+msgstr ""
+
+#: core/includes/back/custom-taxonomies.php:25
+msgid "New category name"
+msgstr ""
+
+#: core/includes/back/custom-taxonomies.php:26
+msgid "Categories"
 msgstr ""
 
 #: core/includes/back/dashboard-footer.php:12
 msgid "Powered by"
 msgstr ""
 
+#: core/includes/back/dashboard-options.php:8
+msgid "Images"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:9
+msgid "Resize and optimize media while upload"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:10
+msgid ""
+"In this section, you can enable resizing and optimization of images while "
+"uploading them to the media library. You can specify the formats that will "
+"be resized, set the width and height of the resized images, and adjust the "
+"quality of the resized images. Additionally, you can enable the conversion "
+"of images to the WEBP format, which is a modern image format that provides "
+"better compression and quality compared to other formats."
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:15
+#: core/includes/back/dashboard-options.php:70
+#: core/includes/back/dashboard-options.php:95
+#: core/includes/back/dashboard-options.php:158
+msgid "Enable"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:16
+msgid "Enable resizing media while upload"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:28
+msgid "Formats"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:29
+msgid "Resize at upload formats"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:40
+msgid "Width"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:41
+msgid "Resize upload width"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:52
+msgid "Height"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:53
+msgid "Resize upload height"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:64
+msgid "Quality"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:65
+msgid "Resize upload quality"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:71
+msgid "Enable WEBP convert"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:82
+#: core/includes/back/dashboard-options.php:83
+msgid "Webp convert quality"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:88
+msgid "SMTP"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:89
+msgid "Configure custom SMTP server"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:90
+msgid ""
+"In this section, you can configure a custom SMTP server to send emails from "
+"your website. You can specify the SMTP host, port, username, password, and "
+"from name. Additionally, you can enable a secure SMTP connection using SSL."
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:96
+msgid "Enable custom SMTP server"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:101
+msgid "SMTP host"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:106
+msgid "SMTP port"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:111
+msgid "SMTP username"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:116
+msgid "SMTP password"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:121
+msgid "SMTP from name"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:126
+msgid "Secure SMTP connection"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:127
+msgid "Use SSL for SMTP connection"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:132
+msgid "Custom code"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:133
+msgid "Custom HTML code for header and footer"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:134
+msgid ""
+"In this section, you can add custom HTML code to the header and footer of "
+"your website. The custom code will be placed inside the header tag and "
+"before the end of the body tag. You can use this feature to add custom "
+"scripts, styles, meta tags, and other elements to your website."
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:139
+msgid "Header custom code"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:140
+msgid "The custom code will be placed inside the header tag"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:145
+msgid "Footer custom code"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:146
+msgid "The special code will be placed before the end of the body tag"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:151
+msgid "Maintenance"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:152
+msgid "Maintenance mode for anonymous users"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:153
+msgid ""
+"In this section, you can enable maintenance mode for anonymous users, "
+"customize the title and text that will be displayed on the maintenance page."
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:159
+msgid "Enable maintenance mode for anonymous users"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:164
+msgid "Title"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:165
+msgid "Maintenance mode title for anonymous users"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:170
+msgid "Text"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:171
+msgid "Maintenance mode text for anonymous users"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:176
+msgid "Other options"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:177
+msgid "All other various options"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:178
+msgid ""
+"In this section, you can enable or disable various options that affect the "
+"functionality of your website. You can disable updates, customizer, src set, "
+"default image sizes, core privacy tools, CYR3LAT transliteration, DNS "
+"prefetch, Rest API, Emojis, Embeds, dashboard widgets, admin top bar, admin "
+"email verification, comments, child media deletion, HTML cache, minify, ACF, "
+"Gutenberg editor, and specify the Google maps API key."
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:183
+msgid "Disable all updates"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:184
+msgid "Disable plugins and WordPress core updates"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:189
+msgid "Disable customizer"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:190
+msgid "Disable WordPress customizer"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:195
+msgid "Disable src set"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:196
+msgid "Disable src set for images"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:201
+msgid "Remove default image sizes"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:202
+msgid "Remove default image sizes in WordPress"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:207
+msgid "Disable core privacy tools"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:208
+msgid "Disable default WordPress core privacy tools"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:213
+msgid "Enable CYR3LAT"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:214
+msgid "Enable CYR3LAT transliteration"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:219
+msgid "Disable DNS prefetch"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:220
+msgid "Disable DNS prefetch for external resources"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:225
+msgid "Disable Rest API"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:226
+msgid "Disable Rest API for anonymous users"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:231
+msgid "Disable Emojis"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:232
+msgid "Disable default WordPress Emojis"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:237
+msgid "Disable Embeds"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:238
+msgid "Disable default WordPress Embeds"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:243
+msgid "Disable dashboard widgets"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:244
+msgid "Disable default WordPress dashboard widgets"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:249
+msgid "Hide admin top bar"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:250
+msgid "Hide admin top bar for all users on front-end"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:255
+msgid "Disable admin email verification"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:256
+msgid "Disable default WordPress admin email verification"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:261
+msgid "Disable comments"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:262
+msgid "Disable comments on all posts and pages"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:267
+msgid "Delete child media"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:268
+msgid "Delete child media when parent post is deleted"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:273
+msgid "Enable HTML cache"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:274
+msgid "Enable HTML page cache for anonymous users"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:279
+msgid "Enable minify"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:280
+msgid "Enable HTML minifier on frontend"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:285
+msgid "Hide ACF"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:286
+msgid "Hide Advanced Custom Fields from Dashboard"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:291
+msgid "Disable Gutenberg editor everywhere"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:296
+msgid "Disable Gutenberg editor for Blog"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:301
+msgid "Google maps API key"
+msgstr ""
+
+#: core/includes/back/dashboard-options.php:302
+msgid "Google maps API key to integrate with Advanced Custom Fields"
+msgstr ""
+
 #: core/includes/back/dashboard-update-assets-version.php:16
 msgid "Update theme version"
+msgstr ""
+
+#: core/includes/back/system-acf-nav-menu-field.php:28
+msgid "Nav Menu"
+msgstr ""
+
+#: core/includes/back/system-acf-nav-menu-field.php:47
+msgid "Return Value"
+msgstr ""
+
+#: core/includes/back/system-acf-nav-menu-field.php:48
+msgid "Specify the returned value on front end"
+msgstr ""
+
+#: core/includes/back/system-acf-nav-menu-field.php:53
+msgid "Nav Menu Object"
+msgstr ""
+
+#: core/includes/back/system-acf-nav-menu-field.php:54
+msgid "Nav Menu HTML"
+msgstr ""
+
+#: core/includes/back/system-acf-nav-menu-field.php:55
+msgid "Nav Menu ID"
+msgstr ""
+
+#: core/includes/back/system-acf-nav-menu-field.php:56
+msgid "All"
+msgstr ""
+
+#: core/includes/back/system-acf-nav-menu-field.php:62
+msgid "Menu Container"
+msgstr ""
+
+#: core/includes/back/system-acf-nav-menu-field.php:63
+msgid "What to wrap the Menu's ul with (when returning HTML only)"
+msgstr ""
+
+#: core/includes/back/system-acf-nav-menu-field.php:71
+msgid "Allow Null?"
+msgstr ""
+
+#: core/includes/back/system-acf-nav-menu-field.php:76
+msgid "Yes"
+msgstr ""
+
+#: core/includes/back/system-acf-nav-menu-field.php:77
+msgid "No"
+msgstr ""
+
+#: core/includes/back/system-acf-nav-menu-field.php:90
+#: core/includes/back/system-thumbnails.php:27
+msgid "None"
+msgstr ""
+
+#: core/includes/back/system-acf-nav-menu-field.php:137
+msgid "Choose one"
 msgstr ""
 
 #: core/includes/back/system-disable-customizer.php:109
 msgid "The Customizer is currently disabled."
 msgstr ""
 
+#: core/includes/back/system-redirect-rules.php:8
+msgid "Redirect Rules Options"
+msgstr ""
+
+#: core/includes/back/system-redirect-rules.php:27
+msgid "Old URL:"
+msgstr ""
+
+#: core/includes/back/system-redirect-rules.php:31
+msgid "New URL:"
+msgstr ""
+
+#: core/includes/back/system-redirect-rules.php:35
+msgid "Code:"
+msgstr ""
+
 #: core/includes/back/system-thumbnails.php:13
 msgid "Thumbnail"
 msgstr ""
 
-#: core/includes/back/system-thumbnails.php:27
-msgid "None"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:8
-msgid "Your Email"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:9
-msgid "Your password"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:10
-msgid "Title"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:11
-msgid "Text"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:14
-msgid "Website options"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:22
-msgid "Disable Rest API"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:32
-msgid "Inline scripts and styles"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:35
-msgid "Enable"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:36
-msgid "Width"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:37
-msgid "Height"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:38
-msgid "Quality"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:39
-msgid "Formats"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:43
-msgid "SMTP"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:44
-msgid "Host"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:45
-msgid "Port"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:46
-msgid "Username"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:47 views/password.twig:10
-msgid "Password"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:48
-msgid "From name"
-msgstr ""
-
-#: core/includes/front/custom-localization.php:49
-msgid "Secure"
-msgstr ""
-
-#: core/init.php:56
+#: core/init.php:59
 msgid "Website under Maintenance"
 msgstr ""
 
-#: core/init.php:57
+#: core/init.php:60
 msgid ""
 "We are performing scheduled maintenance. We will be back online shortly."
 msgstr ""
 
-#: core/init.php:201
+#: core/init.php:169
 msgid "Please, install Advanced Custom Fields PRO version"
 msgstr ""
 
-#: core/libs/acf-nav-menu-field/nav-menu-v4.php:25
-#: core/libs/acf-nav-menu-field/nav-menu-v5.php:25
-msgid "Nav Menu"
+#: core/vendor/timber/timber/src/Archives.php:188
+#, php-format
+msgid "%1$s %2$d"
 msgstr ""
 
-#: core/libs/acf-nav-menu-field/nav-menu-v4.php:26
-msgid "Relational"
+#: core/vendor/timber/timber/src/DateTimeHelper.php:84
+#, php-format
+msgid "%s ago"
 msgstr ""
 
-#: core/libs/acf-nav-menu-field/nav-menu-v4.php:49
-#: core/libs/acf-nav-menu-field/nav-menu-v5.php:44
-msgid "Return Value"
+#: core/vendor/timber/timber/src/DateTimeHelper.php:89
+#, php-format
+msgid "%s from now"
 msgstr ""
 
-#: core/libs/acf-nav-menu-field/nav-menu-v4.php:59
-#: core/libs/acf-nav-menu-field/nav-menu-v5.php:50
-msgid "Nav Menu Object"
+#: core/vendor/timber/timber/src/PagesMenu.php:84
+msgid "Pages"
 msgstr ""
 
-#: core/libs/acf-nav-menu-field/nav-menu-v4.php:60
-#: core/libs/acf-nav-menu-field/nav-menu-v5.php:51
-msgid "Nav Menu HTML"
+#: core/vendor/timber/timber/src/Pagination.php:144
+msgid "&laquo; Previous"
 msgstr ""
 
-#: core/libs/acf-nav-menu-field/nav-menu-v4.php:61
-#: core/libs/acf-nav-menu-field/nav-menu-v5.php:52
-msgid "Nav Menu ID"
+#: core/vendor/timber/timber/src/Pagination.php:145
+msgid "Next &raquo;"
 msgstr ""
 
-#: core/libs/acf-nav-menu-field/nav-menu-v4.php:69
-#: core/libs/acf-nav-menu-field/nav-menu-v5.php:59
-msgid "Menu Container"
+#: core/vendor/timber/timber/src/Pagination.php:221
+#: core/vendor/timber/timber/src/TextHelper.php:47
+msgid "&hellip;"
 msgstr ""
 
-#: core/libs/acf-nav-menu-field/nav-menu-v4.php:70
-#: core/libs/acf-nav-menu-field/nav-menu-v5.php:60
-msgid "What to wrap the Menu's ul with (when returning HTML only)"
+#: views/blocks/logical/pattern.twig:8
+msgid "No pattern selected"
 msgstr ""
 
-#: core/libs/acf-nav-menu-field/nav-menu-v4.php:85
-#: core/libs/acf-nav-menu-field/nav-menu-v5.php:68
-msgid "Allow Null?"
+#: views/dashboard/fields/link.twig:3
+msgid "Edit Link"
 msgstr ""
 
-#: core/libs/acf-nav-menu-field/nav-menu-v4.php:95
-#: core/libs/acf-nav-menu-field/nav-menu-v5.php:73
-msgid "Yes"
+#: views/dashboard/fields/link.twig:10
+msgid "(new tab)"
 msgstr ""
 
-#: core/libs/acf-nav-menu-field/nav-menu-v4.php:96
-#: core/libs/acf-nav-menu-field/nav-menu-v5.php:74
-msgid "No"
+#: views/dashboard/fields/link.twig:11
+msgid "Remove Link"
 msgstr ""
 
-#: core/libs/acf-nav-menu-field/nav-menu-v5.php:45
-msgid "Specify the returned value on front end"
-msgstr ""
-
-#: core/libs/acf-nav-menu-field/nav-menu-v5.php:53
-msgid "All"
-msgstr ""
-
-#: core/libs/acf-nav-menu-field/nav-menu-v5.php:134
-msgid "Choose one"
-msgstr ""
-
-#: core/libs/libraries.php:30 core/libs/libraries.php:38
-#: core/libs/libraries.php:39
-msgid "Framework"
+#: views/password.twig:10
+msgid "Password"
 msgstr ""
 
 #: views/password.twig:11

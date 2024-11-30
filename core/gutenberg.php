@@ -11,7 +11,11 @@ if(!get_option('disable_gutenberg_everywhere')){
             array(
                 array(
                     'slug' => 'main',
-                    'title' => __( 'Main', TEXTDOMAIN ),
+                    'title' => __( 'Main blocks', TEXTDOMAIN ),
+                ),
+                array(
+                    'slug' => 'logical',
+                    'title' => __( 'Logical blocks', TEXTDOMAIN ),
                 ),
             )
         );
@@ -33,6 +37,14 @@ if(!get_option('disable_gutenberg_everywhere')){
                 "name" => "second-screen",
                 "label" => __( "Second screen", TEXTDOMAIN ),
                 "category" => "main",
+                'defaults' => array(
+                    'field_5es3eaf348ca151aff27' => array('desktop_tablet','mobile')
+                )
+            ),
+            array(
+                "name" => "pattern",
+                "label" => __( "Pattern", TEXTDOMAIN ),
+                "category" => "logical",
                 'defaults' => array(
                     'field_5es3eaf348ca151aff27' => array('desktop_tablet','mobile')
                 )
@@ -107,7 +119,7 @@ if(!get_option('disable_gutenberg_everywhere')){
         $context['is_admin'] = is_admin();
         $context['is_example'] = get_field('is_example');
         if($context['is_example']){
-            $context['block_example'] = TEMPLATE_DIRECTORY_URL . 'assets/block-preview/' . $block['category'] . '/' . $no_category_block_name . '.png?ver=' . ASSETS_VERSION;
+            $context['block_example'] = TEMPLATE_DIRECTORY_URL . 'assets/block-preview/' . $block['category'] . '/' . $no_category_block_name . '.webp?ver=' . ASSETS_VERSION;
         }
 
         // Render the block
@@ -150,5 +162,70 @@ if(!get_option('disable_gutenberg_everywhere')){
         }
     }
     add_action('init', 'add_locks_styles_css_action');
+
+    /** adding custom block patterns categories */
+    function custom_block_pattern_categories_array() {
+        $categories = get_terms('pattern_categories', array('hide_empty' => false));
+        $pattern_categories = array();
+        foreach ($categories as $category) {
+            $pattern_categories[] = array(
+                $category->slug,
+                array('label' => $category->name)
+            );
+        }
+        return $pattern_categories;
+    }
+
+    /** adding custom block patterns */
+    function custom_block_patterns_array() {
+        $args = array(
+            'post_type' => 'patterns',
+            'posts_per_page' => -1,
+        );
+        $posts = get_posts($args);
+        $custom_block_patterns = array();
+        foreach ($posts as $post) {
+            $terms = wp_get_post_terms($post->ID, 'pattern_categories');
+            $categories_slugs = array_map(function($term) { return $term->slug; }, $terms);
+            $custom_block_patterns[] = array(
+                'pattern-' . $post->ID,
+                array(
+                    'title'       => $post->post_title,
+                    'description' => $post->post_excerpt,
+                    'categories'  => $categories_slugs,
+                    'content'     => $post->post_content
+                )
+            );
+        }
+        return $custom_block_patterns;
+    }
+
+    /** registering custom block patterns categories */
+    function custom_block_pattern_category() {
+        $pattern_categories = custom_block_pattern_categories_array();
+        if(!empty($pattern_categories)){
+            foreach ($pattern_categories as $category){
+                register_block_pattern_category(
+                    $category[0],
+                    $category[1]
+                );
+            }
+        }
+    }
+    add_action( 'init', 'custom_block_pattern_category' );
+
+    /** registering custom block patterns */
+    function register_custom_patterns() {
+        $custom_block_patterns_array = custom_block_patterns_array();
+        if(!empty($custom_block_patterns_array)){
+            foreach ($custom_block_patterns_array as $pattern){
+                register_block_pattern(
+                    $pattern[0],
+                    $pattern[1]
+                );
+            }
+        }
+    }
+    add_action( 'init', 'register_custom_patterns' );
 
 }

@@ -1,0 +1,14 @@
+{% if options is iterable %}
+<table class="form-table" role="presentation">
+    <tbody>
+    {% for key,val in options %}
+    <tr>
+        <th scope="row"><label for="{{ val.name }}">{{ val.label }} {% if val.required %} *{% endif %}</label></th>
+        <td>
+            {% include 'dashboard/fields/' ~ val.type ~ '.twig' with {'name': val.name, 'description': val.description, 'value': get_option(val.name), 'required': val.required ?? false} %}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endif %}

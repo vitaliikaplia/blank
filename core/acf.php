@@ -22,16 +22,24 @@ if (class_exists('ACF')) {
         // return
         return $paths;
     }
-    // Options page for ACF
-    $sub_page = array(
-        'title' => __("Framework", TEXTDOMAIN),
-        'slug' => 'options',
-        'capability' => 'edit_posts',
-        'position'   => 30,
-        'icon_url'   => TEMPLATE_DIRECTORY_URL . 'assets/svg/favicon.svg'
-    );
-    acf_add_options_page($sub_page);
-    // Main label for ACF options pages
-    acf_set_options_page_menu(__("Framework", TEXTDOMAIN));
-    acf_set_options_page_title( __("Framework", TEXTDOMAIN) );
+
+    // Options pages for ACF
+    acf_add_options_sub_page(array(
+        'page_title'  => __('Header', TEXTDOMAIN),
+        'menu_title'  => __('Header', TEXTDOMAIN),
+        'slug' => 'header',
+        'parent_slug' => 'themes.php',
+    ));
+    acf_add_options_sub_page(array(
+        'page_title'  => __('Footer', TEXTDOMAIN),
+        'menu_title'  => __('Footer', TEXTDOMAIN),
+        'slug' => 'footer',
+        'parent_slug' => 'themes.php',
+    ));
+    acf_add_options_sub_page(array(
+        'page_title'  => __('Other', TEXTDOMAIN),
+        'menu_title'  => __('Other', TEXTDOMAIN),
+        'slug' => 'other',
+        'parent_slug' => 'themes.php',
+    ));
 }

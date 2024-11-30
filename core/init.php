@@ -73,7 +73,8 @@ function activation_function( $oldname, $oldtheme=false ) {
     add_option('disable_dns_prefetch', true);
     add_option('disable_emojis', true);
     add_option('disable_embeds', true);
-    add_option('hide_dashboard_widgets', true);
+    add_option('enable_webp_convert', true);
+    add_option('webp_convert_quality', 90);
     add_option('hide_admin_top_bar', true);
     add_option('disable_admin_email_verification', true);
     add_option('disable_comments', true);
@@ -100,7 +101,8 @@ function deactivation_function( $newname, $newtheme ) {
     delete_option('disable_dns_prefetch');
     delete_option('disable_emojis');
     delete_option('disable_embeds');
-    delete_option('hide_dashboard_widgets');
+    delete_option('enable_webp_convert');
+    delete_option('webp_convert_quality');
     delete_option('hide_admin_top_bar');
     delete_option('disable_admin_email_verification');
     delete_option('disable_comments');
@@ -116,8 +118,8 @@ add_action('switch_theme', 'deactivation_function', 10, 2);
 /** load wordpress includes script */
 require_once ABSPATH . 'wp-admin' . DS . 'includes' . DS . 'file.php';
 
-/** pr */
-require_once CORE_PATH . DS . 'pr.php';
+/** debugging */
+require_once CORE_PATH . DS . 'debugging.php';
 
 /** cache */
 $includedFiles = list_files( CORE_PATH . DS . 'cache' );
@@ -148,10 +150,10 @@ if(is_array($includedAjax) && $includedAjax){
 
 /** maintenance mode */
 if(get_option('enable_maintenance_mode')){
-	global $pagenow;
-	if(!is_admin() && !is_user_logged_in() && $pagenow != "wp-login.php"){
-		wp_die('<h1>'.get_option( 'maintenance_mode_title' ).'</h1><p>'.get_option( 'maintenance_mode_text' ).'</p>');
-	}
+    global $pagenow;
+    if(!is_admin() && !is_user_logged_in() && $pagenow != "wp-login.php"){
+        wp_die('<h1>'.get_option( 'maintenance_mode_title' ).'</h1><p>'.get_option( 'maintenance_mode_text' ).'</p>');
+    }
 }
 
 /** timber html cache */

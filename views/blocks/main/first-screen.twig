@@ -6,6 +6,10 @@
     <div class="typo">{{ fields.text }}</div>
     {% endif %}
 
+    {% if fields.inner_image.url %}
+    {{ fields.inner_image | picture }}
+    {% endif %}
+
 {% endblock %}
 
 {% block wrapper_tag_params %}

@@ -4,232 +4,6 @@
 @import "mixins";
 @import "plugins/select2.min";
 
-@include keyframe(loader){
-	from{
-		@include transform(rotate(0));
-	}
-	to{
-		@include transform(rotate(360deg));
-	}
-}
-
-/* dashboard widget configuration */
-.widget-options-inner{
-	padding: 0;
-	position: relative;
-	display: flex;
-	align-items: stretch;
-	justify-content: center;
-	margin-left: -12px;
-	margin-right: -12px;
-	width: calc(100% + 24px);
-	margin-top: -11px;
-	margin-bottom: -12px;
-
-	&.wait{
-		&:before{
-			content: '';
-			display: block;
-			position: absolute;
-			z-index: 8;
-			top: -29px;
-			right: 92px;
-			width: 16px;
-			height: 16px;
-			border: 2px solid transparent;
-			border-top: 2px solid #797C82;
-			border-radius: 50%;
-			@include animation(loader 0.63s infinite linear);
-		}
-	}
-
-	.tweakTabs{
-		position: relative;
-		z-index: 10;
-		@include transform(translateZ(10px));
-		width: 280px;
-		background: #F9F9F9;
-		padding: 0;
-		margin: 0;
-
-		li{
-			position: relative;
-			border-bottom: solid 1px #DFDFDF;
-			margin-bottom: 0;
-			background: #F9F9F9;
-
-			a{
-				display: block;
-				padding: 9px 12px;
-			}
-
-			&.active{
-				background-color: #fff;
-
-				a{
-					background-color: #fff;
-					outline: none;
-					box-shadow: none;
-				}
-
-				&:after{
-					content: '';
-					display: block;
-					width: 1px;
-					height: 100%;
-					background-color: #fff;
-					position: absolute;
-					z-index: 12;
-					@include transform(translateZ(12px));
-					top: 0;
-					right: -1px;
-					pointer-events: none;
-				}
-			}
-		}
-	}
-	.tweakGroups{
-		position: relative;
-		z-index: 8;
-		@include transform(translateZ(8px));
-		width: calc(100% - 280px);
-		border-left: solid 1px #DFDFDF;
-		padding: 20px;
-
-		.group{
-			display: none;
-			border: solid 1px #DFDFDF;
-
-			&.active{
-				display: block;
-			}
-		}
-	}
-
-	label{
-		display: block;
-		position: relative;
-		overflow: hidden;
-		color: #23282D;
-		font-size: 13px;
-		font-weight: 500;
-		border-bottom: solid 1px #DFDFDF;
-		padding: 12px;
-
-		.select2.select2-container{
-			width: 100% !important;
-		}
-
-		&:last-child{
-			border-bottom: none;
-		}
-
-		& > .widget-options-checkbox{
-			position: absolute;
-			left: -99999px;
-
-			&:checked + span:before{
-				background-color: #46B450;
-			}
-
-			&:checked + span:after{
-				left: 21px;
-			}
-		}
-
-		& > .indicator{
-			display: inline-block;
-			vertical-align: -8px;
-			width: 42px;
-			height: 24px;
-			background: #ffffff;
-			border: solid 1px #DDDDDD;
-			box-sizing: border-box;
-			border-radius: 12px;
-			cursor: pointer;
-			margin-right: 12px;
-			position: relative;
-
-			&:before{
-				content: '';
-				display: block;
-				position: absolute;
-				z-index: 1;
-				top: 1px;
-				right: 1px;
-				bottom: 1px;
-				left: 1px;
-				border-radius: 12px;
-				box-sizing: border-box;
-				background-color: #E14D43;
-				transition: all .35s;
-			}
-
-			&:after{
-				content: '';
-				display: block;
-				position: absolute;
-				z-index: 4;
-				width: 16px;
-				height: 16px;
-				background-color: white;
-				border-radius: 100%;
-				left: 3px;
-				top: 3px;
-				transition: all .35s;
-			}
-		}
-
-		& > .label{
-			display: block;
-			margin-bottom: 8px;
-		}
-
-		& > .widget-options-number{
-			display: block;
-			width: 100%;
-			margin-bottom: 0;
-			border: solid 1px #DDDDDD;
-
-			&::-webkit-outer-spin-button,
-			&::-webkit-inner-spin-button {
-				-webkit-appearance: none;
-			}
-		}
-
-		& > .widget-options-text{
-			display: block;
-			width: 100%;
-			margin-bottom: 0;
-			border: solid 1px #DDDDDD;
-
-			&::-webkit-outer-spin-button,
-			&::-webkit-inner-spin-button {
-				-webkit-appearance: none;
-			}
-		}
-
-		& > .widget-options-textarea{
-			display: block;
-			width: 100%;
-			margin-bottom: 0;
-		}
-
-		& > .widget-options-code{
-			display: block;
-			width: 100%;
-			margin-bottom: 0;
-		}
-
-		& > .widget-options-select-multiple{
-			display: block;
-			width: 100%;
-			margin-bottom: 0;
-			padding: 0;
-		}
-	}
-}
-
 /* disable-welcome-and-tips */
 .wp-admin .components-popover.nux-dot-tip {
 	display: none !important;
@@ -269,12 +43,16 @@
 }
 
 /* change width of gutenberg sidebar */
-.edit-post-layout.is-sidebar-opened .edit-post-sidebar,
-.edit-post-layout.is-sidebar-opened .edit-post-plugin-sidebar__sidebar-layout{
-	width: 460px !important;
-}
-.edit-post-layout.is-sidebar-opened .edit-post-layout__content{
-	margin-right: 460px !important;
+.is-gutenberg-sidebar-opened .interface-navigable-region.interface-interface-skeleton__sidebar{
+	width: 500px !important;
+
+	.interface-complementary-area__fill{
+		width: 100% !important;
+
+		.interface-complementary-area.editor-sidebar{
+			width: 100% !important;
+		}
+	}
 }
 
 /* fix tiny mce editor fullscreen mode */
@@ -337,9 +115,6 @@ body.mce-fullscreen{
 		padding-right: 0 !important;
 	}
 }
-.index-php .postbox-container{
-	width: 100% !important;
-}
 #custom_acf_options_widget{
 	#message{
 		display: none;
@@ -371,14 +146,73 @@ body.mce-fullscreen{
 	display: none;
 }
 
-/* fix dashboard framework svg icon */
-.toplevel_page_options{
-	.wp-menu-image{
-		img{
-			width: 20px !important;
-			height: 20px !important;
-			opacity: 1 !important;
-			transform: translateY(-2px) !important;
+/* new gutenberg fixes */
+.editor-header .editor-header__center{
+	display: none !important;
+}
+.editor-list-view-sidebar{
+	.block-editor-tabbed-sidebar__tablist-and-close-button{
+		display: none !important;
+	}
+}
+.block-editor-inserter__main-area{
+	.block-editor-tabbed-sidebar__tablist-and-close-button{
+		.block-editor-tabbed-sidebar__tab:last-child{
+			display: none !important;
 		}
 	}
+}
+
+/* custom acf options pages */
+#acf-group_634e9e74a9c0d,
+#acf-group_674a44baa578f{
+	padding: 0;
+
+	& > .inside{
+		padding: 0;
+
+		& > .acf-field{
+			padding: 0;
+			border: none !important;
+		}
+	}
+}
+
+/* custom options pages */
+.linkPreview{
+	display: none;
+
+	&.show{
+		display: block;
+	}
+
+	& > *{
+		display: none;
+
+		&.show{
+			display: inline;
+		}
+	}
+
+	.title{
+		font-weight: 500;
+	}
+
+	.url{
+		color: #2782ad;
+	}
+
+	.target{
+		font-style: italic;
+	}
+}
+.custom-button-link-button{
+	&.hide{
+		display: none;
+	}
+}
+
+/* fix code field on custom options pages */
+.CodeMirror{
+	border: solid 1px #DDDDDD;
 }

@@ -1,11 +1,11 @@
 {
     "name": "vitaliikaplia/blank",
-    "description": "blank wp theme",
+    "description": "blank WordPress template",
     "type": "theme",
     "license": "none",
     "autoload": {
         "psr-4": {
-            "Vitaliikaplia\\Blank\\": "src/"
+            "Vitaliikaplia\\blank\\": "src/"
         }
     },
     "authors": [
@@ -20,7 +20,7 @@
     "config": {
         "vendor-dir": "core/vendor",
         "platform": {
-            "php": "7.4"
+            "php": "8.3"
         },
         "allow-plugins": {
             "composer/installers": true

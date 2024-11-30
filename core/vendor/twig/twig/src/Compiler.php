@@ -22,7 +22,6 @@ class Compiler
     private $lastLine;
     private $source;
     private $indentation;
-    private $env;
     private $debugInfo = [];
     private $sourceOffset;
     private $sourceLine;
@@ -30,9 +29,9 @@ class Compiler
     private $didUseEcho = false;
     private $didUseEchoStack = [];
 
-    public function __construct(Environment $env)
-    {
-        $this->env = $env;
+    public function __construct(
+        private Environment $env,
+    ) {
     }
 
     public function getEnvironment(): Environment
@@ -75,7 +74,7 @@ class Compiler
             $node->compile($this);
 
             if ($this->didUseEcho) {
-                trigger_deprecation('twig/twig', '3.9', 'Using "%s" is deprecated, use "yield" instead in "%s", then flag the class with #[YieldReady].', $this->didUseEcho, \get_class($node));
+                trigger_deprecation('twig/twig', '3.9', 'Using "%s" is deprecated, use "yield" instead in "%s", then flag the class with #[\Twig\Attribute\YieldReady].', $this->didUseEcho, \get_class($node));
             }
 
             return $this;
@@ -100,7 +99,7 @@ class Compiler
             $node->compile($this);
 
             if ($this->didUseEcho) {
-                trigger_deprecation('twig/twig', '3.9', 'Using "%s" is deprecated, use "yield" instead in "%s", then flag the class with #[YieldReady].', $this->didUseEcho, \get_class($node));
+                trigger_deprecation('twig/twig', '3.9', 'Using "%s" is deprecated, use "yield" instead in "%s", then flag the class with #[\Twig\Attribute\YieldReady].', $this->didUseEcho, \get_class($node));
             }
 
             return $this;
@@ -244,7 +243,7 @@ class Compiler
 
     public function getVarName(): string
     {
-        return \sprintf('__internal_compile_%d', $this->varNameSalt++);
+        return \sprintf('_v%d', $this->varNameSalt++);
     }
 
     private function checkForEcho(string $string): void

@@ -153,3 +153,13 @@
     }
   }
 }
+
+/* block preview styles */
+.block-example{
+  background-color: #fff;
+  aspect-ratio: 1/.7;
+  font-size: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -2,199 +2,222 @@
 
 if(!defined('ABSPATH')){exit;}
 
-if (class_exists('ACF')) {
+/**
+ * Nav Menu Field v5
+ *
+ * @package ACF Nav Menu Field
+ */
 
-    class acf_field_nav_menu_v5 extends acf_field
-    {
-        // vars
-        var $settings, // will hold info such as dir / path
-            $defaults; // will hold default field options
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
-        /*
-        *  __construct
-        *
-        *  Set name / label needed for actions / filters
-        *
-        *  @since	3.6
-        *  @date	23/01/13
-        */
+/**
+ * ACF_Field_Nav_Menu_V5 Class
+ *
+ * This class contains all the custom workings for the Nav Menu Field for ACF v5
+ */
+class ACF_Field_Nav_Menu_V5 extends acf_field {
 
-        function __construct()
-        {
-            // vars
-            $this->name = 'nav_menu';
-            $this->label = __('Nav Menu', 'acf');
-            $this->category = __("Relational",'acf'); // Basic, Content, Choice, etc
-            $this->defaults = array(
-                'save_format' => 'id',
-                'allow_null' => -1,
-                'container' => 'div'
-            );
+    /**
+     * Sets up some default values and delegats work to the parent constructor.
+     */
+    public function __construct() {
+        $this->name     = 'nav_menu';
+        $this->label    = __( 'Nav Menu', TEXTDOMAIN );
+        $this->category = 'relational';
+        $this->defaults = array(
+            'save_format' => 'id',
+            'allow_null'  => 0,
+            'container'   => 'div',
+        );
 
-            // do not delete!
-            parent::__construct();
+        parent::__construct();
+    }
 
-            // settings
-            $this->settings = array(
-                'path' => apply_filters('acf/helpers/get_path', __FILE__),
-                'dir' => apply_filters('acf/helpers/get_dir', __FILE__),
-                'version' => '1.1.2'
-            );
+    /**
+     * Renders the Nav Menu Field options seen when editing a Nav Menu Field.
+     *
+     * @param array $field The array representation of the current Nav Menu Field.
+     */
+    public function render_field_settings( $field ) {
+        // Register the Return Value format setting
+        acf_render_field_setting( $field, array(
+            'label'        => __( 'Return Value', TEXTDOMAIN ),
+            'instructions' => __( 'Specify the returned value on front end', TEXTDOMAIN ),
+            'type'         => 'radio',
+            'name'         => 'save_format',
+            'layout'       => 'horizontal',
+            'choices'      => array(
+                'object' => __( 'Nav Menu Object', TEXTDOMAIN ),
+                'menu'   => __( 'Nav Menu HTML', TEXTDOMAIN ),
+                'id'     => __( 'Nav Menu ID', TEXTDOMAIN ),
+                'all'     => __( 'All', TEXTDOMAIN ),
+            ),
+        ) );
+
+        // Register the Menu Container setting
+        acf_render_field_setting( $field, array(
+            'label'        => __( 'Menu Container', TEXTDOMAIN ),
+            'instructions' => __( "What to wrap the Menu's ul with (when returning HTML only)", TEXTDOMAIN ),
+            'type'         => 'select',
+            'name'         => 'container',
+            'choices'      => $this->get_allowed_nav_container_tags(),
+        ) );
+
+        // Register the Allow Null setting
+        acf_render_field_setting( $field, array(
+            'label'        => __( 'Allow Null?', TEXTDOMAIN ),
+            'type'         => 'radio',
+            'name'         => 'allow_null',
+            'layout'       => 'horizontal',
+            'choices'      => array(
+                1 => __( 'Yes', TEXTDOMAIN ),
+                0 => __( 'No', TEXTDOMAIN ),
+            ),
+        ) );
+    }
+
+    /**
+     * Get the allowed wrapper tags for use with wp_nav_menu().
+     *
+     * @return array An array of allowed wrapper tags.
+     */
+    private function get_allowed_nav_container_tags() {
+        $tags           = apply_filters( 'wp_nav_menu_container_allowedtags', array( 'div', 'nav' ) );
+        $formatted_tags = array(
+            '0' => __( 'None', TEXTDOMAIN ),
+        );
+
+        foreach ( $tags as $tag ) {
+            $formatted_tags[$tag] = ucfirst( $tag );
         }
 
-        /*
-        *  create_options()
-        *
-        *  Create extra options for your field. This is rendered when editing a field.
-        *  The value of $field['name'] can be used (like bellow) to save extra data to the $field
-        *
-        *  @type	action
-        *  @since	3.6
-        *  @date	23/01/13
-        *
-        *  @param	$field	- an array holding all the field's data
-        */
+        return $formatted_tags;
+    }
 
-        function render_field_settings( $field )
-        {
-            // Create Field Options HTML
-            acf_render_field_setting( $field, array(
-                'label'			=> __('Return Value','acf'),
-                'type'		=>	'radio',
-                'name'		=> 'save_format',
-                'layout'	=>	'horizontal',
-                'choices' 	=>	array(
-                    'object'	=>	__("Nav Menu Object",'acf'),
-                    'menu'		=>	__("Nav Menu HTML",'acf'),
-                    'id'		=>	__("Nav Menu ID",'acf')
-                )
-            ));
+    /**
+     * Renders the Nav Menu Field.
+     *
+     * @param array $field The array representation of the current Nav Menu Field.
+     */
+    public function render_field( $field ) {
+        $allow_null = $field['allow_null'];
+        $nav_menus  = $this->get_nav_menus( $allow_null );
 
-            $choices = $this->get_allowed_nav_container_tags();
-            $usingMenu = $field['save_format'] === 'menu' ? '*' : '.';
-            acf_render_field_setting( $field, array(
-                'label'			=> __('Menu Container','acf'),
-                'instructions'	=> __('What to wrap the Menu\'s ul with.<br />Only used when returning HTML' . $usingMenu,'acf'),
-                'type'		=>	'select',
-                'name'		=> 'container',
-                'choices' 	=>	$choices
-            ));
+        if ( empty( $nav_menus ) ) {
+            return;
+        }
+        ?>
+        <select id="<?php esc_attr( $field['id'] ); ?>" class="<?php echo esc_attr( $field['class'] ); ?>" name="<?php echo esc_attr( $field['name'] ); ?>">
+            <?php foreach( $nav_menus as $nav_menu_id => $nav_menu_name ) : ?>
+                <option value="<?php echo esc_attr( $nav_menu_id ); ?>" <?php selected( $field['value'], $nav_menu_id ); ?>>
+                    <?php echo esc_html( $nav_menu_name ); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <?php
+    }
 
-            acf_render_field_setting( $field, array(
-                'label'			=> __('Allow Null?','acf'),
-                'type'	=>	'radio',
-                'name'		=> 'allow_null',
-                'choices'	=>	array(
-                    1	=>	__("Yes",'acf'),
-                    0	=>	__("No",'acf'),
-                ),
-                'layout'	=>	'horizontal',
-            ));
+    /**
+     * Gets a list of Nav Menus indexed by their Nav Menu IDs.
+     *
+     * @param bool $allow_null If true, prepends the null option.
+     *
+     * @return array An array of Nav Menus indexed by their Nav Menu IDs.
+     */
+    private function get_nav_menus( $allow_null = false ) {
+
+        $navs = get_terms( 'nav_menu', array( 'hide_empty' => false ) );
+
+        $nav_menus = array();
+
+        if ( $allow_null ) {
+            $nav_menus[''] = ' - ' . __("Choose one", TEXTDOMAIN) . ' - ';
         }
 
-
-        /*
-        *  create_field()
-        *
-        *  Create the HTML interface for your field
-        *
-        *  @param	$field - an array holding all the field's data
-        *
-        *  @type	action
-        *  @since	3.6
-        *  @date	23/01/13
-        */
-        function render_field( $field )
-        {
-            // ob_start();
-            // print_r($field);
-            // error_log(ob_get_clean());
-
-            // create Field HTML
-            echo sprintf( '<select id="%d" class="%s" name="%s">', $field['id'], $field['class'], $field['name']  );
-
-            // null
-            if( $field['allow_null'] )
-            {
-                echo '<option value=""> - Select - </option>';
-            }
-
-            // Nav Menus
-            $nav_menus = $this->get_nav_menus();
-
-            foreach( $nav_menus as $nav_menu_id => $nav_menu_name ) {
-                $selected = selected( $field['value'], $nav_menu_id );
-                echo sprintf( '<option value="%1$d" %3$s>%2$s</option>', $nav_menu_id, $nav_menu_name, $selected );
-            }
-
-            echo '</select>';
-        }
-
-        function get_nav_menus() {
-            $navs = get_terms('nav_menu', array( 'hide_empty' => false ) );
-
-            $nav_menus = array();
-            foreach( $navs as $nav ) {
+        foreach ( $navs as $nav ) {
+            if(defined('ICL_LANGUAGE_CODE')){
+                $language_code = apply_filters( 'wpml_element_language_code', null, array( 'element_id'=> (int)$nav->term_id, 'element_type'=> 'nav_menu' ) );
+                if(ICL_LANGUAGE_CODE == $language_code){
+                    $nav_menus[ $nav->term_id ] = $nav->name;
+                }
+            } else {
                 $nav_menus[ $nav->term_id ] = $nav->name;
             }
-
-            return $nav_menus;
         }
 
-        function get_allowed_nav_container_tags() {
-            $tags = apply_filters( 'wp_nav_menu_container_allowedtags', array( 'div', 'nav' ) );
-            $formatted_tags = array(
-                array( '0' => 'None' )
-            );
-            foreach( $tags as $tag ) {
-                $formatted_tags[0][$tag] = ucfirst( $tag );
-            }
-            return $formatted_tags;
+        return $nav_menus;
+    }
+
+    /**
+     * Renders the Nav Menu Field.
+     *
+     * @param int   $value   The Nav Menu ID selected for this Nav Menu Field.
+     * @param int   $post_id The Post ID this $value is associated with.
+     * @param array $field   The array representation of the current Nav Menu Field.
+     *
+     * @return mixed The Nav Menu ID, or the Nav Menu HTML, or the Nav Menu Object, or false.
+     */
+    public function format_value( $value, $post_id, $field ) {
+        // bail early if no value
+        if ( empty( $value ) ) {
+            return false;
         }
 
-        function format_value( $value, $post_id, $field )
-        {
-            // defaults
-            $field = array_merge($this->defaults, $field);
+        // check format
+        if ( 'object' == $field['save_format'] ) {
+            $wp_menu_object = wp_get_nav_menu_object( $value );
 
-            if( !$value ) {
+            if( empty( $wp_menu_object ) ) {
                 return false;
             }
 
-            // check format
-            if( $field['save_format'] == 'object' ) {
-                $wp_menu_object = wp_get_nav_menu_object( $value );
+            $menu_object = new stdClass;
 
-                if( !$wp_menu_object ) {
-                    return false;
-                }
+            $menu_object->ID    = $wp_menu_object->term_id;
+            $menu_object->name  = $wp_menu_object->name;
+            $menu_object->slug  = $wp_menu_object->slug;
+            $menu_object->count = $wp_menu_object->count;
 
-                $menu_object = new stdClass;
+            return $menu_object;
+        } elseif ( 'menu' == $field['save_format'] ) {
+            ob_start();
 
-                $menu_object->ID = $wp_menu_object->term_id;
-                $menu_object->name = $wp_menu_object->name;
-                $menu_object->slug = $wp_menu_object->slug;
-                $menu_object->count = $wp_menu_object->count;
+            echo preg_replace( array( '#^<ul[^>]*>#', '#</ul>$#' ), '', str_replace(array('current-menu-item','current_page_item','current-menu-ancestor','current_page_parent'),'', preg_replace( array( '#^<div[^>]*>#', '#</div>$#' ), '', wp_nav_menu( array(
+                'menu' => $value,
+                'container' => $field['container'],
+                'menu_class'=> false,
+                'menu_id'=> false,
+                'echo' => false,
+                'link_before'     => '<span>',
+                'link_after'      => '</span>'
+            ) ) ) ) );
 
-                return $menu_object;
+            return ob_get_clean();
+        } elseif ( 'all' == $field['save_format'] ) {
+            ob_start();
 
-            } elseif( $field['save_format'] == 'menu' ) {
+            echo preg_replace( array( '#^<ul[^>]*>#', '#</ul>$#' ), '', str_replace(array('current-menu-item','current_page_item','current-menu-ancestor','current_page_parent'),'', preg_replace( array( '#^<div[^>]*>#', '#</div>$#' ), '', wp_nav_menu( array(
+                'menu' => $value,
+                'container' => $field['container'],
+                'menu_class'=> false,
+                'menu_id'=> false,
+                'echo' => false,
+                'link_before'     => '<span>',
+                'link_after'      => '</span>'
+            ) ) ) ) );
 
-                ob_start();
-
-                wp_nav_menu( array(
-                    'menu' => $value,
-                    'container' => $field['container']
-                ) );
-
-                return ob_get_clean();
-
-            }
-            return $value;
+            $letsSaveArr['html'] = ob_get_clean();
+            $letsSaveArr['id'] = $value;
+            $letsSaveArr['object'] = wp_get_nav_menu_object( $value );
+            return $letsSaveArr;
         }
+
+        // Just return the Nav Menu ID
+        return $value;
     }
-
-    // create field
-    new acf_field_nav_menu_v5();
-
 }
+
+new ACF_Field_Nav_Menu_V5();

@@ -21,14 +21,17 @@ use Twig\Error\SyntaxError;
  */
 final class TokenStream
 {
-    private $tokens;
     private $current = 0;
-    private $source;
 
-    public function __construct(array $tokens, ?Source $source = null)
-    {
-        $this->tokens = $tokens;
-        $this->source = $source ?: new Source('', '');
+    public function __construct(
+        private array $tokens,
+        private ?Source $source = null,
+    ) {
+        if (null === $this->source) {
+            trigger_deprecation('twig/twig', '3.16', \sprintf('Not passing a "%s" object to "%s" constructor is deprecated.', Source::class, __CLASS__));
+
+            $this->source = new Source('', '');
+        }
     }
 
     public function __toString()
@@ -110,7 +113,7 @@ final class TokenStream
      */
     public function isEOF(): bool
     {
-        return /* Token::EOF_TYPE */ -1 === $this->tokens[$this->current]->getType();
+        return Token::EOF_TYPE === $this->tokens[$this->current]->getType();
     }
 
     public function getCurrent(): Token
@@ -118,11 +121,6 @@ final class TokenStream
         return $this->tokens[$this->current];
     }
 
-    /**
-     * Gets the source associated with this stream.
-     *
-     * @internal
-     */
     public function getSourceContext(): Source
     {
         return $this->source;

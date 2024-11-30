@@ -22,7 +22,6 @@ class StarterSite extends Site {
         $context['site_language'] = get_bloginfo('language');
         $context['svg_sprite'] = SVG_SPRITE_URL;
         $context['general_fields'] = cache_general_fields();
-        $context['localization'] = custom_localization();
         $context['TEXTDOMAIN'] = TEXTDOMAIN;
         return $context;
     }
@@ -31,6 +30,10 @@ class StarterSite extends Site {
         /* this is where you can add your own functions to twig */
         $twig->addExtension( new \Twig\Extension\StringLoaderExtension() );
         $twig->addFilter( new \Twig\TwigFilter( 'pr', 'pr' ) );
+        $twig->addFilter( new \Twig\TwigFilter( 'picture', 'render_picture_tag' ) );
+        $twig->addFilter( new \Twig\TwigFilter( 'picture_src', 'render_picture_src' ) );
+        $twig->addFunction( new \Twig\TwigFunction('get_option', 'get_option'));
+        $twig->addFunction( new \Twig\TwigFunction('wp_editor', 'wp_editor'));
         return $twig;
     }
 }
