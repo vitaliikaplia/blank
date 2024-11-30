@@ -34,6 +34,7 @@ class StarterSite extends Site {
         $twig->addFilter( new \Twig\TwigFilter( 'picture_src', 'render_picture_src' ) );
         $twig->addFunction( new \Twig\TwigFunction('get_option', 'get_option'));
         $twig->addFunction( new \Twig\TwigFunction('wp_editor', 'wp_editor'));
+        $twig->addFunction( new \Twig\TwigFunction('checked', 'checked'));
         return $twig;
     }
 }

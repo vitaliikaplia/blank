@@ -216,3 +216,10 @@ body.mce-fullscreen{
 .CodeMirror{
 	border: solid 1px #DDDDDD;
 }
+
+/* fix custom post type redirect rules */
+.post-type-redirect-rules{
+	#acf_after_title-sortables{
+		margin-top: 0 !important;
+	}
+}

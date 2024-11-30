@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 01:57+0200\n"
+"POT-Creation-Date: 2024-11-30 22:19+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -28,6 +28,10 @@ msgstr "Шапка"
 #: core/acf.php:34 core/acf.php:35
 msgid "Footer"
 msgstr "Футер"
+
+#: core/acf.php:40 core/acf.php:41
+msgid "Other"
+msgstr "Другое"
 
 #: core/gutenberg.php:14
 msgid "Main blocks"
@@ -618,60 +622,60 @@ msgstr ""
 msgid "Update theme version"
 msgstr "Обновить версию темы"
 
-#: core/includes/back/system-acf-nav-menu-field.php:28
+#: core/includes/back/system-acf-nav-menu-field.php:19
 msgid "Nav Menu"
 msgstr "Навигационное меню"
 
-#: core/includes/back/system-acf-nav-menu-field.php:47
+#: core/includes/back/system-acf-nav-menu-field.php:38
 msgid "Return Value"
 msgstr "Возвращаемое значение"
 
-#: core/includes/back/system-acf-nav-menu-field.php:48
+#: core/includes/back/system-acf-nav-menu-field.php:39
 msgid "Specify the returned value on front end"
 msgstr "Укажите возвращаемое значение"
 
-#: core/includes/back/system-acf-nav-menu-field.php:53
+#: core/includes/back/system-acf-nav-menu-field.php:44
 msgid "Nav Menu Object"
 msgstr "Объект меню"
 
-#: core/includes/back/system-acf-nav-menu-field.php:54
+#: core/includes/back/system-acf-nav-menu-field.php:45
 msgid "Nav Menu HTML"
 msgstr "HTML меню"
 
-#: core/includes/back/system-acf-nav-menu-field.php:55
+#: core/includes/back/system-acf-nav-menu-field.php:46
 msgid "Nav Menu ID"
 msgstr "ID меню"
 
-#: core/includes/back/system-acf-nav-menu-field.php:56
+#: core/includes/back/system-acf-nav-menu-field.php:47
 msgid "All"
 msgstr "Все"
 
-#: core/includes/back/system-acf-nav-menu-field.php:62
+#: core/includes/back/system-acf-nav-menu-field.php:53
 msgid "Menu Container"
 msgstr "Контейнер меню"
 
-#: core/includes/back/system-acf-nav-menu-field.php:63
+#: core/includes/back/system-acf-nav-menu-field.php:54
 msgid "What to wrap the Menu's ul with (when returning HTML only)"
 msgstr "Обертка для меню"
 
-#: core/includes/back/system-acf-nav-menu-field.php:71
+#: core/includes/back/system-acf-nav-menu-field.php:62
 msgid "Allow Null?"
 msgstr "Разрешить пустое значение?"
 
-#: core/includes/back/system-acf-nav-menu-field.php:76
+#: core/includes/back/system-acf-nav-menu-field.php:67
 msgid "Yes"
 msgstr "Да"
 
-#: core/includes/back/system-acf-nav-menu-field.php:77
+#: core/includes/back/system-acf-nav-menu-field.php:68
 msgid "No"
 msgstr "Нет"
 
-#: core/includes/back/system-acf-nav-menu-field.php:90
+#: core/includes/back/system-acf-nav-menu-field.php:81
 #: core/includes/back/system-thumbnails.php:27
 msgid "None"
 msgstr "Нет"
 
-#: core/includes/back/system-acf-nav-menu-field.php:137
+#: core/includes/back/system-acf-nav-menu-field.php:128
 msgid "Choose one"
 msgstr "Выберите"
 
@@ -679,21 +683,75 @@ msgstr "Выберите"
 msgid "The Customizer is currently disabled."
 msgstr "Customizer в настоящий момент отключен."
 
+#: core/includes/back/system-generate-blog-posts.php:10
+#: core/includes/back/system-generate-blog-posts.php:11
+#: core/includes/back/system-generate-blog-posts.php:163
+msgid "Generate Posts"
+msgstr "Генерировать посты"
+
+#: core/includes/back/system-generate-blog-posts.php:85
+#, php-format
+msgid "Error generating post %d: %s"
+msgstr "Ошибка при создании постов %d: %s"
+
+#: core/includes/back/system-generate-blog-posts.php:112
+#, php-format
+msgid "Successfully generated %d posts!"
+msgstr "Успешно создано %d постов!"
+
+#: core/includes/back/system-generate-blog-posts.php:119
+msgid "Errors occurred:"
+msgstr "Возникли ошибки:"
+
+#: core/includes/back/system-generate-blog-posts.php:129
+msgid "Generate Random Posts"
+msgstr "Генерация случайных постов"
+
+#: core/includes/back/system-generate-blog-posts.php:136
+msgid "Number of posts to generate"
+msgstr "Количество постов для генерации"
+
+#: core/includes/back/system-generate-blog-posts.php:140
+msgid "How many posts should be generated (max 100)"
+msgstr "Сколько постов должно быть создано (не более 100)"
+
+#: core/includes/back/system-generate-blog-posts.php:145
+msgid "Paragraphs per post"
+msgstr "Параграфы в одном посте"
+
+#: core/includes/back/system-generate-blog-posts.php:149
+msgid "How many paragraphs should be in each post (max 50)"
+msgstr "Сколько абзацев должно быть в каждом посте (не более 50)"
+
+#: core/includes/back/system-generate-blog-posts.php:154
+msgid "Include featured image"
+msgstr "Включение изображения из сообщения"
+
+#: core/includes/back/system-generate-blog-posts.php:158
+msgid "Generate and attach a random featured image for each post"
+msgstr "Генерируйте и прикрепляйте случайное изображение для каждого сообщения"
+
 #: core/includes/back/system-redirect-rules.php:8
 msgid "Redirect Rules Options"
 msgstr "Параметры правил перенаправления"
 
-#: core/includes/back/system-redirect-rules.php:27
-msgid "Old URL:"
-msgstr "Старый URL-адрес:"
+#: core/includes/back/system-redirect-rules.php:61
+msgid ""
+"Invalid redirect rule: Old URL and New URL must be different and not empty."
+msgstr ""
+"Неверное правило перенаправления: Старый URL и новый URL должны быть разными "
+"и не пустыми."
 
-#: core/includes/back/system-redirect-rules.php:31
-msgid "New URL:"
-msgstr "Новый URL:"
+#: core/includes/back/system-redirect-rules.php:80
+msgid "Conflict detected: A redirect rule with this Old URL already exists."
+msgstr "Обнаружен конфликт: Правило перенаправления с этим URL уже существует."
 
-#: core/includes/back/system-redirect-rules.php:35
-msgid "Code:"
-msgstr "Код:"
+#: core/includes/back/system-redirect-rules.php:88
+msgid ""
+"Invalid redirect rule: Old URL must contain the current WordPress domain."
+msgstr ""
+"Неверное правило перенаправления: Старый URL должен содержать текущий домен "
+"WordPress."
 
 #: core/includes/back/system-thumbnails.php:13
 msgid "Thumbnail"
@@ -710,7 +768,7 @@ msgstr ""
 "Мы проводим плановое обслуживание. Мы проводим плановое техническое "
 "обслуживание. Мы вернемся онлайн в ближайшее время."
 
-#: core/init.php:169
+#: core/init.php:171
 msgid "Please, install Advanced Custom Fields PRO version"
 msgstr "Пожалуйста, установите PRO версию Advanced Custom Fields"
 
@@ -762,6 +820,14 @@ msgstr "(yangi tab)"
 msgid "Remove Link"
 msgstr "Удалить ссылку"
 
+#: views/dashboard/redirects-meta.twig:2
+msgid "Old URL:"
+msgstr "Старый URL-адрес:"
+
+#: views/dashboard/redirects-meta.twig:10
+msgid "Code:"
+msgstr "Код:"
+
 #: views/password.twig:10
 msgid "Password"
 msgstr "Пароль"
@@ -769,6 +835,9 @@ msgstr "Пароль"
 #: views/password.twig:11
 msgid "Submit"
 msgstr "Отправить"
+
+#~ msgid "New URL:"
+#~ msgstr "Новый URL:"
 
 #, fuzzy
 #~ msgid ""

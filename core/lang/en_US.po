@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 02:03+0200\n"
+"POT-Creation-Date: 2024-11-30 22:18+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -27,6 +27,10 @@ msgstr ""
 
 #: core/acf.php:34 core/acf.php:35
 msgid "Footer"
+msgstr ""
+
+#: core/acf.php:40 core/acf.php:41
+msgid "Other"
 msgstr ""
 
 #: core/gutenberg.php:14
@@ -589,60 +593,60 @@ msgstr ""
 msgid "Update theme version"
 msgstr ""
 
-#: core/includes/back/system-acf-nav-menu-field.php:28
+#: core/includes/back/system-acf-nav-menu-field.php:19
 msgid "Nav Menu"
 msgstr ""
 
-#: core/includes/back/system-acf-nav-menu-field.php:47
+#: core/includes/back/system-acf-nav-menu-field.php:38
 msgid "Return Value"
 msgstr ""
 
-#: core/includes/back/system-acf-nav-menu-field.php:48
+#: core/includes/back/system-acf-nav-menu-field.php:39
 msgid "Specify the returned value on front end"
 msgstr ""
 
-#: core/includes/back/system-acf-nav-menu-field.php:53
+#: core/includes/back/system-acf-nav-menu-field.php:44
 msgid "Nav Menu Object"
 msgstr ""
 
-#: core/includes/back/system-acf-nav-menu-field.php:54
+#: core/includes/back/system-acf-nav-menu-field.php:45
 msgid "Nav Menu HTML"
 msgstr ""
 
-#: core/includes/back/system-acf-nav-menu-field.php:55
+#: core/includes/back/system-acf-nav-menu-field.php:46
 msgid "Nav Menu ID"
 msgstr ""
 
-#: core/includes/back/system-acf-nav-menu-field.php:56
+#: core/includes/back/system-acf-nav-menu-field.php:47
 msgid "All"
 msgstr ""
 
-#: core/includes/back/system-acf-nav-menu-field.php:62
+#: core/includes/back/system-acf-nav-menu-field.php:53
 msgid "Menu Container"
 msgstr ""
 
-#: core/includes/back/system-acf-nav-menu-field.php:63
+#: core/includes/back/system-acf-nav-menu-field.php:54
 msgid "What to wrap the Menu's ul with (when returning HTML only)"
 msgstr ""
 
-#: core/includes/back/system-acf-nav-menu-field.php:71
+#: core/includes/back/system-acf-nav-menu-field.php:62
 msgid "Allow Null?"
 msgstr ""
 
-#: core/includes/back/system-acf-nav-menu-field.php:76
+#: core/includes/back/system-acf-nav-menu-field.php:67
 msgid "Yes"
 msgstr ""
 
-#: core/includes/back/system-acf-nav-menu-field.php:77
+#: core/includes/back/system-acf-nav-menu-field.php:68
 msgid "No"
 msgstr ""
 
-#: core/includes/back/system-acf-nav-menu-field.php:90
+#: core/includes/back/system-acf-nav-menu-field.php:81
 #: core/includes/back/system-thumbnails.php:27
 msgid "None"
 msgstr ""
 
-#: core/includes/back/system-acf-nav-menu-field.php:137
+#: core/includes/back/system-acf-nav-menu-field.php:128
 msgid "Choose one"
 msgstr ""
 
@@ -650,20 +654,70 @@ msgstr ""
 msgid "The Customizer is currently disabled."
 msgstr ""
 
+#: core/includes/back/system-generate-blog-posts.php:10
+#: core/includes/back/system-generate-blog-posts.php:11
+#: core/includes/back/system-generate-blog-posts.php:163
+msgid "Generate Posts"
+msgstr ""
+
+#: core/includes/back/system-generate-blog-posts.php:85
+#, php-format
+msgid "Error generating post %d: %s"
+msgstr ""
+
+#: core/includes/back/system-generate-blog-posts.php:112
+#, php-format
+msgid "Successfully generated %d posts!"
+msgstr ""
+
+#: core/includes/back/system-generate-blog-posts.php:119
+msgid "Errors occurred:"
+msgstr ""
+
+#: core/includes/back/system-generate-blog-posts.php:129
+msgid "Generate Random Posts"
+msgstr ""
+
+#: core/includes/back/system-generate-blog-posts.php:136
+msgid "Number of posts to generate"
+msgstr ""
+
+#: core/includes/back/system-generate-blog-posts.php:140
+msgid "How many posts should be generated (max 100)"
+msgstr ""
+
+#: core/includes/back/system-generate-blog-posts.php:145
+msgid "Paragraphs per post"
+msgstr ""
+
+#: core/includes/back/system-generate-blog-posts.php:149
+msgid "How many paragraphs should be in each post (max 50)"
+msgstr ""
+
+#: core/includes/back/system-generate-blog-posts.php:154
+msgid "Include featured image"
+msgstr ""
+
+#: core/includes/back/system-generate-blog-posts.php:158
+msgid "Generate and attach a random featured image for each post"
+msgstr ""
+
 #: core/includes/back/system-redirect-rules.php:8
 msgid "Redirect Rules Options"
 msgstr ""
 
-#: core/includes/back/system-redirect-rules.php:27
-msgid "Old URL:"
+#: core/includes/back/system-redirect-rules.php:61
+msgid ""
+"Invalid redirect rule: Old URL and New URL must be different and not empty."
 msgstr ""
 
-#: core/includes/back/system-redirect-rules.php:31
-msgid "New URL:"
+#: core/includes/back/system-redirect-rules.php:80
+msgid "Conflict detected: A redirect rule with this Old URL already exists."
 msgstr ""
 
-#: core/includes/back/system-redirect-rules.php:35
-msgid "Code:"
+#: core/includes/back/system-redirect-rules.php:88
+msgid ""
+"Invalid redirect rule: Old URL must contain the current WordPress domain."
 msgstr ""
 
 #: core/includes/back/system-thumbnails.php:13
@@ -679,7 +733,7 @@ msgid ""
 "We are performing scheduled maintenance. We will be back online shortly."
 msgstr ""
 
-#: core/init.php:169
+#: core/init.php:171
 msgid "Please, install Advanced Custom Fields PRO version"
 msgstr ""
 
@@ -729,6 +783,14 @@ msgstr ""
 
 #: views/dashboard/fields/link.twig:11
 msgid "Remove Link"
+msgstr ""
+
+#: views/dashboard/redirects-meta.twig:2
+msgid "Old URL:"
+msgstr ""
+
+#: views/dashboard/redirects-meta.twig:10
+msgid "Code:"
 msgstr ""
 
 #: views/password.twig:10

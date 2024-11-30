@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 02:02+0200\n"
+"POT-Creation-Date: 2024-11-30 22:21+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -28,6 +28,10 @@ msgstr "Шапка"
 #: core/acf.php:34 core/acf.php:35
 msgid "Footer"
 msgstr "Підвал"
+
+#: core/acf.php:40 core/acf.php:41
+msgid "Other"
+msgstr "Інше"
 
 #: core/gutenberg.php:14
 msgid "Main blocks"
@@ -616,60 +620,60 @@ msgstr "Ключ API карт Google для інтеграції з Advanced Cus
 msgid "Update theme version"
 msgstr "Оновити версію теми"
 
-#: core/includes/back/system-acf-nav-menu-field.php:28
+#: core/includes/back/system-acf-nav-menu-field.php:19
 msgid "Nav Menu"
 msgstr "Навігаційне меню"
 
-#: core/includes/back/system-acf-nav-menu-field.php:47
+#: core/includes/back/system-acf-nav-menu-field.php:38
 msgid "Return Value"
 msgstr "Значення, що повертається"
 
-#: core/includes/back/system-acf-nav-menu-field.php:48
+#: core/includes/back/system-acf-nav-menu-field.php:39
 msgid "Specify the returned value on front end"
 msgstr "Вкажіть значення, що повертається"
 
-#: core/includes/back/system-acf-nav-menu-field.php:53
+#: core/includes/back/system-acf-nav-menu-field.php:44
 msgid "Nav Menu Object"
 msgstr "Об'єкт меню"
 
-#: core/includes/back/system-acf-nav-menu-field.php:54
+#: core/includes/back/system-acf-nav-menu-field.php:45
 msgid "Nav Menu HTML"
 msgstr "HTML меню"
 
-#: core/includes/back/system-acf-nav-menu-field.php:55
+#: core/includes/back/system-acf-nav-menu-field.php:46
 msgid "Nav Menu ID"
 msgstr "ID меню"
 
-#: core/includes/back/system-acf-nav-menu-field.php:56
+#: core/includes/back/system-acf-nav-menu-field.php:47
 msgid "All"
 msgstr "Усі"
 
-#: core/includes/back/system-acf-nav-menu-field.php:62
+#: core/includes/back/system-acf-nav-menu-field.php:53
 msgid "Menu Container"
 msgstr "Контейнер меню"
 
-#: core/includes/back/system-acf-nav-menu-field.php:63
+#: core/includes/back/system-acf-nav-menu-field.php:54
 msgid "What to wrap the Menu's ul with (when returning HTML only)"
 msgstr "Обгортка для меню"
 
-#: core/includes/back/system-acf-nav-menu-field.php:71
+#: core/includes/back/system-acf-nav-menu-field.php:62
 msgid "Allow Null?"
 msgstr "Дозволити порожнє значення?"
 
-#: core/includes/back/system-acf-nav-menu-field.php:76
+#: core/includes/back/system-acf-nav-menu-field.php:67
 msgid "Yes"
 msgstr "Так"
 
-#: core/includes/back/system-acf-nav-menu-field.php:77
+#: core/includes/back/system-acf-nav-menu-field.php:68
 msgid "No"
 msgstr "Ні"
 
-#: core/includes/back/system-acf-nav-menu-field.php:90
+#: core/includes/back/system-acf-nav-menu-field.php:81
 #: core/includes/back/system-thumbnails.php:27
 msgid "None"
 msgstr "Немає"
 
-#: core/includes/back/system-acf-nav-menu-field.php:137
+#: core/includes/back/system-acf-nav-menu-field.php:128
 msgid "Choose one"
 msgstr "Виберіть"
 
@@ -677,21 +681,77 @@ msgstr "Виберіть"
 msgid "The Customizer is currently disabled."
 msgstr "Кастомайзер наразі вимкнено."
 
+#: core/includes/back/system-generate-blog-posts.php:10
+#: core/includes/back/system-generate-blog-posts.php:11
+#: core/includes/back/system-generate-blog-posts.php:163
+msgid "Generate Posts"
+msgstr "Генерація постів"
+
+#: core/includes/back/system-generate-blog-posts.php:85
+#, php-format
+msgid "Error generating post %d: %s"
+msgstr "Помилка створення публікації %d: %s"
+
+#: core/includes/back/system-generate-blog-posts.php:112
+#, php-format
+msgid "Successfully generated %d posts!"
+msgstr "Успішно створено %d публікацій!"
+
+#: core/includes/back/system-generate-blog-posts.php:119
+msgid "Errors occurred:"
+msgstr "Виникли помилки:"
+
+#: core/includes/back/system-generate-blog-posts.php:129
+msgid "Generate Random Posts"
+msgstr "Генерація випадкових постів"
+
+#: core/includes/back/system-generate-blog-posts.php:136
+msgid "Number of posts to generate"
+msgstr "Кількість постів для генерації"
+
+#: core/includes/back/system-generate-blog-posts.php:140
+msgid "How many posts should be generated (max 100)"
+msgstr "Скільки постів має бути згенеровано (максимум 100)"
+
+#: core/includes/back/system-generate-blog-posts.php:145
+msgid "Paragraphs per post"
+msgstr "Кількість абзаців"
+
+#: core/includes/back/system-generate-blog-posts.php:149
+msgid "How many paragraphs should be in each post (max 50)"
+msgstr "Скільки абзаців має бути в кожному пості (максимум 50)"
+
+#: core/includes/back/system-generate-blog-posts.php:154
+msgid "Include featured image"
+msgstr "Додати обкладинку посту"
+
+#: core/includes/back/system-generate-blog-posts.php:158
+msgid "Generate and attach a random featured image for each post"
+msgstr "Створюйте та прикріплюйте випадкове зображення для кожного посту"
+
 #: core/includes/back/system-redirect-rules.php:8
 msgid "Redirect Rules Options"
 msgstr "Правила перенаправлення"
 
-#: core/includes/back/system-redirect-rules.php:27
-msgid "Old URL:"
-msgstr "Стара адреса:"
+#: core/includes/back/system-redirect-rules.php:61
+msgid ""
+"Invalid redirect rule: Old URL and New URL must be different and not empty."
+msgstr ""
+"Неправильне правило перенаправлення: Стара URL-адреса та Нова URL-адреса "
+"повинні відрізнятися і не бути порожніми."
 
-#: core/includes/back/system-redirect-rules.php:31
-msgid "New URL:"
-msgstr "Нова адреса:"
+#: core/includes/back/system-redirect-rules.php:80
+msgid "Conflict detected: A redirect rule with this Old URL already exists."
+msgstr ""
+"Виявлено конфлікт: Правило перенаправлення з цією старою URL-адресою вже "
+"існує."
 
-#: core/includes/back/system-redirect-rules.php:35
-msgid "Code:"
-msgstr "Код:"
+#: core/includes/back/system-redirect-rules.php:88
+msgid ""
+"Invalid redirect rule: Old URL must contain the current WordPress domain."
+msgstr ""
+"Неправильне правило перенаправлення: Стара URL-адреса повинна містити "
+"поточний домен WordPress."
 
 #: core/includes/back/system-thumbnails.php:13
 msgid "Thumbnail"
@@ -708,7 +768,7 @@ msgstr ""
 "Ми проводимо планове технічне обслуговування. Ми проводимо планове технічне "
 "обслуговування. Незабаром ми знову будемо онлайн."
 
-#: core/init.php:169
+#: core/init.php:171
 msgid "Please, install Advanced Custom Fields PRO version"
 msgstr "Будь ласка, встановіть PRO версію Advanced Custom Fields"
 
@@ -760,6 +820,14 @@ msgstr "(нова вкладка)"
 msgid "Remove Link"
 msgstr "Видалити посилання"
 
+#: views/dashboard/redirects-meta.twig:2
+msgid "Old URL:"
+msgstr "Стара адреса:"
+
+#: views/dashboard/redirects-meta.twig:10
+msgid "Code:"
+msgstr "Код:"
+
 #: views/password.twig:10
 msgid "Password"
 msgstr "Пароль"
@@ -767,6 +835,9 @@ msgstr "Пароль"
 #: views/password.twig:11
 msgid "Submit"
 msgstr "Надіслати"
+
+#~ msgid "New URL:"
+#~ msgstr "Нова адреса:"
 
 #~ msgid "Main"
 #~ msgstr "Головний"

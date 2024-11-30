@@ -14,7 +14,7 @@ register_post_type('redirect-rules', array(
         'rewrite' => array('slug' => false, 'with_front' => false),
         'query_var' => true,
         'has_archive' => false,
-        'supports' => array('title','author'),
+        'supports' => array('author'),
         'labels' => array (
             'name' => __('Redirect rules', TEXTDOMAIN),
             'singular_name' => __('Redirect rule', TEXTDOMAIN),
