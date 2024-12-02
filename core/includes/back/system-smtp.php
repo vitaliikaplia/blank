@@ -23,7 +23,7 @@ function smtp_fix_phpmailer_init( $phpmailer ) {
         if(get_option('smtp_secure')){
             $phpmailer->SMTPSecure = 'ssl';
         } else {
-            $phpmailer->SMTPSecure = false;
+            $phpmailer->SMTPSecure = 'tls';
         }
         $phpmailer->IsSMTP();
     }
