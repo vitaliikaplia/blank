@@ -24,6 +24,7 @@ if(is_admin()){
 //        remove_submenu_page( 'tools.php', 'site-health.php' );
 
         remove_submenu_page( 'themes.php', 'site-editor.php?path=/patterns' );
+        remove_submenu_page( 'themes.php', 'site-editor.php?p=/pattern' );
 
         global $submenu;
         $redirect_rules_position = null;
