@@ -9,7 +9,7 @@ This is a clean custom WordPress starter theme developed for building modern and
 - **Composer Integration:** Manage dependencies with Composer (`composer.json` and `composer.lock` included).
 - **Prepros Config:** Ready for use with Prepros for compiling assets.
 - **Custom Templates:** Includes default WordPress template files (`404.php`, `archive.php`, `author.php`, `single.php`, etc.).
-- **Modern Design Preview:** Includes a `screenshot.webp` for WordPress theme preview.
+- **Modern Design Preview:** Includes a `screenshot.png` for WordPress theme preview.
 
 ## Folder Structure
 
@@ -27,7 +27,7 @@ blank/
 ├── index.php
 ├── page.php
 ├── prepros.config
-├── screenshot.webp
+├── screenshot.png
 ├── search.php
 ├── single.php
 ├── style.css
@@ -45,12 +45,17 @@ blank/
 - WEBP image converter & big images resizer
 - Timber HTML cache
 - HTML minify
-- Mail logging post type
+- Enhanced mail sending logic with logging and Twig templates for emails.
 - SMTP settings
 - Header & Footer html code editor
 - Maintenance mode feature
 - Custom Gutenberg blocks: easy to add new ACF blocks and block categories with custom fields and twig templates
+- A feature to parse all pages as Gutenberg blocks.
+- Automatic loading of block styles on the front end when a block is used.
+- `get_pattern()` helper function for easily including modular templates.
 - Custom options framework with different field types allows to create custom options pages and fields
+- Conditional logic for custom options fields.
+- Geolocation features
 - Disable all updates feature
 - Disable customizer feature
 - Disable src set feature
@@ -62,6 +67,7 @@ blank/
 - Disable WordPress Emojis feature
 - Disable Embeds feature
 - Disable default dashboard widgets feature
+- Customizable WordPress dashboard menu.
 - Hide admin top bar for all users on front-end feature
 - Disable default WordPress admin email verification feature
 - Disable comments feature for all post types
@@ -71,6 +77,7 @@ blank/
 - Disable Gutenberg editor for Blog posts feature
 - Google maps API key option (for ACF)
 - Lorem ipsum posts generator tool
+- Localization ready (with provided `.po` and `.mo` files).
 - and more, and more...
 
 ## Requires
@@ -86,7 +93,7 @@ blank/
 1. Open `functions.php` to configure theme-specific settings.
 2. Modify files under `views/` for template parts and layouts.
 3. Use the `assets/` directory to manage your CSS, JavaScript, and images.
-4. Replace `screenshot.webp` with your custom theme preview image.
+4. Replace `screenshot.png` with your custom theme preview image.
 5. And remember: **Code is Poetry**. 
 
 ## License
