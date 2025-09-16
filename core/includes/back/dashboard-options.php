@@ -26,7 +26,17 @@ function get_custom_options(){
                     ),
                     'name'         => 'resize_at_upload_formats',
                     'label'         => __("Formats", TEXTDOMAIN),
-                    'description'   => __("Resize at upload formats", TEXTDOMAIN)
+                    'description'   => __("Resize at upload formats", TEXTDOMAIN),
+                    'conditional_logic' => array(
+                        'action' => 'show',
+                        'rules' => array(
+                            array(
+                                'field' => 'enable_resize_at_upload',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
                 ),
                 array (
                     'type'          => 'range',
@@ -39,6 +49,16 @@ function get_custom_options(){
                     ),
                     'label'         => __("Width", TEXTDOMAIN),
                     'description'   => __("Resize upload width", TEXTDOMAIN),
+                    'conditional_logic' => array(
+                        'action' => 'show',
+                        'rules' => array(
+                            array(
+                                'field' => 'enable_resize_at_upload',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
                 ),
                 array (
                     'type'          => 'range',
@@ -51,6 +71,16 @@ function get_custom_options(){
                     ),
                     'label'         => __("Height", TEXTDOMAIN),
                     'description'   => __("Resize upload height", TEXTDOMAIN),
+                    'conditional_logic' => array(
+                        'action' => 'show',
+                        'rules' => array(
+                            array(
+                                'field' => 'enable_resize_at_upload',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
                 ),
                 array (
                     'type'          => 'range',
@@ -63,6 +93,16 @@ function get_custom_options(){
                     ),
                     'label'         => __("Quality", TEXTDOMAIN),
                     'description'   => __("Resize upload quality", TEXTDOMAIN),
+                    'conditional_logic' => array(
+                        'action' => 'show',
+                        'rules' => array(
+                            array(
+                                'field' => 'enable_resize_at_upload',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
                 ),
                 array (
                     'type'          => 'checkbox',
@@ -81,6 +121,16 @@ function get_custom_options(){
                     ),
                     'label'         => __("Webp convert quality", TEXTDOMAIN),
                     'description'   => __("Webp convert quality", TEXTDOMAIN),
+                    'conditional_logic' => array(
+                        'action' => 'show',
+                        'rules' => array(
+                            array(
+                                'field' => 'enable_webp_convert',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
                 ),
             ),
         ),
@@ -96,35 +146,95 @@ function get_custom_options(){
                     'description'   => __("Enable custom SMTP server", TEXTDOMAIN),
                 ),
                 array (
-                    'type'          => 'text',
-                    'name'          => 'smtp_host',
-                    'label'         => __("SMTP host", TEXTDOMAIN),
+                    'type'              => 'text',
+                    'name'              => 'smtp_host',
+                    'label'             => __("SMTP host", TEXTDOMAIN),
+                    'conditional_logic' => array(
+                        'action' => 'show',
+                        'rules' => array(
+                            array(
+                                'field' => 'enable_custom_smtp_server',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
                 ),
                 array (
-                    'type'          => 'number',
-                    'name'          => 'smtp_port',
-                    'label'         => __("SMTP port", TEXTDOMAIN),
+                    'type'              => 'number',
+                    'name'              => 'smtp_port',
+                    'label'             => __("SMTP port", TEXTDOMAIN),
+                    'conditional_logic' => array(
+                        'action' => 'show',
+                        'rules' => array(
+                            array(
+                                'field' => 'enable_custom_smtp_server',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
                 ),
                 array (
-                    'type'          => 'text',
-                    'name'          => 'smtp_username',
-                    'label'         => __("SMTP username", TEXTDOMAIN),
+                    'type'              => 'text',
+                    'name'              => 'smtp_username',
+                    'label'             => __("SMTP username", TEXTDOMAIN),
+                    'conditional_logic' => array(
+                        'action' => 'show',
+                        'rules' => array(
+                            array(
+                                'field' => 'enable_custom_smtp_server',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
                 ),
                 array (
-                    'type'          => 'password',
-                    'name'          => 'smtp_password',
-                    'label'         => __("SMTP password", TEXTDOMAIN),
+                    'type'              => 'password',
+                    'name'              => 'smtp_password',
+                    'label'             => __("SMTP password", TEXTDOMAIN),
+                    'conditional_logic' => array(
+                        'action' => 'show',
+                        'rules' => array(
+                            array(
+                                'field' => 'enable_custom_smtp_server',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
                 ),
                 array (
-                    'type'          => 'text',
-                    'name'          => 'smtp_from_name',
-                    'label'         => __("SMTP from name", TEXTDOMAIN),
+                    'type'              => 'text',
+                    'name'              => 'smtp_from_name',
+                    'label'             => __("SMTP from name", TEXTDOMAIN),
+                    'conditional_logic' => array(
+                        'action' => 'show',
+                        'rules' => array(
+                            array(
+                                'field' => 'enable_custom_smtp_server',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
                 ),
                 array (
-                    'type'          => 'checkbox',
-                    'name'          => 'smtp_secure',
-                    'label'         => __("Secure SMTP connection", TEXTDOMAIN),
-                    'description'   => __("Use SSL for SMTP connection", TEXTDOMAIN),
+                    'type'              => 'checkbox',
+                    'name'              => 'smtp_secure',
+                    'label'             => __("Secure SMTP connection", TEXTDOMAIN),
+                    'description'       => __("Use SSL for SMTP connection", TEXTDOMAIN),
+                    'conditional_logic' => array(
+                        'action' => 'show',
+                        'rules' => array(
+                            array(
+                                'field' => 'enable_custom_smtp_server',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
                 ),
             ),
         ),
@@ -162,13 +272,45 @@ function get_custom_options(){
                     'type'          => 'text',
                     'name'          => 'maintenance_mode_title',
                     'label'         => __('Title', TEXTDOMAIN),
-                    'description'   => __('Maintenance mode title for anonymous users', TEXTDOMAIN)
+                    'description'   => __('Maintenance mode title for anonymous users', TEXTDOMAIN),
+                    'conditional_logic' => array(
+                        'action' => 'show',
+                        'rules' => array(
+                            array(
+                                'field' => 'enable_maintenance_mode',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
                 ),
                 array (
                     'type'          => 'mce',
                     'name'          => 'maintenance_mode_text',
                     'label'         => __('Text', TEXTDOMAIN),
-                    'description'   => __('Maintenance mode text for anonymous users', TEXTDOMAIN)
+                    'description'   => __('Maintenance mode text for anonymous users', TEXTDOMAIN),
+                    'conditional_logic' => array(
+                        'action' => 'show',
+                        'rules' => array(
+                            array(
+                                'field' => 'enable_maintenance_mode',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+        'integrations'   =>  Array(
+            'label' => __('Integrations', TEXTDOMAIN),
+            'title' => __('Integrations with third-party services options', TEXTDOMAIN),
+            'fields' => Array(
+                array (
+                    'type'          => 'password',
+                    'name'          => 'google_maps_api_key',
+                    'label'         => __("Google Maps API key", TEXTDOMAIN),
+                    'description'   => '<a href="https://console.cloud.google.com/apis/credentials" target="_blank">'.__('Google Cloud Console', TEXTDOMAIN).'</a>',
                 ),
             ),
         ),
@@ -300,12 +442,6 @@ function get_custom_options(){
                     'name'          => 'parse_all_pages_blocks_as_gutenberg_patterns',
                     'label'         => __("Parse all pages blocks as Gutenberg patterns", TEXTDOMAIN),
                 ),
-                array (
-                    'type'          => 'password',
-                    'name'          => 'google_maps_api_key',
-                    'label'         => __("Google maps API key", TEXTDOMAIN),
-                    'description'   => __("Google maps API key to integrate with Advanced Custom Fields", TEXTDOMAIN),
-                ),
             ),
         ),
     );
@@ -327,7 +463,7 @@ add_action('admin_menu', function() {
             function() use ($value, $key) {
                 echo '<div class="wrap">';
                 echo '<h1>' . (!empty($value['title']) ? $value['title'] : $value['label']).'</h1>';
-                echo '<form method="post" action="options.php">';
+                echo '<form method="post" action="options.php" class="custom-options-form">';
                 if(!empty($value['description'])){
                     echo '<p>'.$value['description'].'</p>';
                 }

@@ -47,7 +47,7 @@ register_post_type('patterns', array(
         'rewrite' => array('slug' => false, 'with_front' => false),
         'query_var' => true,
         'has_archive' => false,
-        'menu_position' => 88,
+        'menu_position' => 86,
         'menu_icon' => 'dashicons-block-default',
         'supports' => array('title','editor','revisions','author'),
         'show_in_rest' => true,

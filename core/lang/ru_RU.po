@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-16 16:41+0300\n"
+"POT-Creation-Date: 2025-09-16 17:35+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -184,7 +184,7 @@ msgstr "Родительский элемент"
 #: core/includes/back/custom-post-types.php:96
 #: core/includes/back/custom-post-types.php:97
 msgid "Mail log"
-msgstr "Журнал почты"
+msgstr "Email логи"
 
 #: core/includes/back/custom-post-types.php:98
 #: core/includes/back/custom-post-types.php:99
@@ -278,9 +278,9 @@ msgstr ""
 "другими форматами."
 
 #: core/includes/back/dashboard-options.php:15
-#: core/includes/back/dashboard-options.php:70
-#: core/includes/back/dashboard-options.php:95
-#: core/includes/back/dashboard-options.php:158
+#: core/includes/back/dashboard-options.php:110
+#: core/includes/back/dashboard-options.php:145
+#: core/includes/back/dashboard-options.php:268
 msgid "Enable"
 msgstr "Включить"
 
@@ -296,48 +296,48 @@ msgstr "Форматы"
 msgid "Resize at upload formats"
 msgstr "Форматы изменяемых изображений при загрузке"
 
-#: core/includes/back/dashboard-options.php:40
+#: core/includes/back/dashboard-options.php:50
 msgid "Width"
 msgstr "Ширина"
 
-#: core/includes/back/dashboard-options.php:41
+#: core/includes/back/dashboard-options.php:51
 msgid "Resize upload width"
 msgstr "Максимальная ширина загружаемого изображения"
 
-#: core/includes/back/dashboard-options.php:52
+#: core/includes/back/dashboard-options.php:72
 msgid "Height"
 msgstr "Высота"
 
-#: core/includes/back/dashboard-options.php:53
+#: core/includes/back/dashboard-options.php:73
 msgid "Resize upload height"
 msgstr "Максимальная высота загружаемого изображения"
 
-#: core/includes/back/dashboard-options.php:64
+#: core/includes/back/dashboard-options.php:94
 msgid "Quality"
 msgstr "Качество"
 
-#: core/includes/back/dashboard-options.php:65
+#: core/includes/back/dashboard-options.php:95
 msgid "Resize upload quality"
 msgstr "Максимальная качество для ресайза"
 
-#: core/includes/back/dashboard-options.php:71
+#: core/includes/back/dashboard-options.php:111
 msgid "Enable WEBP convert"
 msgstr "Включить конвертацию WEBP"
 
-#: core/includes/back/dashboard-options.php:82
-#: core/includes/back/dashboard-options.php:83
+#: core/includes/back/dashboard-options.php:122
+#: core/includes/back/dashboard-options.php:123
 msgid "Webp convert quality"
 msgstr "Качество конвертирования Webp"
 
-#: core/includes/back/dashboard-options.php:88
+#: core/includes/back/dashboard-options.php:138
 msgid "SMTP"
 msgstr "SMTP"
 
-#: core/includes/back/dashboard-options.php:89
+#: core/includes/back/dashboard-options.php:139
 msgid "Configure custom SMTP server"
 msgstr "Активировать пользовательский SMTP сервер"
 
-#: core/includes/back/dashboard-options.php:90
+#: core/includes/back/dashboard-options.php:140
 msgid ""
 "In this section, you can configure a custom SMTP server to send emails from "
 "your website. You can specify the SMTP host, port, username, password, and "
@@ -348,47 +348,47 @@ msgstr ""
 "пользователя, пароль и имя отправителя. Кроме того, вы можете включить "
 "безопасное SMTP-соединение с использованием SSL."
 
-#: core/includes/back/dashboard-options.php:96
+#: core/includes/back/dashboard-options.php:146
 msgid "Enable custom SMTP server"
 msgstr "Активировать пользовательский SMTP сервер"
 
-#: core/includes/back/dashboard-options.php:101
+#: core/includes/back/dashboard-options.php:151
 msgid "SMTP host"
 msgstr "SMTP хост"
 
-#: core/includes/back/dashboard-options.php:106
+#: core/includes/back/dashboard-options.php:166
 msgid "SMTP port"
 msgstr "SMTP порт"
 
-#: core/includes/back/dashboard-options.php:111
+#: core/includes/back/dashboard-options.php:181
 msgid "SMTP username"
 msgstr "SMTP пользователь"
 
-#: core/includes/back/dashboard-options.php:116
+#: core/includes/back/dashboard-options.php:196
 msgid "SMTP password"
 msgstr "SMTP пароль"
 
-#: core/includes/back/dashboard-options.php:121
+#: core/includes/back/dashboard-options.php:211
 msgid "SMTP from name"
 msgstr "SMTP имя отправителя"
 
-#: core/includes/back/dashboard-options.php:126
+#: core/includes/back/dashboard-options.php:226
 msgid "Secure SMTP connection"
 msgstr "Безопасное SMTP-соединение"
 
-#: core/includes/back/dashboard-options.php:127
+#: core/includes/back/dashboard-options.php:227
 msgid "Use SSL for SMTP connection"
 msgstr "Безопасное SMTP-соединение"
 
-#: core/includes/back/dashboard-options.php:132
+#: core/includes/back/dashboard-options.php:242
 msgid "Custom code"
 msgstr "Пользовательский код"
 
-#: core/includes/back/dashboard-options.php:133
+#: core/includes/back/dashboard-options.php:243
 msgid "Custom HTML code for header and footer"
 msgstr "Пользовательский HTML-код для верхнего и нижнего колонтитулов"
 
-#: core/includes/back/dashboard-options.php:134
+#: core/includes/back/dashboard-options.php:244
 msgid ""
 "In this section, you can add custom HTML code to the header and footer of "
 "your website. The custom code will be placed inside the header tag and "
@@ -401,31 +401,31 @@ msgstr ""
 "для добавления пользовательских скриптов, стилей, метатегов и других "
 "элементов на ваш сайт."
 
-#: core/includes/back/dashboard-options.php:139
+#: core/includes/back/dashboard-options.php:249
 msgid "Header custom code"
 msgstr "Код в шапку"
 
-#: core/includes/back/dashboard-options.php:140
+#: core/includes/back/dashboard-options.php:250
 msgid "The custom code will be placed inside the header tag"
 msgstr "Пользовательский код будет размещен внутри тега header"
 
-#: core/includes/back/dashboard-options.php:145
+#: core/includes/back/dashboard-options.php:255
 msgid "Footer custom code"
 msgstr "Код в подвал"
 
-#: core/includes/back/dashboard-options.php:146
+#: core/includes/back/dashboard-options.php:256
 msgid "The special code will be placed before the end of the body tag"
 msgstr "Специальный код будет размещен перед концом тега body"
 
-#: core/includes/back/dashboard-options.php:151
+#: core/includes/back/dashboard-options.php:261
 msgid "Maintenance"
 msgstr "Обслуживание"
 
-#: core/includes/back/dashboard-options.php:152
+#: core/includes/back/dashboard-options.php:262
 msgid "Maintenance mode for anonymous users"
 msgstr "Режим обслуживания для анонимных пользователей"
 
-#: core/includes/back/dashboard-options.php:153
+#: core/includes/back/dashboard-options.php:263
 msgid ""
 "In this section, you can enable maintenance mode for anonymous users, "
 "customize the title and text that will be displayed on the maintenance page."
@@ -434,35 +434,51 @@ msgstr ""
 "пользователей, настроить заголовок и текст, которые будут отображаться на "
 "странице обслуживания."
 
-#: core/includes/back/dashboard-options.php:159
+#: core/includes/back/dashboard-options.php:269
 msgid "Enable maintenance mode for anonymous users"
 msgstr "Режим обслуживания для анонимных пользователей"
 
-#: core/includes/back/dashboard-options.php:164
+#: core/includes/back/dashboard-options.php:274
 msgid "Title"
 msgstr "Заголовок"
 
-#: core/includes/back/dashboard-options.php:165
+#: core/includes/back/dashboard-options.php:275
 msgid "Maintenance mode title for anonymous users"
 msgstr "Заголовок режима обслуживания для анонимных пользователей"
 
-#: core/includes/back/dashboard-options.php:170
+#: core/includes/back/dashboard-options.php:290
 msgid "Text"
 msgstr "Текст"
 
-#: core/includes/back/dashboard-options.php:171
+#: core/includes/back/dashboard-options.php:291
 msgid "Maintenance mode text for anonymous users"
 msgstr "Текст режима обслуживания для анонимных пользователей"
 
-#: core/includes/back/dashboard-options.php:176
+#: core/includes/back/dashboard-options.php:306
+msgid "Integrations"
+msgstr "Интеграции"
+
+#: core/includes/back/dashboard-options.php:307
+msgid "Integrations with third-party services options"
+msgstr "Интеграция со сторонними сервисами"
+
+#: core/includes/back/dashboard-options.php:312
+msgid "Google Maps API key"
+msgstr "Ключ API Карт Google"
+
+#: core/includes/back/dashboard-options.php:313
+msgid "Google Cloud Console"
+msgstr "Google Cloud Консоль"
+
+#: core/includes/back/dashboard-options.php:318
 msgid "Other options"
 msgstr "Прочие параметры"
 
-#: core/includes/back/dashboard-options.php:177
+#: core/includes/back/dashboard-options.php:319
 msgid "All other various options"
 msgstr "Прочие параметры"
 
-#: core/includes/back/dashboard-options.php:178
+#: core/includes/back/dashboard-options.php:320
 msgid ""
 "In this section, you can enable or disable various options that affect the "
 "functionality of your website. You can disable updates, customizer, src set, "
@@ -480,171 +496,162 @@ msgstr ""
 "администратора, комментарии, удаление дочерних медиафайлов, кэш HTML, "
 "минификацию, ACF, редактор Gutenberg и указать ключ API Google Maps."
 
-#: core/includes/back/dashboard-options.php:183
+#: core/includes/back/dashboard-options.php:325
 msgid "Disable all updates"
 msgstr "Отключить все обновления"
 
-#: core/includes/back/dashboard-options.php:184
+#: core/includes/back/dashboard-options.php:326
 msgid "Disable plugins and WordPress core updates"
 msgstr "Отключите плагины и обновления ядра WordPress"
 
-#: core/includes/back/dashboard-options.php:189
+#: core/includes/back/dashboard-options.php:331
 msgid "Disable customizer"
 msgstr "Отключить кастомайзер"
 
-#: core/includes/back/dashboard-options.php:190
+#: core/includes/back/dashboard-options.php:332
 msgid "Disable WordPress customizer"
 msgstr "Отключить кастомайзер"
 
-#: core/includes/back/dashboard-options.php:195
+#: core/includes/back/dashboard-options.php:337
 msgid "Disable src set"
 msgstr "Отключить src set"
 
-#: core/includes/back/dashboard-options.php:196
+#: core/includes/back/dashboard-options.php:338
 msgid "Disable src set for images"
 msgstr "Отключить src set"
 
-#: core/includes/back/dashboard-options.php:201
+#: core/includes/back/dashboard-options.php:343
 msgid "Remove default image sizes"
 msgstr "Отключить стандартные размеры изображений"
 
-#: core/includes/back/dashboard-options.php:202
+#: core/includes/back/dashboard-options.php:344
 msgid "Remove default image sizes in WordPress"
 msgstr "Отключить стандартные размеры изображений"
 
-#: core/includes/back/dashboard-options.php:207
+#: core/includes/back/dashboard-options.php:349
 msgid "Disable core privacy tools"
 msgstr "Отключить инструменты конфиденциальности"
 
-#: core/includes/back/dashboard-options.php:208
+#: core/includes/back/dashboard-options.php:350
 msgid "Disable default WordPress core privacy tools"
 msgstr "Отключить инструменты конфиденциальности"
 
-#: core/includes/back/dashboard-options.php:213
+#: core/includes/back/dashboard-options.php:355
 msgid "Enable CYR3LAT"
 msgstr "Активировать CYR3LAT"
 
-#: core/includes/back/dashboard-options.php:214
+#: core/includes/back/dashboard-options.php:356
 msgid "Enable CYR3LAT transliteration"
 msgstr "Активировать CYR3LAT"
 
-#: core/includes/back/dashboard-options.php:219
+#: core/includes/back/dashboard-options.php:361
 msgid "Disable DNS prefetch"
 msgstr "Скрыть DNS prefetch"
 
-#: core/includes/back/dashboard-options.php:220
+#: core/includes/back/dashboard-options.php:362
 msgid "Disable DNS prefetch for external resources"
 msgstr "Скрыть DNS prefetch"
 
-#: core/includes/back/dashboard-options.php:225
+#: core/includes/back/dashboard-options.php:367
 msgid "Disable Rest API"
 msgstr "Отключить Rest API"
 
-#: core/includes/back/dashboard-options.php:226
+#: core/includes/back/dashboard-options.php:368
 msgid "Disable Rest API for anonymous users"
 msgstr "Отключить Rest API для анонимных пользователей"
 
-#: core/includes/back/dashboard-options.php:231
+#: core/includes/back/dashboard-options.php:373
 msgid "Disable Emojis"
 msgstr "Отключить Emoji"
 
-#: core/includes/back/dashboard-options.php:232
+#: core/includes/back/dashboard-options.php:374
 msgid "Disable default WordPress Emojis"
 msgstr "Отключить Emoji"
 
-#: core/includes/back/dashboard-options.php:237
+#: core/includes/back/dashboard-options.php:379
 msgid "Disable Embeds"
 msgstr "Отключить Embeds"
 
-#: core/includes/back/dashboard-options.php:238
+#: core/includes/back/dashboard-options.php:380
 msgid "Disable default WordPress Embeds"
 msgstr "Отключить Embeds"
 
-#: core/includes/back/dashboard-options.php:243
+#: core/includes/back/dashboard-options.php:385
 msgid "Disable dashboard widgets"
 msgstr "Скрыть стандартные виджеты консоли"
 
-#: core/includes/back/dashboard-options.php:244
+#: core/includes/back/dashboard-options.php:386
 msgid "Disable default WordPress dashboard widgets"
 msgstr "Скрыть стандартные виджеты консоли"
 
-#: core/includes/back/dashboard-options.php:249
+#: core/includes/back/dashboard-options.php:391
 msgid "Hide admin top bar"
 msgstr "Отключить панель администратора"
 
-#: core/includes/back/dashboard-options.php:250
+#: core/includes/back/dashboard-options.php:392
 msgid "Hide admin top bar for all users on front-end"
 msgstr ""
 "Скрыть верхнюю панель администратора для всех пользователей на фронтенде"
 
-#: core/includes/back/dashboard-options.php:255
+#: core/includes/back/dashboard-options.php:397
 msgid "Disable admin email verification"
 msgstr "Отключить E-mail верификацию админов"
 
-#: core/includes/back/dashboard-options.php:256
+#: core/includes/back/dashboard-options.php:398
 msgid "Disable default WordPress admin email verification"
 msgstr "Отключить E-mail верификацию админов"
 
-#: core/includes/back/dashboard-options.php:261
+#: core/includes/back/dashboard-options.php:403
 msgid "Disable comments"
 msgstr "Отключить комментарии"
 
-#: core/includes/back/dashboard-options.php:262
+#: core/includes/back/dashboard-options.php:404
 msgid "Disable comments on all posts and pages"
 msgstr "Отключите комментарии для всех постов и страниц"
 
-#: core/includes/back/dashboard-options.php:267
+#: core/includes/back/dashboard-options.php:409
 msgid "Delete child media"
 msgstr "Удалять вложения"
 
-#: core/includes/back/dashboard-options.php:268
+#: core/includes/back/dashboard-options.php:410
 msgid "Delete child media when parent post is deleted"
 msgstr "Удаление дочерних медиа при удалении родительского поста"
 
-#: core/includes/back/dashboard-options.php:273
+#: core/includes/back/dashboard-options.php:415
 msgid "Enable HTML cache"
 msgstr "Включить HTML кеширование"
 
-#: core/includes/back/dashboard-options.php:274
+#: core/includes/back/dashboard-options.php:416
 msgid "Enable HTML page cache for anonymous users"
 msgstr "Включить кэширование HTML-страниц для анонимных пользователей"
 
-#: core/includes/back/dashboard-options.php:279
+#: core/includes/back/dashboard-options.php:421
 msgid "Enable minify"
 msgstr "Включить минификацию"
 
-#: core/includes/back/dashboard-options.php:280
+#: core/includes/back/dashboard-options.php:422
 msgid "Enable HTML minifier on frontend"
 msgstr "Включить HTML-минификатор на фронтенде"
 
-#: core/includes/back/dashboard-options.php:285
+#: core/includes/back/dashboard-options.php:427
 msgid "Hide ACF"
 msgstr "Скрыть ACF"
 
-#: core/includes/back/dashboard-options.php:286
+#: core/includes/back/dashboard-options.php:428
 msgid "Hide Advanced Custom Fields from Dashboard"
 msgstr "Скрыть ACF из вдминки"
 
-#: core/includes/back/dashboard-options.php:291
+#: core/includes/back/dashboard-options.php:433
 msgid "Disable Gutenberg editor everywhere"
 msgstr "Отключите редактор Gutenberg везде"
 
-#: core/includes/back/dashboard-options.php:296
+#: core/includes/back/dashboard-options.php:438
 msgid "Disable Gutenberg editor for Blog"
 msgstr "Отключите редактор Gutenberg для блога"
 
-#: core/includes/back/dashboard-options.php:301
+#: core/includes/back/dashboard-options.php:443
 msgid "Parse all pages blocks as Gutenberg patterns"
 msgstr "Парсить все блоки страниц как Gutenber паттерны"
-
-#: core/includes/back/dashboard-options.php:306
-msgid "Google maps API key"
-msgstr "Ключ Google maps API"
-
-#: core/includes/back/dashboard-options.php:307
-msgid "Google maps API key to integrate with Advanced Custom Fields"
-msgstr ""
-"Ключ API Google Maps для интеграции с расширенными пользовательскими полями"
 
 #: core/includes/back/dashboard-update-assets-version.php:16
 msgid "Update theme version"
@@ -863,6 +870,11 @@ msgstr "Пароль"
 #: views/password.twig:11
 msgid "Submit"
 msgstr "Отправить"
+
+#~ msgid "Google maps API key to integrate with Advanced Custom Fields"
+#~ msgstr ""
+#~ "Ключ API Google Maps для интеграции с расширенными пользовательскими "
+#~ "полями"
 
 #~ msgid "New URL:"
 #~ msgstr "Новый URL:"
