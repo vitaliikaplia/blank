@@ -251,6 +251,12 @@ function get_custom_options(){
                 ),
                 array (
                     'type'          => 'code',
+                    'name'          => 'after_body_custom_code',
+                    'label'         => __("After &#x3C;body&#x3E; custom code", TEXTDOMAIN),
+                    'description'   => __("The special code will be placed after the start of the body tag", TEXTDOMAIN)
+                ),
+                array (
+                    'type'          => 'code',
                     'name'          => 'footer_custom_code',
                     'label'         => __("Footer custom code", TEXTDOMAIN),
                     'description'   => __("The special code will be placed before the end of the body tag", TEXTDOMAIN)
@@ -314,7 +320,7 @@ function get_custom_options(){
                 ),
             ),
         ),
-        'other'   =>  Array(
+        'various'   =>  Array(
             'label' => __('Other options', TEXTDOMAIN),
             'title' => __('All other various options', TEXTDOMAIN),
             'description' => __('In this section, you can enable or disable various options that affect the functionality of your website. You can disable updates, customizer, src set, default image sizes, core privacy tools, CYR3LAT transliteration, DNS prefetch, Rest API, Emojis, Embeds, dashboard widgets, admin top bar, admin email verification, comments, child media deletion, HTML cache, minify, ACF, Gutenberg editor, and specify the Google maps API key.', TEXTDOMAIN),

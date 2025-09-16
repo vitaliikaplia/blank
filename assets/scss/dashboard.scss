@@ -223,3 +223,84 @@ body.mce-fullscreen{
 		margin-top: 0 !important;
 	}
 }
+
+/* custom dashboard meta */
+.post-type-mail-log{
+    .wp-heading-inline,
+    .wp-header-end,
+    #screen-meta-links,
+    .handle-order-higher,
+    .handle-order-lower{
+        display: none !important;
+    }
+    .meta-box-sortables{
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    #custom-orders-information-fields-meta-box,
+    #custom-payments-information-fields-meta-box,
+    #custom-payments-information-fields-meta-box-2,
+    #custom-sms-log-information-fields-meta-box,
+    #custom-email-log-information-fields-meta-box,
+    #custom-email-log-information-fields-meta-box-2{
+
+        .inside{
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: none;
+            margin-bottom: 0;
+
+            tbody{
+                tr{
+                    border-bottom: solid 1px #e5e5e5;
+
+                    td{
+                        padding: 12px;
+                        border-right: solid 1px #e5e5e5;
+
+                        &:last-child{
+                            font-weight: 600;
+                        }
+                    }
+
+                    &:last-child{
+                        border-bottom: none;
+                    }
+
+                    &:hover{
+                        background-color: #f9f9f9;
+                    }
+                }
+            }
+
+            p{
+                margin: 0 !important;
+                line-height: 1.8 !important;
+            }
+
+            .mailPreview{
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto;
+            }
+        }
+    }
+    #custom-payments-information-fields-meta-box-2,
+    #custom-sms-log-information-fields-meta-box-2,
+    #custom-mail-log-information-fields-meta-box-3{
+        #log_data{
+            display: none !important;
+        }
+    }
+    #custom-email-log-information-fields-meta-box-2{
+        .inside{
+            font-size: 0 !important;
+        }
+    }
+}

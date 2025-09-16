@@ -2,6 +2,7 @@
 {% include 'overall/html-header.twig' %}
 {% endblock %}
 <body class="{{body_class}}">
+{{ get_option('after_body_custom_code') }}
 <main>
 {% block content %}{% endblock %}
 </main>

@@ -4,11 +4,11 @@
 @import "mixins";
 
 body.login {
-	background-color: #fff;
+	background-color: #C551E7;
 }
 
 .login #login h1 a {
-	background-image: url(../svg/icon.svg);
+	background-image: url(../svg/icon-white.svg);
 	width: 144px;
 	height: 144px;
 	outline: none !important;
@@ -29,11 +29,11 @@ body.login {
 		@include box-shadow(0 1px 2px 0px rgba(0,0,0,0.25));
 	}
 	#nav a, #backtoblog a {
-		color: #000 !important;
+		color: #fff !important;
 		text-decoration: none;
 	}
 	#nav a:hover, #backtoblog a:hover {
-		color: #000 !important;
+		color: #fff !important;
 		text-decoration: underline;
 	}
 	.button-primary {
@@ -41,20 +41,20 @@ body.login {
 		border: none !important;
 		box-shadow: none !important;
 		outline: none !important;
-		background-color: #373c42;
+		background-color: #C551E7;
 		&:hover {
 			background-image: none;
 			opacity: 0.8;
 			border: none !important;
 			box-shadow: none !important;
-			background-color: #373c42;
+			background-color: #C551E7;
 		}
 		&:visited, &:active, &:focus {
 			background-image: none;
 			opacity: 1;
 			border: none !important;
 			box-shadow: none !important;
-			background-color: #373c42;
+			background-color: #C551E7;
 		}
 	}
 	.button{
@@ -67,7 +67,7 @@ body.login {
 		padding: 0 24px;
 
 		a{
-			color: #000;
+			color: #fff;
 			text-decoration: none;
 
 			&:hover{

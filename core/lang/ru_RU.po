@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-16 17:35+0300\n"
+"POT-Creation-Date: 2025-09-16 18:37+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -252,6 +252,22 @@ msgstr "Категории"
 msgid "Powered by"
 msgstr "Работает на"
 
+#: core/includes/back/dashboard-mail-log-meta.php:36
+msgid "Invalid mail log ID"
+msgstr "Неверный идентификатор почтового журнала"
+
+#: core/includes/back/dashboard-mail-log-meta.php:53
+msgid "Email log information"
+msgstr "Информация о Email отправке"
+
+#: core/includes/back/dashboard-mail-log-meta.php:74
+msgid "Email preview"
+msgstr "Предварительный просмотр письма"
+
+#: core/includes/back/dashboard-mail-log-meta.php:98
+msgid "Recipient"
+msgstr "Получатель"
+
 #: core/includes/back/dashboard-options.php:8
 msgid "Images"
 msgstr "Изображения"
@@ -280,7 +296,7 @@ msgstr ""
 #: core/includes/back/dashboard-options.php:15
 #: core/includes/back/dashboard-options.php:110
 #: core/includes/back/dashboard-options.php:145
-#: core/includes/back/dashboard-options.php:268
+#: core/includes/back/dashboard-options.php:274
 msgid "Enable"
 msgstr "Включить"
 
@@ -410,22 +426,30 @@ msgid "The custom code will be placed inside the header tag"
 msgstr "Пользовательский код будет размещен внутри тега header"
 
 #: core/includes/back/dashboard-options.php:255
+msgid "After &#x3C;body&#x3E; custom code"
+msgstr "Код после &#x3C;body&#x3E;"
+
+#: core/includes/back/dashboard-options.php:256
+msgid "The special code will be placed after the start of the body tag"
+msgstr "Специальный код будет размещен после начала тега body"
+
+#: core/includes/back/dashboard-options.php:261
 msgid "Footer custom code"
 msgstr "Код в подвал"
 
-#: core/includes/back/dashboard-options.php:256
+#: core/includes/back/dashboard-options.php:262
 msgid "The special code will be placed before the end of the body tag"
 msgstr "Специальный код будет размещен перед концом тега body"
 
-#: core/includes/back/dashboard-options.php:261
+#: core/includes/back/dashboard-options.php:267
 msgid "Maintenance"
 msgstr "Обслуживание"
 
-#: core/includes/back/dashboard-options.php:262
+#: core/includes/back/dashboard-options.php:268
 msgid "Maintenance mode for anonymous users"
 msgstr "Режим обслуживания для анонимных пользователей"
 
-#: core/includes/back/dashboard-options.php:263
+#: core/includes/back/dashboard-options.php:269
 msgid ""
 "In this section, you can enable maintenance mode for anonymous users, "
 "customize the title and text that will be displayed on the maintenance page."
@@ -434,51 +458,51 @@ msgstr ""
 "пользователей, настроить заголовок и текст, которые будут отображаться на "
 "странице обслуживания."
 
-#: core/includes/back/dashboard-options.php:269
+#: core/includes/back/dashboard-options.php:275
 msgid "Enable maintenance mode for anonymous users"
 msgstr "Режим обслуживания для анонимных пользователей"
 
-#: core/includes/back/dashboard-options.php:274
+#: core/includes/back/dashboard-options.php:280
 msgid "Title"
 msgstr "Заголовок"
 
-#: core/includes/back/dashboard-options.php:275
+#: core/includes/back/dashboard-options.php:281
 msgid "Maintenance mode title for anonymous users"
 msgstr "Заголовок режима обслуживания для анонимных пользователей"
 
-#: core/includes/back/dashboard-options.php:290
+#: core/includes/back/dashboard-options.php:296
 msgid "Text"
 msgstr "Текст"
 
-#: core/includes/back/dashboard-options.php:291
+#: core/includes/back/dashboard-options.php:297
 msgid "Maintenance mode text for anonymous users"
 msgstr "Текст режима обслуживания для анонимных пользователей"
 
-#: core/includes/back/dashboard-options.php:306
+#: core/includes/back/dashboard-options.php:312
 msgid "Integrations"
 msgstr "Интеграции"
 
-#: core/includes/back/dashboard-options.php:307
+#: core/includes/back/dashboard-options.php:313
 msgid "Integrations with third-party services options"
 msgstr "Интеграция со сторонними сервисами"
 
-#: core/includes/back/dashboard-options.php:312
+#: core/includes/back/dashboard-options.php:318
 msgid "Google Maps API key"
 msgstr "Ключ API Карт Google"
 
-#: core/includes/back/dashboard-options.php:313
+#: core/includes/back/dashboard-options.php:319
 msgid "Google Cloud Console"
 msgstr "Google Cloud Консоль"
 
-#: core/includes/back/dashboard-options.php:318
+#: core/includes/back/dashboard-options.php:324
 msgid "Other options"
 msgstr "Прочие параметры"
 
-#: core/includes/back/dashboard-options.php:319
+#: core/includes/back/dashboard-options.php:325
 msgid "All other various options"
 msgstr "Прочие параметры"
 
-#: core/includes/back/dashboard-options.php:320
+#: core/includes/back/dashboard-options.php:326
 msgid ""
 "In this section, you can enable or disable various options that affect the "
 "functionality of your website. You can disable updates, customizer, src set, "
@@ -496,160 +520,160 @@ msgstr ""
 "администратора, комментарии, удаление дочерних медиафайлов, кэш HTML, "
 "минификацию, ACF, редактор Gutenberg и указать ключ API Google Maps."
 
-#: core/includes/back/dashboard-options.php:325
+#: core/includes/back/dashboard-options.php:331
 msgid "Disable all updates"
 msgstr "Отключить все обновления"
 
-#: core/includes/back/dashboard-options.php:326
+#: core/includes/back/dashboard-options.php:332
 msgid "Disable plugins and WordPress core updates"
 msgstr "Отключите плагины и обновления ядра WordPress"
 
-#: core/includes/back/dashboard-options.php:331
+#: core/includes/back/dashboard-options.php:337
 msgid "Disable customizer"
 msgstr "Отключить кастомайзер"
 
-#: core/includes/back/dashboard-options.php:332
+#: core/includes/back/dashboard-options.php:338
 msgid "Disable WordPress customizer"
 msgstr "Отключить кастомайзер"
 
-#: core/includes/back/dashboard-options.php:337
+#: core/includes/back/dashboard-options.php:343
 msgid "Disable src set"
 msgstr "Отключить src set"
 
-#: core/includes/back/dashboard-options.php:338
+#: core/includes/back/dashboard-options.php:344
 msgid "Disable src set for images"
 msgstr "Отключить src set"
 
-#: core/includes/back/dashboard-options.php:343
+#: core/includes/back/dashboard-options.php:349
 msgid "Remove default image sizes"
 msgstr "Отключить стандартные размеры изображений"
 
-#: core/includes/back/dashboard-options.php:344
+#: core/includes/back/dashboard-options.php:350
 msgid "Remove default image sizes in WordPress"
 msgstr "Отключить стандартные размеры изображений"
 
-#: core/includes/back/dashboard-options.php:349
+#: core/includes/back/dashboard-options.php:355
 msgid "Disable core privacy tools"
 msgstr "Отключить инструменты конфиденциальности"
 
-#: core/includes/back/dashboard-options.php:350
+#: core/includes/back/dashboard-options.php:356
 msgid "Disable default WordPress core privacy tools"
 msgstr "Отключить инструменты конфиденциальности"
 
-#: core/includes/back/dashboard-options.php:355
+#: core/includes/back/dashboard-options.php:361
 msgid "Enable CYR3LAT"
 msgstr "Активировать CYR3LAT"
 
-#: core/includes/back/dashboard-options.php:356
+#: core/includes/back/dashboard-options.php:362
 msgid "Enable CYR3LAT transliteration"
 msgstr "Активировать CYR3LAT"
 
-#: core/includes/back/dashboard-options.php:361
+#: core/includes/back/dashboard-options.php:367
 msgid "Disable DNS prefetch"
 msgstr "Скрыть DNS prefetch"
 
-#: core/includes/back/dashboard-options.php:362
+#: core/includes/back/dashboard-options.php:368
 msgid "Disable DNS prefetch for external resources"
 msgstr "Скрыть DNS prefetch"
 
-#: core/includes/back/dashboard-options.php:367
+#: core/includes/back/dashboard-options.php:373
 msgid "Disable Rest API"
 msgstr "Отключить Rest API"
 
-#: core/includes/back/dashboard-options.php:368
+#: core/includes/back/dashboard-options.php:374
 msgid "Disable Rest API for anonymous users"
 msgstr "Отключить Rest API для анонимных пользователей"
 
-#: core/includes/back/dashboard-options.php:373
+#: core/includes/back/dashboard-options.php:379
 msgid "Disable Emojis"
 msgstr "Отключить Emoji"
 
-#: core/includes/back/dashboard-options.php:374
+#: core/includes/back/dashboard-options.php:380
 msgid "Disable default WordPress Emojis"
 msgstr "Отключить Emoji"
 
-#: core/includes/back/dashboard-options.php:379
+#: core/includes/back/dashboard-options.php:385
 msgid "Disable Embeds"
 msgstr "Отключить Embeds"
 
-#: core/includes/back/dashboard-options.php:380
+#: core/includes/back/dashboard-options.php:386
 msgid "Disable default WordPress Embeds"
 msgstr "Отключить Embeds"
 
-#: core/includes/back/dashboard-options.php:385
+#: core/includes/back/dashboard-options.php:391
 msgid "Disable dashboard widgets"
 msgstr "Скрыть стандартные виджеты консоли"
 
-#: core/includes/back/dashboard-options.php:386
+#: core/includes/back/dashboard-options.php:392
 msgid "Disable default WordPress dashboard widgets"
 msgstr "Скрыть стандартные виджеты консоли"
 
-#: core/includes/back/dashboard-options.php:391
+#: core/includes/back/dashboard-options.php:397
 msgid "Hide admin top bar"
 msgstr "Отключить панель администратора"
 
-#: core/includes/back/dashboard-options.php:392
+#: core/includes/back/dashboard-options.php:398
 msgid "Hide admin top bar for all users on front-end"
 msgstr ""
 "Скрыть верхнюю панель администратора для всех пользователей на фронтенде"
 
-#: core/includes/back/dashboard-options.php:397
+#: core/includes/back/dashboard-options.php:403
 msgid "Disable admin email verification"
 msgstr "Отключить E-mail верификацию админов"
 
-#: core/includes/back/dashboard-options.php:398
+#: core/includes/back/dashboard-options.php:404
 msgid "Disable default WordPress admin email verification"
 msgstr "Отключить E-mail верификацию админов"
 
-#: core/includes/back/dashboard-options.php:403
+#: core/includes/back/dashboard-options.php:409
 msgid "Disable comments"
 msgstr "Отключить комментарии"
 
-#: core/includes/back/dashboard-options.php:404
+#: core/includes/back/dashboard-options.php:410
 msgid "Disable comments on all posts and pages"
 msgstr "Отключите комментарии для всех постов и страниц"
 
-#: core/includes/back/dashboard-options.php:409
+#: core/includes/back/dashboard-options.php:415
 msgid "Delete child media"
 msgstr "Удалять вложения"
 
-#: core/includes/back/dashboard-options.php:410
+#: core/includes/back/dashboard-options.php:416
 msgid "Delete child media when parent post is deleted"
 msgstr "Удаление дочерних медиа при удалении родительского поста"
 
-#: core/includes/back/dashboard-options.php:415
+#: core/includes/back/dashboard-options.php:421
 msgid "Enable HTML cache"
 msgstr "Включить HTML кеширование"
 
-#: core/includes/back/dashboard-options.php:416
+#: core/includes/back/dashboard-options.php:422
 msgid "Enable HTML page cache for anonymous users"
 msgstr "Включить кэширование HTML-страниц для анонимных пользователей"
 
-#: core/includes/back/dashboard-options.php:421
+#: core/includes/back/dashboard-options.php:427
 msgid "Enable minify"
 msgstr "Включить минификацию"
 
-#: core/includes/back/dashboard-options.php:422
+#: core/includes/back/dashboard-options.php:428
 msgid "Enable HTML minifier on frontend"
 msgstr "Включить HTML-минификатор на фронтенде"
 
-#: core/includes/back/dashboard-options.php:427
+#: core/includes/back/dashboard-options.php:433
 msgid "Hide ACF"
 msgstr "Скрыть ACF"
 
-#: core/includes/back/dashboard-options.php:428
+#: core/includes/back/dashboard-options.php:434
 msgid "Hide Advanced Custom Fields from Dashboard"
 msgstr "Скрыть ACF из вдминки"
 
-#: core/includes/back/dashboard-options.php:433
+#: core/includes/back/dashboard-options.php:439
 msgid "Disable Gutenberg editor everywhere"
 msgstr "Отключите редактор Gutenberg везде"
 
-#: core/includes/back/dashboard-options.php:438
+#: core/includes/back/dashboard-options.php:444
 msgid "Disable Gutenberg editor for Blog"
 msgstr "Отключите редактор Gutenberg для блога"
 
-#: core/includes/back/dashboard-options.php:443
+#: core/includes/back/dashboard-options.php:449
 msgid "Parse all pages blocks as Gutenberg patterns"
 msgstr "Парсить все блоки страниц как Gutenber паттерны"
 
@@ -706,7 +730,8 @@ msgid "No"
 msgstr "Нет"
 
 #: core/includes/back/system-acf-nav-menu-field.php:81
-#: core/includes/back/system-thumbnails.php:27
+#: core/includes/back/system-thumbnails.php:20
+#: core/includes/back/system-thumbnails.php:22
 msgid "None"
 msgstr "Нет"
 
@@ -788,7 +813,11 @@ msgstr ""
 "Неверное правило перенаправления: Старый URL должен содержать текущий домен "
 "WordPress."
 
-#: core/includes/back/system-thumbnails.php:13
+#: core/includes/back/system-send-email.php:34
+msgid "Test"
+msgstr "Тест"
+
+#: core/includes/back/system-thumbnails.php:9
 msgid "Thumbnail"
 msgstr "Миниатюра"
 
@@ -843,6 +872,10 @@ msgstr "&hellip;"
 msgid "No pattern selected"
 msgstr "Hech qanday naqsh tanlanmagan"
 
+#: views/dashboard/email-log-meta.twig:7
+msgid "Log ID"
+msgstr "ID лога"
+
 #: views/dashboard/fields/link.twig:3
 msgid "Edit Link"
 msgstr "Изменить ссылку"
@@ -862,6 +895,10 @@ msgstr "Старый URL-адрес:"
 #: views/dashboard/redirects-meta.twig:10
 msgid "Code:"
 msgstr "Код:"
+
+#: views/email/base.twig:385
+msgid "Session information"
+msgstr "Информация о сеансе"
 
 #: views/password.twig:10
 msgid "Password"

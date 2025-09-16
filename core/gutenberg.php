@@ -119,7 +119,7 @@ if(!get_option('disable_gutenberg_everywhere')){
         $context['is_admin'] = is_admin();
         $context['is_example'] = get_field('is_example');
         if($context['is_example']){
-            $context['block_example'] = TEMPLATE_DIRECTORY_URL . 'assets/block-preview/' . $block['category'] . '/' . $no_category_block_name . '.webp?ver=' . ASSETS_VERSION;
+            $context['block_example'] = TEMPLATE_DIRECTORY_URL . 'assets/block-preview/' . $block['category'] . '/' . $no_category_block_name . '.png?ver=' . ASSETS_VERSION;
         }
 
         // Render the block
