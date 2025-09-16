@@ -296,6 +296,11 @@ function get_custom_options(){
                     'label'         => __("Disable Gutenberg editor for Blog", TEXTDOMAIN),
                 ),
                 array (
+                    'type'          => 'checkbox',
+                    'name'          => 'parse_all_pages_blocks_as_gutenberg_patterns',
+                    'label'         => __("Parse all pages blocks as Gutenberg patterns", TEXTDOMAIN),
+                ),
+                array (
                     'type'          => 'password',
                     'name'          => 'google_maps_api_key',
                     'label'         => __("Google maps API key", TEXTDOMAIN),

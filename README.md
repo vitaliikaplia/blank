@@ -1,4 +1,4 @@
-# Blank Theme for WordPress
+# Blank WordPress Template
 
 This is a clean custom WordPress starter theme developed for building modern and fully customizable WordPress websites from scratch. It includes a clean structure, essential files, and integrations to kickstart your development process.
 

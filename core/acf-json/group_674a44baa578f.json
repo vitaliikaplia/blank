@@ -1,6 +1,6 @@
 {
     "key": "group_674a44baa578f",
-    "title": "Settings: Footer",
+    "title": "Налаштування підвалу",
     "fields": [
         {
             "key": "field_674a44baa7284",
@@ -21,7 +21,7 @@
             "sub_fields": [
                 {
                     "key": "field_674a4bed7c914",
-                    "label": "Menu",
+                    "label": "Меню",
                     "name": "menu",
                     "aria-label": "",
                     "type": "nav_menu",
@@ -40,7 +40,7 @@
                 },
                 {
                     "key": "field_674a44baae0e6",
-                    "label": "Copy line",
+                    "label": "Копірайт",
                     "name": "copy_line",
                     "aria-label": "",
                     "type": "text",
@@ -52,9 +52,9 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 2,
                     "default_value": "",
                     "maxlength": "",
+                    "allow_in_bindings": 1,
                     "placeholder": "",
                     "prepend": "",
                     "append": ""
@@ -80,5 +80,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732925239
+    "modified": 1758028186
 }

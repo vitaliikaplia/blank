@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 22:21+0200\n"
+"POT-Creation-Date: 2025-09-16 16:42+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
 "Language-Team: Vitalii Kaplia <vitalii.kaplia@gmail.com>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ../..\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.7\n"
 "X-Poedit-SearchPath-0: core/lang\n"
 "X-Poedit-SearchPath-1: core\n"
 "X-Poedit-SearchPath-2: .\n"
@@ -25,13 +25,29 @@ msgstr ""
 msgid "Header"
 msgstr "Шапка"
 
-#: core/acf.php:34 core/acf.php:35
+#: core/acf.php:32
+msgid "Header options updated"
+msgstr "Параметри шапки оновлено"
+
+#: core/acf.php:33 core/acf.php:41 core/acf.php:49
+msgid "Update"
+msgstr "Оновити"
+
+#: core/acf.php:36 core/acf.php:37
 msgid "Footer"
 msgstr "Підвал"
 
-#: core/acf.php:40 core/acf.php:41
+#: core/acf.php:40
+msgid "Footer options updated"
+msgstr "Параметри підвалу оновлено"
+
+#: core/acf.php:44 core/acf.php:45
 msgid "Other"
 msgstr "Інше"
+
+#: core/acf.php:48
+msgid "Other options updated"
+msgstr "Інші опції оновлено"
 
 #: core/gutenberg.php:14
 msgid "Main blocks"
@@ -52,6 +68,14 @@ msgstr "Другий екран"
 #: core/gutenberg.php:46 core/includes/back/custom-post-types.php:57
 msgid "Pattern"
 msgstr "Патерн"
+
+#: core/gutenberg.php:296
+msgid "Block"
+msgstr "Блок"
+
+#: core/gutenberg.php:297
+msgid "Block from"
+msgstr "Блок від"
 
 #: core/includes/back/custom-post-types.php:6
 #: core/includes/back/custom-post-types.php:19
@@ -609,10 +633,14 @@ msgid "Disable Gutenberg editor for Blog"
 msgstr "Вимкнути редактор Gutenberg для блогу"
 
 #: core/includes/back/dashboard-options.php:301
+msgid "Parse all pages blocks as Gutenberg patterns"
+msgstr "Парсити усі блоки сторінок як Гутенберг патерни"
+
+#: core/includes/back/dashboard-options.php:306
 msgid "Google maps API key"
 msgstr "Ключ Google maps API"
 
-#: core/includes/back/dashboard-options.php:302
+#: core/includes/back/dashboard-options.php:307
 msgid "Google maps API key to integrate with Advanced Custom Fields"
 msgstr "Ключ API карт Google для інтеграції з Advanced Custom Fields"
 
@@ -889,12 +917,6 @@ msgstr "Надіслати"
 
 #~ msgid "Framework"
 #~ msgstr "Фреймворк"
-
-#~ msgid "Update"
-#~ msgstr "Оновити"
-
-#~ msgid "Settings updated"
-#~ msgstr "Налаштування оновлено"
 
 #~ msgid "User additional fields"
 #~ msgstr "Додаткові поля користувача"

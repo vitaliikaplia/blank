@@ -3,7 +3,7 @@
 {% block content %}
 
     {% if fields.pattern %}
-    {{ get_post(fields.pattern).content }}
+        {{ get_pattern(fields.pattern) }}
     {% else %}
     <p class="no-pattern-selected">{{ __('No pattern selected', TEXTDOMAIN) }}</p>
     {% endif %}

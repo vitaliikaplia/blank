@@ -1,10 +1,10 @@
 {
     "key": "group_61b8eba44d195",
-    "title": "Block: First screen",
+    "title": "Блок: Перший екран",
     "fields": [
         {
             "key": "field_65e0f016dff07",
-            "label": "Content",
+            "label": "Контент",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -22,7 +22,7 @@
         },
         {
             "key": "field_61b8ebc072ecc",
-            "label": "Text",
+            "label": "Текст",
             "name": "text",
             "aria-label": "",
             "type": "wysiwyg",
@@ -35,6 +35,7 @@
                 "id": ""
             },
             "default_value": "",
+            "allow_in_bindings": 1,
             "tabs": "visual",
             "toolbar": "full",
             "media_upload": 0,
@@ -42,7 +43,7 @@
         },
         {
             "key": "field_62164b9481e7e",
-            "label": "Wrapper Background",
+            "label": "Фон обгортки",
             "name": "wrapper_background",
             "aria-label": "",
             "type": "color_picker",
@@ -56,11 +57,12 @@
             },
             "default_value": "#ef0a0a",
             "enable_opacity": 0,
-            "return_format": "string"
+            "return_format": "string",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_62164ba681e7f",
-            "label": "Inner Background",
+            "label": "Фон внутрішнього блоку",
             "name": "inner_background",
             "aria-label": "",
             "type": "color_picker",
@@ -74,11 +76,12 @@
             },
             "default_value": "#049804",
             "enable_opacity": 0,
-            "return_format": "string"
+            "return_format": "string",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_62164bde81e80",
-            "label": "Inner text",
+            "label": "Внутрішній текст",
             "name": "inner_text",
             "aria-label": "",
             "type": "color_picker",
@@ -92,11 +95,12 @@
             },
             "default_value": "#fff",
             "enable_opacity": 0,
-            "return_format": "string"
+            "return_format": "string",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_674a5b82198fe",
-            "label": "Inner image",
+            "label": "Внутрішнє зображення",
             "name": "inner_image",
             "aria-label": "",
             "type": "image",
@@ -139,5 +143,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732926390
+    "modified": 1758028001
 }

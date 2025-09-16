@@ -1,6 +1,6 @@
 {
     "key": "group_634e9e74a9c0d",
-    "title": "Settings: Header",
+    "title": "Налаштування шапки",
     "fields": [
         {
             "key": "field_634e9f562c04d",
@@ -21,7 +21,7 @@
             "sub_fields": [
                 {
                     "key": "field_65d6e715685f6",
-                    "label": "Logo",
+                    "label": "Лого",
                     "name": "logo",
                     "aria-label": "",
                     "type": "image",
@@ -33,7 +33,6 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 1,
                     "return_format": "array",
                     "library": "all",
                     "min_width": "",
@@ -43,11 +42,12 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": "",
+                    "allow_in_bindings": 1,
                     "preview_size": "medium"
                 },
                 {
                     "key": "field_65d6e71d685f7",
-                    "label": "Menu",
+                    "label": "Меню",
                     "name": "menu",
                     "aria-label": "",
                     "type": "nav_menu",
@@ -61,11 +61,12 @@
                     },
                     "save_format": "id",
                     "container": 0,
-                    "allow_null": 1
+                    "allow_null": 1,
+                    "allow_in_bindings": 1
                 },
                 {
                     "key": "field_65d6e72c685f8",
-                    "label": "Button",
+                    "label": "Кнопка",
                     "name": "button",
                     "aria-label": "",
                     "type": "link",
@@ -77,11 +78,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array"
+                    "return_format": "array",
+                    "allow_in_bindings": 1
                 },
                 {
                     "key": "field_65daaeca4532a",
-                    "label": "Language switcher",
+                    "label": "Перемикач мов",
                     "name": "language_switcher",
                     "aria-label": "",
                     "type": "true_false",
@@ -93,9 +95,9 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 1,
                     "message": "",
                     "default_value": 0,
+                    "allow_in_bindings": 1,
                     "ui_on_text": "",
                     "ui_off_text": "",
                     "ui": 1
@@ -121,5 +123,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732925233
+    "modified": 1758028120
 }

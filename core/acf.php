@@ -29,17 +29,23 @@ if (class_exists('ACF')) {
         'menu_title'  => __('Header', TEXTDOMAIN),
         'slug' => 'header',
         'parent_slug' => 'themes.php',
+        'updated_message' => __('Header options updated', TEXTDOMAIN),
+        'update_button' => __('Update', TEXTDOMAIN),
     ));
     acf_add_options_sub_page(array(
         'page_title'  => __('Footer', TEXTDOMAIN),
         'menu_title'  => __('Footer', TEXTDOMAIN),
         'slug' => 'footer',
         'parent_slug' => 'themes.php',
+        'updated_message' => __('Footer options updated', TEXTDOMAIN),
+        'update_button' => __('Update', TEXTDOMAIN),
     ));
     acf_add_options_sub_page(array(
         'page_title'  => __('Other', TEXTDOMAIN),
         'menu_title'  => __('Other', TEXTDOMAIN),
         'slug' => 'other',
         'parent_slug' => 'themes.php',
+        'updated_message' => __('Other options updated', TEXTDOMAIN),
+        'update_button' => __('Update', TEXTDOMAIN)
     ));
 }

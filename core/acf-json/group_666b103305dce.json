@@ -1,10 +1,10 @@
 {
     "key": "group_666b103305dce",
-    "title": "Block: Pattern",
+    "title": "Блок: Патерн",
     "fields": [
         {
             "key": "field_666b14e61545d",
-            "label": "Pattern",
+            "label": "Патерн",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -68,5 +68,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732924177
+    "modified": 1758028072
 }

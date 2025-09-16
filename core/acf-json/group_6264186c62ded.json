@@ -1,10 +1,10 @@
 {
     "key": "group_6264186c62ded",
-    "title": "Block: Second screen",
+    "title": "Блок: Другий екран",
     "fields": [
         {
             "key": "field_65e0f0276c0e6",
-            "label": "Content",
+            "label": "Контент",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -22,7 +22,7 @@
         },
         {
             "key": "field_6264186c6599a",
-            "label": "Text",
+            "label": "Текст",
             "name": "text",
             "aria-label": "",
             "type": "wysiwyg",
@@ -35,6 +35,7 @@
                 "id": ""
             },
             "default_value": "",
+            "allow_in_bindings": 1,
             "tabs": "visual",
             "toolbar": "full",
             "media_upload": 0,
@@ -42,7 +43,7 @@
         },
         {
             "key": "field_6264186c659a2",
-            "label": "Wrapper Background",
+            "label": "Фон обгортки",
             "name": "wrapper_background",
             "aria-label": "",
             "type": "color_picker",
@@ -56,11 +57,12 @@
             },
             "default_value": "#ef0a0a",
             "enable_opacity": 0,
-            "return_format": "string"
+            "return_format": "string",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_6264186c659a7",
-            "label": "Inner Background",
+            "label": "Фон внутрішнього блоку",
             "name": "inner_background",
             "aria-label": "",
             "type": "color_picker",
@@ -74,11 +76,12 @@
             },
             "default_value": "#049804",
             "enable_opacity": 0,
-            "return_format": "string"
+            "return_format": "string",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_6264186c659ad",
-            "label": "Inner text",
+            "label": "Внутрішній текст",
             "name": "inner_text",
             "aria-label": "",
             "type": "color_picker",
@@ -92,7 +95,8 @@
             },
             "default_value": "#fff",
             "enable_opacity": 0,
-            "return_format": "string"
+            "return_format": "string",
+            "allow_in_bindings": 1
         }
     ],
     "location": [
@@ -113,5 +117,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1709240376
+    "modified": 1758028041
 }

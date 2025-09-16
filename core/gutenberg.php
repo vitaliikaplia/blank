@@ -153,15 +153,37 @@ if(!get_option('disable_gutenberg_everywhere')){
     }
     add_action( 'enqueue_block_editor_assets', 'organic_origin_gutenberg_styles' );
 
-    /** adding block styles as css files */
-    function add_locks_styles_css_action() {
-        foreach(get_custom_gutenberg_blocks_array() as $block){
-            $style_name = $block['category'] . '-' . $block['name'];
-            $style_url = TEMPLATE_DIRECTORY_URL . 'assets/css/blocks/' . $block['category'] . '/' . $block['name'] . '.min.css';
-            wp_register_style($style_name, $style_url, '', ASSETS_VERSION);
+    /** adding block styles as css files on front-end */
+    function add_blocks_styles_to_frontend_css_action() {
+        if(!is_admin() && !is_login()){
+            global $post;
+            if (!$post) {
+                return;
+            }
+            foreach (get_custom_gutenberg_blocks_array() as $block) {
+                $block_name = 'acf/' . $block['category'] . '-' . $block['name'];
+
+                if (has_block($block_name, $post->post_content)) {
+                    $style_name = $block['category'] . '-' . $block['name'];
+                    $style_url = TEMPLATE_DIRECTORY_URL . 'assets/css/blocks/' . $block['category'] . '/' . $block['name'] . '.min.css';
+                    wp_enqueue_style($style_name, $style_url, '', ASSETS_VERSION);
+                }
+            }
         }
     }
-    add_action('init', 'add_locks_styles_css_action');
+    add_action('wp_enqueue_scripts', 'add_blocks_styles_to_frontend_css_action');
+
+    /** adding block styles as css files in back-end */
+    function add_locks_styles_to_editor_css_action() {
+        if(is_admin()){
+            foreach(get_custom_gutenberg_blocks_array() as $block){
+                $style_name = $block['category'] . '-' . $block['name'];
+                $style_url = TEMPLATE_DIRECTORY_URL . 'assets/css/blocks/' . $block['category'] . '/' . $block['name'] . '.min.css';
+                wp_register_style($style_name, $style_url, '', ASSETS_VERSION);
+            }
+        }
+    }
+    add_action('init', 'add_locks_styles_to_editor_css_action');
 
     /** adding custom block patterns categories */
     function custom_block_pattern_categories_array() {
@@ -227,5 +249,87 @@ if(!get_option('disable_gutenberg_everywhere')){
         }
     }
     add_action( 'init', 'register_custom_patterns' );
+
+    // This code registers custom block patterns and categories for pages in WordPress.
+    // It retrieves all published pages, extracts their titles and content,
+    // and creates block patterns based on the blocks found within each page's content.
+    // The patterns are categorized by the page ID, allowing for easy organization and retrieval in the Gutenberg editor.
+    if(!empty(get_option('parse_all_pages_blocks_as_gutenberg_patterns'))){
+        function page_block_pattern_categories_array() {
+            $pages = get_posts(array(
+                'post_type' => 'page',
+                'posts_per_page' => -1,
+                'post_status' => 'publish',
+                'suppress_filters' => false
+            ));
+
+            $pattern_categories = array();
+            foreach ($pages as $page) {
+                $pattern_categories[] = array(
+                    'page-' . $page->ID,
+                    array('label' => $page->post_title)
+                );
+            }
+
+            return $pattern_categories;
+        }
+
+        function page_block_patterns_array() {
+            $pages = get_posts(array(
+                'post_type' => 'page',
+                'posts_per_page' => -1,
+                'post_status' => 'publish',
+                'suppress_filters' => false
+            ));
+
+            $custom_block_patterns = array();
+
+            foreach ($pages as $page) {
+                $blocks = parse_blocks($page->post_content);
+                $block_counter = 1;
+
+                foreach ($blocks as $block) {
+                    if (!empty($block['blockName'])) {
+                        $custom_block_patterns[] = array(
+                            'page-' . $page->ID . '-block-' . $block_counter,
+                            array(
+                                'title' => $page->post_title . ' - '.__('Block', TEXTDOMAIN).' ' . $block_counter,
+                                'description' => __('Block from', TEXTDOMAIN).' ' . $page->post_title,
+                                'categories' => array('page-' . $page->ID),
+                                'content' => serialize_block($block)
+                            )
+                        );
+                        $block_counter++;
+                    }
+                }
+            }
+
+            return $custom_block_patterns;
+        }
+
+        function register_page_block_pattern_categories() {
+            $categories = get_transient('page_block_pattern_categories_array' . LANG_SUFFIX);
+            if (!$categories) {
+                $categories = page_block_pattern_categories_array();
+                set_transient('page_block_pattern_categories_array' . LANG_SUFFIX, $categories, TRANSIENTS_TIME);
+            }
+            foreach ($categories as $category) {
+                register_block_pattern_category($category[0], $category[1]);
+            }
+        }
+        add_action('init', 'register_page_block_pattern_categories');
+
+        function register_page_block_patterns() {
+            $patterns = get_transient('page_block_patterns_array' . LANG_SUFFIX);
+            if (!$patterns) {
+                $patterns = page_block_patterns_array();
+                set_transient('page_block_patterns_array' . LANG_SUFFIX, $patterns, TRANSIENTS_TIME);
+            }
+            foreach ($patterns as $pattern) {
+                register_block_pattern($pattern[0], $pattern[1]);
+            }
+        }
+        add_action('init', 'register_page_block_patterns');
+    }
 
 }

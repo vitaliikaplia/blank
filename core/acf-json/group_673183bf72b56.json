@@ -1,10 +1,10 @@
 {
     "key": "group_673183bf72b56",
-    "title": "Settings: Other",
+    "title": "Інші налаштування",
     "fields": [
         {
             "key": "field_673189c4dbc1a",
-            "label": "Cookie Pop-Up",
+            "label": "Кукі попап",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -39,7 +39,7 @@
             "sub_fields": [
                 {
                     "key": "field_635c38224afa8",
-                    "label": "Title",
+                    "label": "Заголовок",
                     "name": "title",
                     "aria-label": "",
                     "type": "text",
@@ -51,16 +51,16 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 2,
                     "default_value": "",
                     "maxlength": "",
+                    "allow_in_bindings": 1,
                     "placeholder": "",
                     "prepend": "",
                     "append": ""
                 },
                 {
                     "key": "field_635c38274afa9",
-                    "label": "Text",
+                    "label": "Текст",
                     "name": "text",
                     "aria-label": "",
                     "type": "wysiwyg",
@@ -72,8 +72,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 2,
                     "default_value": "",
+                    "allow_in_bindings": 1,
                     "tabs": "visual",
                     "toolbar": "full",
                     "media_upload": 0,
@@ -81,7 +81,7 @@
                 },
                 {
                     "key": "field_635c383f4afaa",
-                    "label": "Button title",
+                    "label": "Кнопка",
                     "name": "button_title",
                     "aria-label": "",
                     "type": "text",
@@ -93,9 +93,9 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 2,
                     "default_value": "",
                     "maxlength": "",
+                    "allow_in_bindings": 1,
                     "placeholder": "",
                     "prepend": "",
                     "append": ""
@@ -104,7 +104,7 @@
         },
         {
             "key": "field_6731840251d86",
-            "label": "Colors",
+            "label": "Кольори",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -122,7 +122,7 @@
         },
         {
             "key": "field_6731840f51d87",
-            "label": "Favorite Colors",
+            "label": "Улюблені кольори",
             "name": "favorite_colors",
             "aria-label": "",
             "type": "repeater",
@@ -205,5 +205,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732925283
+    "modified": 1758028238
 }

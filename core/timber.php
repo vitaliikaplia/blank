@@ -30,6 +30,8 @@ class StarterSite extends Site {
         /* this is where you can add your own functions to twig */
         $twig->addExtension( new \Twig\Extension\StringLoaderExtension() );
         $twig->addFilter( new \Twig\TwigFilter( 'pr', 'pr' ) );
+        $twig->addFilter( new \Twig\TwigFilter( 'log', 'write_log' ) );
+        $twig->addFunction( new \Twig\TwigFunction('get_pattern', 'get_pattern'));
         $twig->addFilter( new \Twig\TwigFilter( 'picture', 'render_picture_tag' ) );
         $twig->addFilter( new \Twig\TwigFilter( 'picture_src', 'render_picture_src' ) );
         $twig->addFunction( new \Twig\TwigFunction('get_option', 'get_option'));
