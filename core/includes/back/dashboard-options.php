@@ -3,12 +3,18 @@
 if(!defined('ABSPATH')){exit;}
 
 function get_custom_options(){
+
     return array(
         'images'   =>  Array(
             'label' => __('Images', TEXTDOMAIN),
             'title' => __('Resize and optimize media while upload', TEXTDOMAIN),
             'description' => __('In this section, you can enable resizing and optimization of images while uploading them to the media library. You can specify the formats that will be resized, set the width and height of the resized images, and adjust the quality of the resized images. Additionally, you can enable the conversion of images to the WEBP format, which is a modern image format that provides better compression and quality compared to other formats.', TEXTDOMAIN),
             'fields' => Array(
+                array (
+                    'type'          => 'tab_start',
+                    'name'          => 'resizing_at_upload',
+                    'label'         => __("Resizing at upload", TEXTDOMAIN),
+                ),
                 array (
                     'type'          => 'checkbox',
                     'name'          => 'enable_resize_at_upload',
@@ -105,6 +111,14 @@ function get_custom_options(){
                     ),
                 ),
                 array (
+                    'type'          => 'tab_end',
+                ),
+                array (
+                    'type'          => 'tab_start',
+                    'name'          => 'webp_convert',
+                    'label'         => __("WEBP convert", TEXTDOMAIN),
+                ),
+                array (
                     'type'          => 'checkbox',
                     'name'         => 'enable_webp_convert',
                     'label'         => __("Enable", TEXTDOMAIN),
@@ -131,6 +145,9 @@ function get_custom_options(){
                             ),
                         ),
                     ),
+                ),
+                array (
+                    'type'          => 'tab_end',
                 ),
             ),
         ),
@@ -488,6 +505,9 @@ add_action('admin_menu', function() {
 add_action('admin_init', function() {
     foreach (get_custom_options() as $key=>$value) {
         foreach ($value['fields'] as $field) {
+            if($field['type'] == 'tab_start' || $field['type'] == 'tab_end'){
+                continue;
+            }
             register_setting($key.'_settings', $field['name']);
         }
     }
