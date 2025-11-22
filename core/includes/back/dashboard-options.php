@@ -512,3 +512,45 @@ add_action('admin_init', function() {
         }
     }
 });
+
+if( defined('ICL_LANGUAGE_CODE' ) ){
+    add_action( 'init', function() {
+        foreach (get_custom_options() as $key=>$value) {
+            foreach ($value['fields'] as $field) {
+                if (isset($field['localize']) && $field['localize']) {
+                    do_action( 'wpml_multilingual_options', $field['name'] );
+                }
+            }
+        }
+    });
+    do_action( 'wpml_multilingual_options', 'blogname' );
+    do_action( 'wpml_multilingual_options', 'blogdescription' );
+    add_filter('pre_option', function($pre_option, $option, $default) {
+        if ((defined('REST_REQUEST') && REST_REQUEST) || is_admin() || $pre_option !== false) {
+            return $pre_option;
+        }
+
+        global $sitepress, $wpdb;
+
+        if (!$sitepress) {
+            return $pre_option;
+        }
+
+        $current_lang = $sitepress->get_current_language();
+        $default_lang = $sitepress->get_default_language();
+
+        if ($current_lang !== $default_lang) {
+            $localized_option = $option . '_' . $current_lang;
+            $localized_value = $wpdb->get_var($wpdb->prepare(
+                "SELECT option_value FROM {$wpdb->options} WHERE option_name = %s LIMIT 1",
+                $localized_option
+            ));
+
+            if ($localized_value !== null) {
+                return maybe_unserialize($localized_value);
+            }
+        }
+
+        return $pre_option;
+    }, 10, 3);
+}
