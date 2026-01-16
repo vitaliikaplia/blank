@@ -7,8 +7,32 @@ if (class_exists('ACF')) {
     function allow_svg_in_nav($tags, $context) {
         $tags['figure'] = array('class' => true);
         $tags['svg'] = array();
-        $tags['use'] = array('href' => true);
+        $tags['use'] = array('href' => true, 'xlink:href' => true);
+        $tags['span'] = array('class' => true);
         return $tags;
+    }
+
+    /**
+     * Custom Walker that doesn't escape HTML in menu item titles
+     */
+    class Walker_Nav_Menu_No_Escape extends Walker_Nav_Menu {
+        public function start_el( &$output, $data_object, $depth = 0, $args = null, $current_object_id = 0 ) {
+            // Get the original title before WordPress escapes it
+            $original_title = $data_object->title;
+
+            // Temporarily replace title with a placeholder
+            $placeholder = '___TITLE_PLACEHOLDER_' . md5($original_title) . '___';
+            $data_object->title = $placeholder;
+
+            // Call parent to build the menu item HTML
+            parent::start_el( $output, $data_object, $depth, $args, $current_object_id );
+
+            // Restore original title
+            $data_object->title = $original_title;
+
+            // Replace the escaped placeholder with the original HTML title
+            $output = str_replace( esc_html($placeholder), $original_title, $output );
+        }
     }
 
     /**
@@ -26,9 +50,9 @@ if (class_exists('ACF')) {
             $this->label    = __( 'Nav Menu', TEXTDOMAIN );
             $this->category = 'relational';
             $this->defaults = array(
-                    'save_format' => 'id',
-                    'allow_null'  => 0,
-                    'container'   => 'div',
+                'save_format' => 'id',
+                'allow_null'  => 0,
+                'container'   => 'div',
             );
 
             parent::__construct();
@@ -42,38 +66,38 @@ if (class_exists('ACF')) {
         public function render_field_settings( $field ) {
             // Register the Return Value format setting
             acf_render_field_setting( $field, array(
-                    'label'        => __( 'Return Value', TEXTDOMAIN ),
-                    'instructions' => __( 'Specify the returned value on front end', TEXTDOMAIN ),
-                    'type'         => 'radio',
-                    'name'         => 'save_format',
-                    'layout'       => 'horizontal',
-                    'choices'      => array(
-                            'object' => __( 'Nav Menu Object', TEXTDOMAIN ),
-                            'menu'   => __( 'Nav Menu HTML', TEXTDOMAIN ),
-                            'id'     => __( 'Nav Menu ID', TEXTDOMAIN ),
-                            'all'     => __( 'All', TEXTDOMAIN ),
-                    ),
+                'label'        => __( 'Return Value', TEXTDOMAIN ),
+                'instructions' => __( 'Specify the returned value on front end', TEXTDOMAIN ),
+                'type'         => 'radio',
+                'name'         => 'save_format',
+                'layout'       => 'horizontal',
+                'choices'      => array(
+                    'object' => __( 'Nav Menu Object', TEXTDOMAIN ),
+                    'menu'   => __( 'Nav Menu HTML', TEXTDOMAIN ),
+                    'id'     => __( 'Nav Menu ID', TEXTDOMAIN ),
+                    'all'     => __( 'All', TEXTDOMAIN ),
+                ),
             ) );
 
             // Register the Menu Container setting
             acf_render_field_setting( $field, array(
-                    'label'        => __( 'Menu Container', TEXTDOMAIN ),
-                    'instructions' => __( "What to wrap the Menu's ul with (when returning HTML only)", TEXTDOMAIN ),
-                    'type'         => 'select',
-                    'name'         => 'container',
-                    'choices'      => $this->get_allowed_nav_container_tags(),
+                'label'        => __( 'Menu Container', TEXTDOMAIN ),
+                'instructions' => __( "What to wrap the Menu's ul with (when returning HTML only)", TEXTDOMAIN ),
+                'type'         => 'select',
+                'name'         => 'container',
+                'choices'      => $this->get_allowed_nav_container_tags(),
             ) );
 
             // Register the Allow Null setting
             acf_render_field_setting( $field, array(
-                    'label'        => __( 'Allow Null?', TEXTDOMAIN ),
-                    'type'         => 'radio',
-                    'name'         => 'allow_null',
-                    'layout'       => 'horizontal',
-                    'choices'      => array(
-                            1 => __( 'Yes', TEXTDOMAIN ),
-                            0 => __( 'No', TEXTDOMAIN ),
-                    ),
+                'label'        => __( 'Allow Null?', TEXTDOMAIN ),
+                'type'         => 'radio',
+                'name'         => 'allow_null',
+                'layout'       => 'horizontal',
+                'choices'      => array(
+                    1 => __( 'Yes', TEXTDOMAIN ),
+                    0 => __( 'No', TEXTDOMAIN ),
+                ),
             ) );
         }
 
@@ -85,7 +109,7 @@ if (class_exists('ACF')) {
         private function get_allowed_nav_container_tags() {
             $tags           = apply_filters( 'wp_nav_menu_container_allowedtags', array( 'div', 'nav' ) );
             $formatted_tags = array(
-                    '0' => __( 'None', TEXTDOMAIN ),
+                '0' => __( 'None', TEXTDOMAIN ),
             );
 
             foreach ( $tags as $tag ) {
@@ -182,49 +206,34 @@ if (class_exists('ACF')) {
                 return $menu_object;
             } elseif ( 'menu' == $field['save_format'] ) {
                 $menu_args = array(
-                        'menu' => $value,
-                        'container' => $field['container'],
-                        'menu_class'=> false,
-                        'menu_id'=> false,
-                        'echo' => false,
-                        'link_before' => '',
-                        'link_after' => '',
-                        'items_wrap' => '%3$s', // видаляємо обгортку ul
-                        'walker' => new Walker_Nav_Menu() // використовуємо стандартний walker
+                    'menu' => $value,
+                    'container' => $field['container'],
+                    'menu_class'=> false,
+                    'menu_id'=> false,
+                    'echo' => false,
+                    'link_before' => '',
+                    'link_after' => '',
+                    'items_wrap' => '%3$s', // видаляємо обгортку ul
+                    'walker' => new Walker_Nav_Menu_No_Escape() // використовуємо кастомний walker
                 );
 
-                // Дозволяємо HTML в заголовках через фільтр
-                add_filter('wp_kses_allowed_html', 'allow_svg_in_nav', 10, 2);
                 $menu_html = wp_nav_menu($menu_args);
-                remove_filter('wp_kses_allowed_html', 'allow_svg_in_nav', 10);
 
                 // Видаляємо класи current
                 $menu_html = str_replace(array('current-menu-item','current_page_item','current-menu-ancestor','current_page_parent'), '', $menu_html);
 
                 return $menu_html;
             } elseif ( 'all' == $field['save_format'] ) {
-                // Створюємо callback функцію
-                $allow_html_callback = function($title, $item, $args, $depth) {
-                    return $title;
-                };
-
-                // Додаємо фільтри для дозволу HTML (SVG, figure, use) в title
-                add_filter('nav_menu_item_title', $allow_html_callback, 10, 4);
-                add_filter('wp_kses_allowed_html', 'allow_svg_in_nav', 10, 2);
-
                 $menu_html = wp_nav_menu( array(
-                        'menu' => $value,
-                        'container' => $field['container'],
-                        'menu_class'=> false,
-                        'menu_id'=> false,
-                        'echo' => false,
-                        'link_before' => '',
-                        'link_after' => ''
+                    'menu' => $value,
+                    'container' => $field['container'],
+                    'menu_class'=> false,
+                    'menu_id'=> false,
+                    'echo' => false,
+                    'link_before' => '',
+                    'link_after' => '',
+                    'walker' => new Walker_Nav_Menu_No_Escape() // використовуємо кастомний walker
                 ) );
-
-                // Видаляємо фільтри
-                remove_filter('nav_menu_item_title', $allow_html_callback, 10);
-                remove_filter('wp_kses_allowed_html', 'allow_svg_in_nav', 10);
 
                 // Видаляємо зайві класи та обгортки
                 $menu_html = preg_replace( array( '#^<ul[^>]*>#', '#</ul>$#' ), '', $menu_html);
